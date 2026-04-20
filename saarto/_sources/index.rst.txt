@@ -13,3 +13,12 @@ SAARTO API
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+SAARTO Utilities
+-----------
+
+.. automodule:: saarto.utilities.utilities
+   :members:
+   :undoc-members:
+   :show-inheritance:
