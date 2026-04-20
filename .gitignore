@@ -1,0 +1,10 @@
+docs/build/
+docs/_build/
+_build/
+__pycache__/
+*.pyc
+.python-version
+*.egg-info/
+dist/
+build/
+.DS_Store

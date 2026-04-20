@@ -1,0 +1,53 @@
+saarto.utilities package
+========================
+
+Submodules
+----------
+
+saarto.utilities.DynParam module
+--------------------------------
+
+.. automodule:: saarto.utilities.DynParam
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.utilities.FakeInstruments module
+---------------------------------------
+
+.. automodule:: saarto.utilities.FakeInstruments
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.utilities.MDWriter module
+--------------------------------
+
+.. automodule:: saarto.utilities.MDWriter
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.utilities.PathConfig module
+----------------------------------
+
+.. automodule:: saarto.utilities.PathConfig
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.utilities.utilities module
+---------------------------------
+
+.. automodule:: saarto.utilities.utilities
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saarto.utilities
+   :members:
+   :show-inheritance:
+   :undoc-members:
