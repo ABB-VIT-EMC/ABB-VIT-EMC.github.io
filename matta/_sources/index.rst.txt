@@ -6,6 +6,9 @@
 MATTA Documentation
 ===================
 
+.. include:: ../../README.md
+      :parser: myst_parser.sphinx_
+
 TUI Module
 -----------
 

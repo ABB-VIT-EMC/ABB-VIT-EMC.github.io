@@ -68,6 +68,22 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#saarto">saarto</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#project-structure-and-paths">Project Structure and Paths</a><ul>
+<li><a class="reference internal" href="#structural-element-import">Structural Element Import</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+<li><a class="reference internal" href="#api">API</a></li>
+<li><a class="reference internal" href="#results">Results</a><ul>
+<li><a class="reference internal" href="#tracing-configurations">Tracing Configurations</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-saarto.api">SAARTO API</a><ul>
 <li><a class="reference internal" href="#saarto.api.build"><code class="docutils literal notranslate"><span class="pre">build()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.clean"><code class="docutils literal notranslate"><span class="pre">clean()</span></code></a></li>
@@ -162,6 +178,189 @@ data-aria-dark="Switch to auto color mode">
 </div><article class="yue" role="main">
           <section id="saarto-documentation">
 <h1>SAARTO Documentation<a class="headerlink" href="#saarto-documentation" title="Link to this heading">¶</a></h1>
+<section id="saarto">
+<h2>saarto<a class="headerlink" href="#saarto" title="Link to this heading">¶</a></h2>
+<p><strong>S</strong>ystem for <strong>A</strong>utomated, <strong>A</strong>nti-<strong>R</strong>edundancy <strong>T</strong>est <strong>O</strong>rchestrator or <strong>saarto</strong> is an automatic test orchestrator that relies on SIEMENS Polarion product testing structure. This program is created in EMC and Smart Building Lab in ABB Vittuone, Italy. Instead of creating the test task one-by-one, the system takes the test case/test logic from from a template file that describe a test structure that is also hardware agnostic, and another set of structural elements (for example a ZERA generator and a M4M 30 Ethernet) to create the final <a class="reference external" href="https://robotframework.org/">Robot Framework</a> test task. This results in zero-redundancy, easy-to-write, and easy-to-maintainable codebase.</p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h3>
+<p>The Pipeline in a Nutshell (assume that we are about to generate a test task PMD-0000)</p>
+<p><strong>Bootstrap (create)</strong>: The user selects (or the information is obtained via SIEMENS Polarion) a test case (a.k.a. test structure or test logic), e.g., PMD-1111 in a config.toml.</p>
+<p><strong>Auto-Resolution (fetch)</strong>: The system “reads” the selected test template to identify required hardware (e.g., a Power Meter or Generator). It then automatically fetches the corresponding Structural Element templates and their TOML parameters to the afformentioned config.toml (where user (or Polarion) then fill the desired instruments (e.g. PMD-2222, and PMD-3333)).</p>
+<p><strong>Build (build)</strong>: The pipeline merges the test steps, instrument setups, and site-specific parameters into a unified context. This also auto generates instrument.toml for hardware-specific configuration (e.g. for PMD-2222, and PMD-3333) that should be filled before run-time.</p>
+<p><strong>Rendering (render)</strong>: A final <a class="reference external" href="https://robotframework.org/">Robot Framework</a> file is generated, ensuring that the code is syntactically consistent and perfectly aligned with the target environment. All these files allow us to also generate the PMD-0000 README.md file</p>
+<p>For step-by-step workflow:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">saarto<span class="w"> </span>init<span class="w"> </span>PMD-1111<span class="w"> </span>PMD-0000<span class="w"> </span><span class="c1"># linking/bootstrapping the test case PMD-0000 to the new test task PMD-1111</span>
+</span><span data-line="2"><span class="c1"># before fetching, user should fill all the instrument fields in &lt;TASKS_DIR&gt;/PMD-1111/config.toml</span>
+</span><span data-line="3">saarto<span class="w"> </span>fetch<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># create &lt;TASKS_DIR&gt;PMD-1111/instrument.toml</span>
+</span><span data-line="4">saarto<span class="w"> </span>build<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># compile all the templates resulting in &lt;TASKS_DIR&gt;/PMD-1111/PMD-1111.robot.j2</span>
+</span><span data-line="5">saarto<span class="w"> </span>render<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># before running make sure all the data is set, then this will generate the version that parameters are resolved</span>
+</span></pre></div>
+</div>
+<p>In practice, we follow real workflow</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">saarto<span class="w"> </span>init<span class="w"> </span>PMD-1111<span class="w"> </span>PMD-0000
+</span><span data-line="2"><span class="c1"># the same as fetching, the user must fill the instrument fields</span>
+</span><span data-line="3">saarto<span class="w"> </span>compile<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># this is equivalent to fetch -&gt; build. This works because instrument.toml always should be written with default values for readability</span>
+</span><span data-line="4">saarto<span class="w"> </span>run<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># this should generate and run the generated code, each time the code in the marker is fetch, user added code should be outside of the markers (###)</span>
+</span><span data-line="5">saarto<span class="w"> </span>clean<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># by running this, we start with a clean slate (deleting PMD-1111.robot), user code will be lost as well.</span>
+</span></pre></div>
+</div>
+<p><img alt="saarto simplified diagram" src="images/saarto_diagram.svg" /></p>
+</section>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ITLAVIT/AutoTestLib">AutoTestLib</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ITLAVIT/matta">matta</a></p></li>
+<li><p>pydantic</p></li>
+<li><p>jinja2</p></li>
+<li><p>robotframework
+The dependencies above should be installed from pyproject.toml except our in-house libraries, which should be install by doing</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;matta&quot;</span><span class="w"> </span>@<span class="w"> </span>git+https://github.com/ITLAVIT/matta
+</span><span data-line="2">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;AutoTestLib&quot;</span><span class="w"> </span>@<span class="w"> </span>git+https://github.com/ITLAVIT/AutoTestLib
+</span></pre></div>
+</div>
+</section>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h3>
+<p>This project is tested on Python 3.14, for automatic installation, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools<span class="w"> </span>wheel
+</span><span data-line="2">git<span class="w"> </span>pull<span class="w"> </span>https://github.com/ITLAVIT/saarto
+</span><span data-line="3">pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>./saarto
+</span></pre></div>
+</div>
+<p>or use this instead of cloning from GitHub</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;saarto&quot;</span><span class="w"> </span>@<span class="w"> </span>git+https://github.com/ITLAVIT/saarto
+</span></pre></div>
+</div>
+</section>
+<section id="project-structure-and-paths">
+<h3>Project Structure and Paths<a class="headerlink" href="#project-structure-and-paths" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">saarto/<span class="w">                          </span><span class="c1"># SAARTO_ROOT</span>
+</span><span data-line="2">│
+</span><span data-line="3">├──<span class="w"> </span>resources/
+</span><span data-line="4">│<span class="w">   </span>├──<span class="w"> </span>test_cases/<span class="w">              </span><span class="c1"># TC_DIR — Test case</span>
+</span><span data-line="5">│<span class="w">   </span>└──<span class="w"> </span>structural_elements/<span class="w">     </span><span class="c1"># SE_DIR — Reusable structural element definitions</span>
+</span><span data-line="6">│
+</span><span data-line="7">├──<span class="w"> </span>test_tasks/<span class="w">                  </span><span class="c1"># TASKS_DIR — Collections of Robot Framework task definitions</span>
+</span><span data-line="8">│
+</span><span data-line="9">└──<span class="w"> </span>src/<span class="w">                         </span><span class="c1"># Source package (HERE)</span>
+</span><span data-line="10"><span class="w">    </span>├──<span class="w"> </span>saarto.toml<span class="w">              </span><span class="c1"># Project path and settings configuration</span>
+</span><span data-line="11"><span class="w">    </span>└──<span class="w"> </span>templates/<span class="w">               </span><span class="c1"># TEMPLATES_DIR — Internal-use templates (\*.\*.j2)</span>
+</span></pre></div>
+</div>
+<section id="structural-element-import">
+<h4>Structural Element Import<a class="headerlink" href="#structural-element-import" title="Link to this heading">¶</a></h4>
+<p>There is also a possibility to import structural elements from another library like <a class="reference external" href="https://github.com/ITLAVIT/AutoTestLib">AutoTestLib</a>.</p>
+<p>Module’s side code</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">### TOML-BLOCK-START: INSTRUMENT_DEFINITION</span>
+</span><span data-line="2"><span class="k">[AutoTestLib__m4m_tcp]</span>
+</span><span data-line="3"><span class="n">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abb_power_meter&quot;</span>
+</span><span data-line="4"><span class="p">.</span>
+</span><span data-line="5"><span class="p">.</span>
+</span><span data-line="6"><span class="c1">### TOML-BLOCK-END: INSTRUMENT_DEFINITION</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1">### ROBOT-BLOCK-START: SE_DEPENDENCIES</span>
+</span><span data-line="9"><span class="n">Library</span><span class="w">    </span><span class="n">AutoTestLib</span><span class="p">.</span><span class="n">Interfaces</span><span class="p">.</span><span class="n">M4MModbusTCP</span><span class="w">    </span><span class="n">AS</span><span class="w">    </span><span class="err">{{</span><span class="w"> </span><span class="n">AutoTestLib__m4m_tcp</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="err">}}</span>
+</span><span data-line="10"><span class="c1">### ROBOT-BLOCK-END: SE_DEPENDENCIES</span>
+</span></pre></div>
+</div>
+<p>saarto’s side (instrument fields in config.cmconf, that was fetched from testcase)</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">[instrument]</span>
+</span><span data-line="2"><span class="n">generic_power_meter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;AutoTestLib__m4m_tcp&quot;</span>
+</span></pre></div>
+</div>
+<p>with “__” double underscore, saarto knows that the word at the front is a python module with saarto templates inside and should be imported.</p>
+</section>
+</section>
+<section id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h3>
+<!-- COMMANDS_START -->
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Arguments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">create</span></code></p></td>
+<td><p>Create test from test case</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code>, <code class="docutils literal notranslate"><span class="pre">test_case</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fetch</span></code></p></td>
+<td><p>Fetch instrument definitions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">build</span></code></p></td>
+<td><p>Build robot template</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">render</span></code></p></td>
+<td><p>Render final robot file</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">clean</span></code></p></td>
+<td><p>Remove the compiled file (*.robot.j2)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">compile</span></code></p></td>
+<td><p>Fetch and build final robot file</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">run</span></code></p></td>
+<td><p>Run final robot file</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show</span></code></p></td>
+<td><p>Show human readable test step</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">paths</span></code></p></td>
+<td><p>List file configured in saarto.toml</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tests</span></code></p></td>
+<td><p>List test tasks</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ses</span></code></p></td>
+<td><p>List structural elements</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cases</span></code></p></td>
+<td><p>List test cases</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- COMMANDS_END -->
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h3>
+<p><strong>saarto</strong> (will) supports creating “recipe,” i.e.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="o">--</span> <span class="n">config</span><span class="o">.</span><span class="n">cmconf</span>
+</span><span data-line="2"><span class="o">--</span> <span class="n">instrument</span><span class="o">.</span><span class="n">toml</span>
+</span></pre></div>
+</div>
+<p>from a function, therefore, with just a Python dict (configurated by Polarion opening test tasks) test task files are automatically generated.</p>
+</section>
+<section id="results">
+<h3>Results<a class="headerlink" href="#results" title="Link to this heading">¶</a></h3>
+<section id="tracing-configurations">
+<h4>Tracing Configurations<a class="headerlink" href="#tracing-configurations" title="Link to this heading">¶</a></h4>
+<p>There are three values that are important</p>
+<ul class="simple">
+<li><p>hash of the templates used</p></li>
+<li><p>hash of the configuration</p></li>
+<li><p>hash of the parameters</p></li>
+</ul>
+<p>with these two we can trace the test structure, configuration and test parameter with these data, which (will) also shown on Git. This allow us to understand and trace any test case without relying on another extra tool, only relying on Git version control.</p>
+</section>
+</section>
+</section>
 <section id="module-saarto.api">
 <span id="saarto-api"></span><h2>SAARTO API<a class="headerlink" href="#module-saarto.api" title="Link to this heading">¶</a></h2>
 <dl class="py function">
