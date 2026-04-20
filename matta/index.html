@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="violet" data-content_root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>matta 1.0.0 documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+      <link rel="canonical" href="https://ABB-VIT-EMC.github.io/matta/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=44020203" />
+    <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ABB-VIT-EMC.github.io/matta/"/>
+  <meta property="og:title" content="MATTA Documentation"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="#">
+      
+      
+      <strong>matta</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0">
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#module-matta.tui">TUI Module</a><ul>
+<li><a class="reference internal" href="#matta.tui.add_extension_if_missing"><code class="docutils literal notranslate"><span class="pre">add_extension_if_missing()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.ask_yes_no"><code class="docutils literal notranslate"><span class="pre">ask_yes_no()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.ensure_folder"><code class="docutils literal notranslate"><span class="pre">ensure_folder()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.get_log_level_priority"><code class="docutils literal notranslate"><span class="pre">get_log_level_priority()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.is_called_from_robot"><code class="docutils literal notranslate"><span class="pre">is_called_from_robot()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.is_valid_filename"><code class="docutils literal notranslate"><span class="pre">is_valid_filename()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.list_directory"><code class="docutils literal notranslate"><span class="pre">list_directory()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.list_picker"><code class="docutils literal notranslate"><span class="pre">list_picker()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.log_message"><code class="docutils literal notranslate"><span class="pre">log_message()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.printc"><code class="docutils literal notranslate"><span class="pre">printc()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.set_log_level"><code class="docutils literal notranslate"><span class="pre">set_log_level()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.show_directory"><code class="docutils literal notranslate"><span class="pre">show_directory()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#render-module">Render Module</a><ul>
+<li><a class="reference internal" href="#matta.render.build_tree_from_path"><code class="docutils literal notranslate"><span class="pre">build_tree_from_path()</span></code></a></li>
+<li><a class="reference internal" href="#matta.render.render_csv_table"><code class="docutils literal notranslate"><span class="pre">render_csv_table()</span></code></a></li>
+<li><a class="reference internal" href="#matta.render.render_dict_as_table"><code class="docutils literal notranslate"><span class="pre">render_dict_as_table()</span></code></a></li>
+<li><a class="reference internal" href="#matta.render.render_tree"><code class="docutils literal notranslate"><span class="pre">render_tree()</span></code></a></li>
+<li><a class="reference internal" href="#matta.render.render_tree_dict"><code class="docutils literal notranslate"><span class="pre">render_tree_dict()</span></code></a></li>
+<li><a class="reference internal" href="#matta.render.render_value"><code class="docutils literal notranslate"><span class="pre">render_value()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="#"><span itemprop="name">matta</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">MATTA Documentation</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <div class="copy-page-wrapper relative pb-4 lg:absolute lg:top-8 lg:right-6 xl:right-12">
+  <div id="copy-page-trigger">
+    <button
+      type="button"
+      class="js-copy px-3 py-1 inline-flex items-center gap-1"
+      data-url="https://ABB-VIT-EMC.github.io/matta/_sources/index.rst.txt"
+    >
+      <i class="i-lucide" data-icon="copy"></i>
+      <span>Copy page</span>
+    </button>
+    <button class="js-menu px-2 py-1" type="button" aria-label="More actions"
+      aria-haspopup="menu" aria-expanded="false" aria-controls="copy-page-content">
+      <i class="i-lucide chevron-down"></i>
+    </button>
+  </div>
+  <div id="copy-page-content" role="menu" aria-orientation="vertical" aria-hidden="true">
+    <div role="presentation">
+      <div class="flex flex-col" role="group">
+        <button class="js-copy" type="button" role="menuitem"
+          data-url="https://ABB-VIT-EMC.github.io/matta/_sources/index.rst.txt">
+          <span class="iconify-icon">
+            <i class="i-lucide" data-icon="copy"></i>
+          </span>
+          <span>Copy page</span>
+        </button>
+        <a role="menuitem" href="https://ABB-VIT-EMC.github.io/matta/_sources/index.rst.txt" target="_blank" rel="nofollow"><iconify-icon icon="bi:code-slash"></iconify-icon>
+            <span>View Source</span></a><a role="menuitem" href="https://chatgpt.com/?hints=search&q=Read%20https%3A//ABB-VIT-EMC.github.io/matta/_sources/index.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:openai"></iconify-icon>
+          <span>Open in ChatGPT</span>
+        </a><a role="menuitem" href="https://claude.ai/new?q=Read%20https%3A//ABB-VIT-EMC.github.io/matta/_sources/index.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:claude"></iconify-icon>
+          <span>Open in Claude</span>
+        </a></div>
+    </div>
+  </div>
+</div><article class="yue" role="main">
+          <section id="matta-documentation">
+<h1>MATTA Documentation<a class="headerlink" href="#matta-documentation" title="Link to this heading">¶</a></h1>
+<section id="module-matta.tui">
+<span id="tui-module"></span><h2>TUI Module<a class="headerlink" href="#module-matta.tui" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.add_extension_if_missing">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">add_extension_if_missing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#add_extension_if_missing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.add_extension_if_missing" title="Link to this definition">¶</a></dt>
+<dd><p>Check if filename has an extension and add the default if missing.</p>
+<p>If the provided filename has no extension, appends the default extension.
+Otherwise, returns the filename unchanged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The filename to check.</p></li>
+<li><p><strong>default_extension</strong> (<em>str</em>) – The extension to add if missing. Defaults to ‘py’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The filename with extension added if necessary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">add_extension_if_missing</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)</span>
+</span><span data-line="2"><span class="go">&#39;script.py&#39;</span>
+</span><span data-line="3"><span class="gp">&gt;&gt;&gt; </span><span class="n">add_extension_if_missing</span><span class="p">(</span><span class="s1">&#39;script.txt&#39;</span><span class="p">)</span>
+</span><span data-line="4"><span class="go">&#39;script.txt&#39;</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.ask_yes_no">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">ask_yes_no</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'N'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#ask_yes_no"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.ask_yes_no" title="Link to this definition">¶</a></dt>
+<dd><p>Prompt user for a yes/no question interactively.</p>
+<p>Displays a question and waits for user input (‘y’ or ‘n’). Repeats
+until valid input is received.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>question</strong> (<em>str</em>) – The question to display to the user.</p></li>
+<li><p><strong>default</strong> (<em>str</em>) – Default choice if user presses Enter without input.
+‘y’ for yes, ‘n’ or ‘N’ for no. Defaults to ‘N’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if user selects ‘yes’, False if ‘no’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;Do you want to continue?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.ensure_folder">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">ensure_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interactive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#ensure_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.ensure_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Ensure a folder exists, optionally creating it with user confirmation.</p>
+<p>Checks if a folder exists at the specified path. If it doesn’t exist,
+optionally prompts the user before creating it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Directory path to ensure. Can be absolute or relative.</p></li>
+<li><p><strong>interactive</strong> (<em>bool</em>) – If True, ask user before creating the directory.
+Defaults to True.</p></li>
+<li><p><strong>relative_to_caller</strong> (<em>bool</em>) – If True, interpret path as relative to
+the caller’s file directory. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if folder exists or was created successfully, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>No exceptions are raised; errors are caught and reported.</strong> – </p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_folder</span><span class="p">(</span><span class="s1">&#39;./output&#39;</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span data-line="2"><span class="go">True</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.get_log_level_priority">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">get_log_level_priority</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#get_log_level_priority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.get_log_level_priority" title="Link to this definition">¶</a></dt>
+<dd><p>Get the numeric priority of a log level.</p>
+<p>Used internally for log level filtering. Higher priority values indicate
+more critical messages (e.g., CRITICAL has higher priority than DEBUG).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level_name</strong> (<em>str</em>) – The log level name. Case-insensitive.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Priority value. DEBUG=1, INFO/SUCCESS=2, WARNING=3, ERROR=4,</dt><dd><p>CRITICAL=5. Returns 0 for unknown levels.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.is_called_from_robot">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">is_called_from_robot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#is_called_from_robot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.is_called_from_robot" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the current code is being executed from Robot Framework.</p>
+<p>Inspects the call stack to determine if any frame belongs to Robot Framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if called from Robot Framework, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Useful for conditional logging and behavior in functions that can be
+called from both Robot Framework and standard Python code.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.is_valid_filename">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">is_valid_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#is_valid_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.is_valid_filename" title="Link to this definition">¶</a></dt>
+<dd><p>Validate if a string is a valid filename for most filesystems.</p>
+<p>Checks for forbidden characters, length limits, and reserved names.
+Compatible with Windows and Linux/Unix systems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The filename to validate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if filename is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Maximum length: 255 characters</p></li>
+<li><p>Forbidden characters: &lt; &gt; : “ / | ? * and control characters</p></li>
+<li><p>Reserved names (Windows): CON, PRN, AUX, NUL, COM1, LPT1</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">is_valid_filename</span><span class="p">(</span><span class="s1">&#39;document.txt&#39;</span><span class="p">)</span>
+</span><span data-line="2"><span class="go">True</span>
+</span><span data-line="3"><span class="gp">&gt;&gt;&gt; </span><span class="n">is_valid_filename</span><span class="p">(</span><span class="s1">&#39;file&lt;name&gt;.txt&#39;</span><span class="p">)</span>
+</span><span data-line="4"><span class="go">False</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.list_directory">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">list_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'folder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#list_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.list_directory" title="Link to this definition">¶</a></dt>
+<dd><p>List subdirectories or files in a given path with optional filtering.</p>
+<p>Uses pathlib for cross-platform compatibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em> or </em><em>Path</em>) – Directory path to list. Defaults to current directory.</p></li>
+<li><p><strong>content</strong> (<em>str</em>) – Type of items to list. Options: ‘folder’, ‘file’, ‘all’.
+Defaults to ‘folder’.</p></li>
+<li><p><strong>match_extension</strong> (<em>str</em>) – Optional file extension filter (without the dot).
+Example: ‘py’ to match only .py files. Only applies to files.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sorted list of item names (strings). Returns False on error.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If path does not exist.</p></li>
+<li><p><strong>NotADirectoryError</strong> – If path is not a directory.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">list_directory</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="n">match_extension</span><span class="o">=</span><span class="s1">&#39;py&#39;</span><span class="p">)</span>
+</span><span data-line="2"><span class="go">[&#39;script1.py&#39;, &#39;script2.py&#39;]</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.list_picker">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">list_picker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Select</span> <span class="pre">an</span> <span class="pre">item'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#list_picker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.list_picker" title="Link to this definition">¶</a></dt>
+<dd><p>Display an interactive TUI list picker for user selection.</p>
+<p>Shows a numbered list of items and prompts the user to select one by
+entering its number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>items</strong> (<em>list</em>) – List of strings to choose from.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title to display above the list. Defaults to ‘Select an item’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list [selected_item, index] where selected_item is the chosen string</dt><dd><p>and index is its position (0-based). Returns None if list is empty
+or user cancels.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">list_picker</span><span class="p">([</span><span class="s1">&#39;Option A&#39;</span><span class="p">,</span> <span class="s1">&#39;Option B&#39;</span><span class="p">,</span> <span class="s1">&#39;Option C&#39;</span><span class="p">])</span>
+</span><span data-line="2"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+</span><span data-line="3"><span class="gp">... </span>    <span class="n">item</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">result</span>
+</span><span data-line="4"><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Selected: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> at index </span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.log_message">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">log_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_datetime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#log_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.log_message" title="Link to this definition">¶</a></dt>
+<dd><p>Log a message with level filtering and optional timestamp.</p>
+<p>Checks multiple sources for the minimum log level to display:
+global LOG_LEVEL variable, __main__ module, or Robot Framework variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<em>str</em>) – Message level. Supported values: DEBUG, INFO, SUCCESS,
+WARNING, ERROR, CRITICAL. Case-insensitive.</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – The message text to log.</p></li>
+<li><p><strong>level_attr</strong> (<em>str</em>) – Minimum level to display. If None, uses LOG_LEVEL
+from globals, __main__, or Robot Framework. Defaults to ‘INFO’.</p></li>
+<li><p><strong>show_datetime</strong> (<em>bool</em>) – Whether to prepend timestamp to message.
+Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Output format: [YYYY-MM-DD HH:MM:SS.fff] [LEVEL]: message</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.printc">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">printc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'white'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flush</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#printc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.printc" title="Link to this definition">¶</a></dt>
+<dd><p>Print colored text to console using ANSI escape codes.</p>
+<blockquote>
+<div><p>Supports various colors and automatically logs to Robot Framework if called
+from within a Robot Framework context.</p>
+<dl>
+<dt>Args:</dt><dd><p>text (str): The text to print.
+color (str): Color name. Options: black, red, green, yellow, blue, magenta,</p>
+<blockquote>
+<div><p>cyan, white, error, debug, info, warning, critical, success.
+Defaults to ‘white’.</p>
+</div></blockquote>
+<p>sep (str): Separator between arguments. Defaults to ‘ ‘.
+end (str): String appended after the last value. Defaults to ‘</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>‘.</dt><dd><blockquote>
+<div><p>file: File object to write to. Defaults to sys.stdout.
+flush (bool): Whether to forcibly flush the stream. Defaults to False.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Note:</dt><dd><p>When called from Robot Framework, output is also logged to the framework’s console.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.set_log_level">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">set_log_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#set_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.set_log_level" title="Link to this definition">¶</a></dt>
+<dd><p>Set the global log level for message filtering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – Log level to set. Supported values: DEBUG, INFO, SUCCESS,
+WARNING, ERROR, CRITICAL. Case-insensitive.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>No exceptions raised; invalid levels are logged as info.</strong> – </p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The log level is stored in the global LOG_LEVEL variable.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.show_directory">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">show_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'file'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/tui.html#show_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.tui.show_directory" title="Link to this definition">¶</a></dt>
+<dd><p>Display folders/files in a path with formatted output.</p>
+<p>Wrapper around list_directory that prints results in a formatted manner.
+Optionally filters by content type and file extension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em> or </em><em>Path</em>) – Directory path to display. Defaults to current directory.</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – Custom header text to display. If None, generates default text.</p></li>
+<li><p><strong>content</strong> (<em>str</em>) – Type of items to show. Options: ‘folder’, ‘file’, ‘all’.
+Defaults to ‘file’.</p></li>
+<li><p><strong>match_extension</strong> (<em>str</em>) – Optional file extension filter (without the dot).
+Example: ‘py’ to show only .py files. Only applies to files.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Items are displayed as bullet points with colored header.</p>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">show_directory</span><span class="p">(</span><span class="s1">&#39;./scripts&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="n">match_extension</span><span class="o">=</span><span class="s1">&#39;py&#39;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="render-module">
+<h2>Render Module<a class="headerlink" href="#render-module" title="Link to this heading">¶</a></h2>
+<dl class="py function" id="module-matta.render">
+<dt class="sig sig-object py" id="matta.render.build_tree_from_path">
+<span class="sig-prename descclassname"><span class="pre">matta.render.</span></span><span class="sig-name descname"><span class="pre">build_tree_from_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/render.html#build_tree_from_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.render.build_tree_from_path" title="Link to this definition">¶</a></dt>
+<dd><p>Build a tree structure dictionary from filesystem paths.</p>
+<p>Recursively traverses directories up to a maximum depth and creates a nested
+dictionary representation. Common development directories are ignored by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Directory path to scan. Defaults to current directory.</p></li>
+<li><p><strong>max_depth</strong> (<em>int</em>) – Maximum depth to traverse. Defaults to 3.</p></li>
+<li><p><strong>current_depth</strong> (<em>int</em>) – Current recursion depth. Internal use only.</p></li>
+<li><p><strong>ignore_dirs</strong> (<em>set</em>) – Directory names to ignore. Defaults to
+{‘.git’, ‘__pycache__’, ‘.venv’, ‘node_modules’, ‘.pytest_cache’}.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Nested dictionary where keys are folder names, values are subdirectories,</dt><dd><p>and “_files” key contains list of files in that directory.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.render.render_csv_table">
+<span class="sig-prename descclassname"><span class="pre">matta.render.</span></span><span class="sig-name descname"><span class="pre">render_csv_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/matta/render.html#render_csv_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.render.render_csv_table" title="Link to this definition">¶</a></dt>
+<dd><p>Render CSV test variations as a formatted table.</p>
+<p>Parses semicolon-delimited CSV with test case parameters and variations.</p>
+<dl class="simple">
+<dt>CSV Convention:</dt><dd><ul class="simple">
+<li><p>Row 0 (header): col 0 = label, col 1 = ignored, col 2+ = test case names</p></li>
+<li><p>Row 1+: col 0 = param name, col 1 = short label, col 2+ = values</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_file</strong> (<em>str</em>) – Path to the CSV file.</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – Output format, either “markdown” or “plaintext”.
+Defaults to “markdown”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(table_string, num_test_cases) where table_string is the formatted</dt><dd><p>table and num_test_cases is the count of test case columns.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.render.render_dict_as_table">
+<span class="sig-prename descclassname"><span class="pre">matta.render.</span></span><span class="sig-name descname"><span class="pre">render_dict_as_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Key'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Value'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/matta/render.html#render_dict_as_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.render.render_dict_as_table" title="Link to this definition">¶</a></dt>
+<dd><p>Render a flat dictionary as a formatted table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – Flat dictionary to render. Nested dicts and lists are skipped.</p></li>
+<li><p><strong>key_col</strong> (<em>str</em>) – Header name for the key column. Defaults to “Key”.</p></li>
+<li><p><strong>val_col</strong> (<em>str</em>) – Header name for the value column. Defaults to “Value”.</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – Output format, either “markdown” or “plaintext”.
+Defaults to “markdown”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Table formatted as markdown or plaintext.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.render.render_tree">
+<span class="sig-prename descclassname"><span class="pre">matta.render.</span></span><span class="sig-name descname"><span class="pre">render_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/render.html#render_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.render.render_tree" title="Link to this definition">¶</a></dt>
+<dd><p>Render a directory tree with ASCII art formatting.</p>
+<p>Displays a filesystem tree structure either from a pre-built dictionary
+or by scanning the filesystem directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tree_data</strong> (<em>dict</em>) – Pre-built tree dictionary. If None, builds from path.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Directory path to scan if tree_data is None. Defaults to “.”.</p></li>
+<li><p><strong>max_depth</strong> (<em>int</em>) – Maximum depth to traverse. Defaults to 3.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ASCII art tree representation with connectors (â”œâ”€â”€, â””â”€â”€).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.render.render_tree_dict">
+<span class="sig-prename descclassname"><span class="pre">matta.render.</span></span><span class="sig-name descname"><span class="pre">render_tree_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/matta/render.html#render_tree_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.render.render_tree_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Render a manually created tree dictionary with ASCII art formatting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tree_dict</strong> (<em>dict</em>) – Dictionary representing tree structure.</p></li>
+<li><p><strong>root_name</strong> (<em>str</em>) – Name of the root node. Defaults to “root”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ASCII art tree representation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.render.render_value">
+<span class="sig-prename descclassname"><span class="pre">matta.render.</span></span><span class="sig-name descname"><span class="pre">render_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/matta/render.html#render_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#matta.render.render_value" title="Link to this definition">¶</a></dt>
+<dd><p>Render a scalar value as markdown inline code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to render. Can be None, empty string, or any scalar.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Markdown formatted value (backticks) or “<em>N/A</em>” if None or empty.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2026, Thanapong Chuangyanyong</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/shibuya.js?v=cac61aee"></script></body>
+</html>
