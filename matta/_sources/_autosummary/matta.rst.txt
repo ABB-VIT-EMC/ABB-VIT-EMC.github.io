@@ -1,0 +1,14 @@
+﻿matta
+=====
+
+.. automodule:: matta
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   render
+   tui
