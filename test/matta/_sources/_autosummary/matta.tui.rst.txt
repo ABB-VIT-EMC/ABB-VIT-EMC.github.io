@@ -1,0 +1,23 @@
+matta.tui
+=========
+
+.. automodule:: matta.tui
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      add_extension_if_missing
+      ask_yes_no
+      ensure_folder
+      get_log_level_priority
+      is_called_from_robot
+      is_valid_filename
+      list_directory
+      list_picker
+      log_message
+      printc
+      set_log_level
+      show_directory
+   
