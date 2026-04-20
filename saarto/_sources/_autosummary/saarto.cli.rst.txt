@@ -1,0 +1,26 @@
+saarto.cli
+==========
+
+.. automodule:: saarto.cli
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cmd_build
+      cmd_cases
+      cmd_clean
+      cmd_compile
+      cmd_create
+      cmd_fetch
+      cmd_paths
+      cmd_render
+      cmd_run
+      cmd_ses
+      cmd_show
+      cmd_tests
+      generate_commands_markdown
+      inject_commands_to_readme
+      main
+   

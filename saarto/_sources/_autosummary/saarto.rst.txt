@@ -1,0 +1,15 @@
+﻿saarto
+======
+
+.. automodule:: saarto
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   api
+   cli
+   utilities

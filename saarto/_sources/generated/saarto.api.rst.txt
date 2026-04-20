@@ -1,0 +1,25 @@
+saarto.api
+==========
+
+.. automodule:: saarto.api
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build
+      clean
+      create_temp_toml
+      fetch
+      generate_doc
+      get_steps
+      init
+      list_strucural_elements
+      list_test_cases
+      list_tests
+      load_config
+      read_text
+      render
+      run
+   

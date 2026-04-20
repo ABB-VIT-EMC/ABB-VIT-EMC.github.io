@@ -6,15 +6,25 @@
 MATTA Documentation
 ===================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+Indices and tables
+==================
 
-API Reference
-=============
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
-.. autosummary::
-   :toctree: _autosummary
-   :recursive:
+TUI Module
+-----------
 
-   matta
+.. automodule:: matta.tui
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Render Module
+-----------
+
+.. automodule:: matta.render
+   :members:
+   :undoc-members:
+   :show-inheritance: 
