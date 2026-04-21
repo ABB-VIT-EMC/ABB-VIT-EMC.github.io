@@ -9,19 +9,13 @@ SAARTO Documentation
 .. include:: ../../README.md
       :parser: myst_parser.sphinx_
 
-SAARTO API
------------
+Module Reference
+-----------------
 
-.. automodule:: saarto.api
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. toctree::
+   api
+   util
 
 
-SAARTO Utilities
------------
 
-.. automodule:: saarto.utilities.utilities
-   :members:
-   :undoc-members:
-   :show-inheritance:
+

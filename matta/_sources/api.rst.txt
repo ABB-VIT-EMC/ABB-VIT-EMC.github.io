@@ -1,0 +1,16 @@
+
+TUI Module
+-----------
+
+.. automodule:: matta.tui
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Render Module
+-----------
+
+.. automodule:: matta.render
+   :members:
+   :undoc-members:
+   :show-inheritance: 

@@ -1,0 +1,7 @@
+TUI Module
+-----------
+
+.. automodule:: matta.tui
+   :members:
+   :undoc-members:
+   :show-inheritance:

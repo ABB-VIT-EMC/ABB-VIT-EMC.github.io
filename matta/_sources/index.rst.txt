@@ -7,20 +7,11 @@ MATTA Documentation
 ===================
 
 .. include:: ../../README.md
-      :parser: myst_parser.sphinx_
+   :parser: myst_parser.sphinx_
 
-TUI Module
------------
+Module Reference
+-----------------
 
-.. automodule:: matta.tui
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Render Module
------------
-
-.. automodule:: matta.render
-   :members:
-   :undoc-members:
-   :show-inheritance: 
+.. toctree::
+   tui
+   render
