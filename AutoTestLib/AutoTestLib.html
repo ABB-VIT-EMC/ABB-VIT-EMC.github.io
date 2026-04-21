@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="violet" data-content_root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AutoTestLib package - AutoTestLib 1.0.0 documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="AutoTestLib.Interfaces package" href="AutoTestLib.Interfaces.html" /><link rel="prev" title="AutoTestLib" href="modules.html" />
+      <link rel="canonical" href="https://ABB-VIT-EMC.github.io/AutoTestLib/AutoTestLib.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=44020203" />
+    <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ABB-VIT-EMC.github.io/AutoTestLib/AutoTestLib.html"/>
+  <meta property="og:title" content="AutoTestLib package"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="index.html">
+      
+      
+      <strong>AutoTestLib</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">AutoTestLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AutoTestLib package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AutoTestLib.Interfaces.html">AutoTestLib.Interfaces package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AutoTestLib.Interfaces.ABB_M4M.html">AutoTestLib.Interfaces.ABB_M4M package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AutoTestLib.Interfaces.Keysight.html">AutoTestLib.Interfaces.Keysight package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AutoTestLib.Interfaces.ZERA.html">AutoTestLib.Interfaces.ZERA package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-AutoTestLib.ATLMath">AutoTestLib.ATLMath module</a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath"><code class="docutils literal notranslate"><span class="pre">ATLMath</span></code></a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.should_be_in_range"><code class="docutils literal notranslate">should_be_in_range()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.should_be_within_percentage"><code class="docutils literal notranslate">should_be_within_percentage()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-AutoTestLib.ATLUnits">AutoTestLib.ATLUnits module</a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ATLUnits.Voltage"><code class="docutils literal notranslate"><span class="pre">Voltage</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-AutoTestLib.DataLogger">AutoTestLib.DataLogger module</a><ul>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger"><code class="docutils literal notranslate"><span class="pre">DataLogger</span></code></a><ul>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.add_row"><code class="docutils literal notranslate">add_row()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.display_preview"><code class="docutils literal notranslate">display_preview()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.get_dataframe"><code class="docutils literal notranslate">get_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.print_headers"><code class="docutils literal notranslate">print_headers()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.reset"><code class="docutils literal notranslate">reset()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.save_to_csv"><code class="docutils literal notranslate">save_to_csv()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.DataLogger.DataLogger.set_and_ensure_path"><code class="docutils literal notranslate">set_and_ensure_path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-AutoTestLib.ErrorCalc">AutoTestLib.ErrorCalc module</a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc"><code class="docutils literal notranslate"><span class="pre">ErrorCalc</span></code></a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.cartesian_title_gen"><code class="docutils literal notranslate">cartesian_title_gen()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.check_data_input"><code class="docutils literal notranslate">check_data_input()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_error"><code class="docutils literal notranslate">get_error()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_error_percent"><code class="docutils literal notranslate">get_error_percent()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_header"><code class="docutils literal notranslate">get_header()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_iter"><code class="docutils literal notranslate">get_iter()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_iter_list"><code class="docutils literal notranslate">get_iter_list()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_stat_by_iter"><code class="docutils literal notranslate">get_stat_by_iter()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.print_tuple_info"><code class="docutils literal notranslate">print_tuple_info()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.process_dataset"><code class="docutils literal notranslate">process_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ErrorCalc.split_data"><code class="docutils literal notranslate">split_data()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ExperimentProcessing"><code class="docutils literal notranslate"><span class="pre">ExperimentProcessing</span></code></a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ErrorCalc.ExperimentProcessing.simple"><code class="docutils literal notranslate">simple()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-AutoTestLib.TUIUtils">AutoTestLib.TUIUtils module</a><ul>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils"><code class="docutils literal notranslate"><span class="pre">TUIUtils</span></code></a><ul>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.ask_yes_no"><code class="docutils literal notranslate">ask_yes_no()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.construct_path"><code class="docutils literal notranslate">construct_path()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.ensure_folder"><code class="docutils literal notranslate">ensure_folder()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.get_log_level_priority"><code class="docutils literal notranslate">get_log_level_priority()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.get_script_name"><code class="docutils literal notranslate">get_script_name()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.is_called_from_robot"><code class="docutils literal notranslate">is_called_from_robot()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.is_valid_filename"><code class="docutils literal notranslate">is_valid_filename()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.list_folders"><code class="docutils literal notranslate">list_folders()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.list_picker"><code class="docutils literal notranslate">list_picker()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.log_message"><code class="docutils literal notranslate">log_message()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.print_colored"><code class="docutils literal notranslate">print_colored()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.save_dataframe_to_csv"><code class="docutils literal notranslate">save_dataframe_to_csv()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.TUIUtils.TUIUtils.show_folders"><code class="docutils literal notranslate">show_folders()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-AutoTestLib.api">AutoTestLib.api module</a><ul>
+<li><a class="reference internal" href="#AutoTestLib.api.list_register_map"><code class="docutils literal notranslate"><span class="pre">list_register_map()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.api.list_se"><code class="docutils literal notranslate"><span class="pre">list_se()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.api.request_se"><code class="docutils literal notranslate"><span class="pre">request_se()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-AutoTestLib">Module contents</a></li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">AutoTestLib</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="modules.html"><span itemprop="name">AutoTestLib</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">AutoTestLib package</strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <div class="copy-page-wrapper relative pb-4 lg:absolute lg:top-8 lg:right-6 xl:right-12">
+  <div id="copy-page-trigger">
+    <button
+      type="button"
+      class="js-copy px-3 py-1 inline-flex items-center gap-1"
+      data-url="https://ABB-VIT-EMC.github.io/AutoTestLib/_sources/AutoTestLib.rst.txt"
+    >
+      <i class="i-lucide" data-icon="copy"></i>
+      <span>Copy page</span>
+    </button>
+    <button class="js-menu px-2 py-1" type="button" aria-label="More actions"
+      aria-haspopup="menu" aria-expanded="false" aria-controls="copy-page-content">
+      <i class="i-lucide chevron-down"></i>
+    </button>
+  </div>
+  <div id="copy-page-content" role="menu" aria-orientation="vertical" aria-hidden="true">
+    <div role="presentation">
+      <div class="flex flex-col" role="group">
+        <button class="js-copy" type="button" role="menuitem"
+          data-url="https://ABB-VIT-EMC.github.io/AutoTestLib/_sources/AutoTestLib.rst.txt">
+          <span class="iconify-icon">
+            <i class="i-lucide" data-icon="copy"></i>
+          </span>
+          <span>Copy page</span>
+        </button>
+        <a role="menuitem" href="https://ABB-VIT-EMC.github.io/AutoTestLib/_sources/AutoTestLib.rst.txt" target="_blank" rel="nofollow"><iconify-icon icon="bi:code-slash"></iconify-icon>
+            <span>View Source</span></a><a role="menuitem" href="https://chatgpt.com/?hints=search&q=Read%20https%3A//ABB-VIT-EMC.github.io/AutoTestLib/_sources/AutoTestLib.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:openai"></iconify-icon>
+          <span>Open in ChatGPT</span>
+        </a><a role="menuitem" href="https://claude.ai/new?q=Read%20https%3A//ABB-VIT-EMC.github.io/AutoTestLib/_sources/AutoTestLib.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:claude"></iconify-icon>
+          <span>Open in Claude</span>
+        </a></div>
+    </div>
+  </div>
+</div><article class="yue" role="main">
+          <section id="autotestlib-package">
+<h1>AutoTestLib package<a class="headerlink" href="#autotestlib-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AutoTestLib.Interfaces.html">AutoTestLib.Interfaces package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AutoTestLib.Interfaces.ABB_M4M.html">AutoTestLib.Interfaces.ABB_M4M package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutoTestLib.Interfaces.Keysight.html">AutoTestLib.Interfaces.Keysight package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutoTestLib.Interfaces.ZERA.html">AutoTestLib.Interfaces.ZERA package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-AutoTestLib.ATLMath">
+<span id="autotestlib-atlmath-module"></span><h2>AutoTestLib.ATLMath module<a class="headerlink" href="#module-AutoTestLib.ATLMath" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.ATLMath.</span></span><span class="sig-name descname"><span class="pre">ATLMath</span></span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.should_be_in_range">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">should_be_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.should_be_in_range" title="Link to this definition">¶</a></dt>
+<dd><p>Check if value(s) are within range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> – Single value or list of values</p></li>
+<li><p><strong>val_expected</strong> – Single expected value or list of expected values</p></li>
+<li><p><strong>tol</strong> – Single tolerance or list of tolerances</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>AssertionError if any value is outside the range</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.should_be_within_percentage">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">should_be_within_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.should_be_within_percentage" title="Link to this definition">¶</a></dt>
+<dd><p>Check if value(s) are within percentage tolerance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> – Single value or list of values</p></li>
+<li><p><strong>val_expected</strong> – Single expected value</p></li>
+<li><p><strong>tol_percent</strong> – Single tolerance percentage or list of tolerances</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>AssertionError if any value is outside the tolerance</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If val is a list and tol_percent is a single value, the same tolerance will be applied to all values.</p></li>
+<li><p>If both val and tol_percent are lists, they must be of the same length.</p></li>
+<li><p>If the input is a string or list of strings, they will be converted to integers before comparison.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-AutoTestLib.ATLUnits">
+<span id="autotestlib-atlunits-module"></span><h2>AutoTestLib.ATLUnits module<a class="headerlink" href="#module-AutoTestLib.ATLUnits" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoTestLib.ATLUnits.Voltage">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.ATLUnits.</span></span><span class="sig-name descname"><span class="pre">Voltage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLUnits.Voltage" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-AutoTestLib.DataLogger">
+<span id="autotestlib-datalogger-module"></span><h2>AutoTestLib.DataLogger module<a class="headerlink" href="#module-AutoTestLib.DataLogger" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.DataLogger.</span></span><span class="sig-name descname"><span class="pre">DataLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subcategories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class to build CSV files with device measurements.
+Structure: ITER;Device1_SubCat1;Device1_SubCat2;…;DeviceN_SubCatN</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.add_row">
+<span class="sig-name descname"><span class="pre">add_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.add_row" title="Link to this definition">¶</a></dt>
+<dd><p>Add a measurement row.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – List of measurement values</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.display_preview">
+<span class="sig-name descname"><span class="pre">display_preview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.display_preview" title="Link to this definition">¶</a></dt>
+<dd><p>Display preview of data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.get_dataframe">
+<span class="sig-name descname"><span class="pre">get_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.get_dataframe" title="Link to this definition">¶</a></dt>
+<dd><p>Get DataFrame from collected data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.print_headers">
+<span class="sig-name descname"><span class="pre">print_headers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.print_headers" title="Link to this definition">¶</a></dt>
+<dd><p>Display headers</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.reset" title="Link to this definition">¶</a></dt>
+<dd><p>Reset builder for new dataset</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.save_to_csv">
+<span class="sig-name descname"><span class="pre">save_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'european'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.save_to_csv" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.DataLogger.DataLogger.set_and_ensure_path">
+<span class="sig-name descname"><span class="pre">set_and_ensure_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_target_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.DataLogger.DataLogger.set_and_ensure_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-AutoTestLib.ErrorCalc">
+<span id="autotestlib-errorcalc-module"></span><h2>AutoTestLib.ErrorCalc module<a class="headerlink" href="#module-AutoTestLib.ErrorCalc" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.ErrorCalc.</span></span><span class="sig-name descname"><span class="pre">ErrorCalc</span></span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for calculating statistical data of the experiment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.cartesian_title_gen">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">cartesian_title_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_categories</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.cartesian_title_gen" title="Link to this definition">¶</a></dt>
+<dd><p>Function that create the string for header accoding to the items and their subcategories</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.check_data_input">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">check_data_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.check_data_input" title="Link to this definition">¶</a></dt>
+<dd><p>Function that check if the input is a tuple of dataframe and its configuration, or just a dataframe, and return them accordingly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.get_error">
+<span class="sig-name descname"><span class="pre">get_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_subjects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_error" title="Link to this definition">¶</a></dt>
+<dd><p>Function that calculate the error between the standard and test subjects, and return them as list of dataframe, the error is calculated as (standard - test_subject)/standard</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.get_error_percent">
+<span class="sig-name descname"><span class="pre">get_error_percent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_subjects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_error_percent" title="Link to this definition">¶</a></dt>
+<dd><p>Function that calculate the error percentage between the standard and test subjects, and return them as list of dataframe, the error is calculated as (standard - test_subject)/standard * 100</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.get_header">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">standard</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_subjects_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_categories</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_header" title="Link to this definition">¶</a></dt>
+<dd><p>Function that return the header of the dataset by permuting the items and their subcategories, and the index of standard and test subjects in the dataset</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.get_iter">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_iter" title="Link to this definition">¶</a></dt>
+<dd><p>Function that return the dataframe of a specific iteration, if the input is a tuple, it will return a tuple of dataframe and the other parameteras</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.get_iter_list">
+<span class="sig-name descname"><span class="pre">get_iter_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_iter_list" title="Link to this definition">¶</a></dt>
+<dd><p>Function that return the list of iteration in the dataset, if the input is a tuple, it will return the list of iteration in the dataframe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.get_stat_by_iter">
+<span class="sig-name descname"><span class="pre">get_stat_by_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.get_stat_by_iter" title="Link to this definition">¶</a></dt>
+<dd><p>Function that calculate the statistic of the error by iteration, and return them as dataframe, the statistic can be mean, std, max, min, if the input
+is a tuple, the output will also be a tuple of dataframe and the other parameteras, if it is just a dataframe, the output will also be just a dataframe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.print_tuple_info">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">print_tuple_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.print_tuple_info" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function that print the information of the dataset, including the head of the dataframe, the
+standard, the test subjects list and the sub categories, if the input is a tuple of dataframe and its configuration</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.process_dataset">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">process_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standard</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_subjects_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.process_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function that process dataset into intellegible names and apply any necessary scaling</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ErrorCalc.split_data">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">split_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_subjects_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ErrorCalc.split_data" title="Link to this definition">¶</a></dt>
+<dd><p>Function that split the dataset into standard and test subjects, and return them as list of dataframe, if the input is a tuple, it will return a tuple of list of dataframe and the other parameteras</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ExperimentProcessing">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.ErrorCalc.</span></span><span class="sig-name descname"><span class="pre">ExperimentProcessing</span></span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ExperimentProcessing" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Utility class for data cleaning functions can be inserted into ErrorCalc</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ErrorCalc.ExperimentProcessing.simple">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ErrorCalc.ExperimentProcessing.simple" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-AutoTestLib.TUIUtils">
+<span id="autotestlib-tuiutils-module"></span><h2>AutoTestLib.TUIUtils module<a class="headerlink" href="#module-AutoTestLib.TUIUtils" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.TUIUtils.</span></span><span class="sig-name descname"><span class="pre">TUIUtils</span></span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Utility class for interactive directory management.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.ask_yes_no">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ask_yes_no</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'N'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.ask_yes_no" title="Link to this definition">¶</a></dt>
+<dd><p>Ask a yes/no question via input() and return True for ‘y’ or False for ‘n’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.construct_path">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">construct_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.construct_path" title="Link to this definition">¶</a></dt>
+<dd><p>Construct a path by appending optional suffix and file extension.
+Returns an absolute path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – Base directory or file path (relative to caller or absolute)</p></li>
+<li><p><strong>suffix</strong> – Optional text to append before the extension</p></li>
+<li><p><strong>extension</strong> – Optional file extension (e.g., ‘.txt’, ‘.py’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Absolute path with suffix and extension applied</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.ensure_folder">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ensure_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interactive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.ensure_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Ensure a folder exists at the specified path. If interactive, ask before creating.
+If relative_to_caller is True, path is relative to the caller’s file directory.
+Returns True if the folder exists or was created, False otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.get_log_level_priority">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_log_level_priority</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.get_log_level_priority" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.get_script_name">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_script_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.get_script_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.is_called_from_robot">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_called_from_robot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.is_called_from_robot" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if the current function is being called from Robot Framework.
+Returns True if any frame in the call stack belongs to Robot Framework.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.is_valid_filename">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_valid_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.is_valid_filename" title="Link to this definition">¶</a></dt>
+<dd><p>Check if filename has valid characters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.list_folders">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">list_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.list_folders" title="Link to this definition">¶</a></dt>
+<dd><p>List all subdirectories in the given path using pathlib.
+:param path: Directory path (default is current directory)
+:return: List of folder names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.list_picker">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">list_picker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Select</span> <span class="pre">an</span> <span class="pre">item'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.list_picker" title="Link to this definition">¶</a></dt>
+<dd><p>Display a TUI list picker for user selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>items</strong> – List of strings to choose from</p></li>
+<li><p><strong>title</strong> – Title to display above the list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected item as string, or None if cancelled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.log_message">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">log_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.log_message" title="Link to this definition">¶</a></dt>
+<dd><p>Log a message with level filtering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> – Message level (‘DEBUG’, ‘INFO’, ‘WARNING’, ‘ERROR’, ‘CRITICAL’, ‘SUCCESS’)</p></li>
+<li><p><strong>level_attr</strong> – Minimum level to display (optional, uses global LOG_LEVEL if exists)</p></li>
+<li><p><strong>message</strong> – Message to log</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.print_colored">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">print_colored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'white'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.print_colored" title="Link to this definition">¶</a></dt>
+<dd><p>Print text in color using ANSI escape codes.
+Colors: black, red, green, yellow, blue, magenta, cyan, white</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.save_dataframe_to_csv">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">save_dataframe_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'international'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.save_dataframe_to_csv" title="Link to this definition">¶</a></dt>
+<dd><p>Save a pandas DataFrame to a CSV file with configurable decimal separator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – pandas DataFrame to save</p></li>
+<li><p><strong>output_path</strong> – Path where the CSV file will be saved</p></li>
+<li><p><strong>decimal_format</strong> – “international” (.) or “european” (,)</p></li>
+<li><p><strong>index</strong> – Whether to include DataFrame index</p></li>
+<li><p><strong>encoding</strong> – File encoding (default: ‘utf-8’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.TUIUtils.TUIUtils.show_folders">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">show_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.TUIUtils.TUIUtils.show_folders" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-AutoTestLib.api">
+<span id="autotestlib-api-module"></span><h2>AutoTestLib.api module<a class="headerlink" href="#module-AutoTestLib.api" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="AutoTestLib.api.list_register_map">
+<span class="sig-prename descclassname"><span class="pre">AutoTestLib.api.</span></span><span class="sig-name descname"><span class="pre">list_register_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.api.list_register_map" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AutoTestLib.api.list_se">
+<span class="sig-prename descclassname"><span class="pre">AutoTestLib.api.</span></span><span class="sig-name descname"><span class="pre">list_se</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.api.list_se" title="Link to this definition">¶</a></dt>
+<dd><p>List available structural elements (SEs) in the SE directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of SE names (without .cm extension)</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Only files with .cm extension will be listed.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AutoTestLib.api.request_se">
+<span class="sig-prename descclassname"><span class="pre">AutoTestLib.api.</span></span><span class="sig-name descname"><span class="pre">request_se</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structural_element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.api.request_se" title="Link to this definition">¶</a></dt>
+<dd><p>this function will read the content of the structural element file and return it as a string. If the structural element does not exist, it will log an error message and return an empty string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>structural_element</strong> – Name of the structural element (with or without .cm extension)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Content of the structural element file as a string, or an empty string if the file does not exist.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">request_se</span><span class="p">(</span><span class="s2">&quot;my_structural_element&quot;</span><span class="p">)</span>
+</span><span data-line="2"><span class="go">&#39;Content of the structural element file&#39;</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-AutoTestLib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AutoTestLib" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="modules.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">AutoTestLib</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="AutoTestLib.Interfaces.html">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">AutoTestLib.Interfaces package</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2026, Thanapong Chuangyanyong</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/shibuya.js?v=cac61aee"></script></body>
+</html>

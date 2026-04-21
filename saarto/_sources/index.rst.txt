@@ -6,13 +6,13 @@
 SAARTO Documentation
 ====================
 
-.. include:: ../../README.md
-      :parser: myst_parser.sphinx_
+   readme
 
 Module Reference
 -----------------
 
 .. toctree::
+   readme
    api
    util
 

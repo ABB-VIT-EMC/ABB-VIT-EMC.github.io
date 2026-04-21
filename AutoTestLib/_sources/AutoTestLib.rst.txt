@@ -1,0 +1,69 @@
+AutoTestLib package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   AutoTestLib.Interfaces
+
+Submodules
+----------
+
+AutoTestLib.ATLMath module
+--------------------------
+
+.. automodule:: AutoTestLib.ATLMath
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+AutoTestLib.ATLUnits module
+---------------------------
+
+.. automodule:: AutoTestLib.ATLUnits
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+AutoTestLib.DataLogger module
+-----------------------------
+
+.. automodule:: AutoTestLib.DataLogger
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+AutoTestLib.ErrorCalc module
+----------------------------
+
+.. automodule:: AutoTestLib.ErrorCalc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+AutoTestLib.TUIUtils module
+---------------------------
+
+.. automodule:: AutoTestLib.TUIUtils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+AutoTestLib.api module
+----------------------
+
+.. automodule:: AutoTestLib.api
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: AutoTestLib
+   :members:
+   :show-inheritance:
+   :undoc-members:
