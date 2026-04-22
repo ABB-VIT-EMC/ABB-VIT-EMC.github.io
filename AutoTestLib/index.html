@@ -88,6 +88,12 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#current-supported-instruments">Current Supported Instruments</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#register-map-documentation">Register Map Documentation</a><ul>
+<li><a class="reference internal" href="#d11modbusmap">D11ModbusMap</a></li>
+<li><a class="reference internal" href="#d13modbusmap">D13ModbusMap</a></li>
+<li><a class="reference internal" href="#m4mmodbusmap">M4MModbusMap</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-reference">Module Reference</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
@@ -188,6 +194,6193 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 </li>
 </ul>
+</section>
+</section>
+<section id="register-map-documentation">
+<h2>Register Map Documentation<a class="headerlink" href="#register-map-documentation" title="Link to this heading">¶</a></h2>
+<p>Generated from: <code class="docutils literal notranslate"><span class="pre">C:\Users\ITTHCHU\Project\ATE\modules\AutoTestLib\src\AutoTestLib\Interfaces\register_map.py</span></code></p>
+<section id="d11modbusmap">
+<h3>D11ModbusMap<a class="headerlink" href="#d11modbusmap" title="Link to this heading">¶</a></h3>
+<p><strong>Total Registers:</strong> 142</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Access</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data_Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Quantities</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20480</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20484</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20488</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20492</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20496</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20500</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20512</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20516</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Equivalent CO2 on Active Imp. Energy Tot.</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>4</p></td>
+<td><p>g/KWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20532</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Equivalent Currency on Active Imp. Energy Tot</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>Currency/KWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20848</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20880</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20912</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Rective Import Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20944</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Rective Export Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20976</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21600</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21604</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21608</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21612</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21616</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21620</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21624</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21628</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21632</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21636</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21640</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21644</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21648</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21652</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21656</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21660</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21664</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21668</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21696</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21700</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21704</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21804</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Active Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21808</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Active Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21812</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Reactive Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21816</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Reactive Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23296</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L1-N</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23298</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L2-N</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23300</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L3-N</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23302</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L1-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23304</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L2-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23306</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L1-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23308</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23310</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23312</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23314</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current IN</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23316</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23318</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23320</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23322</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23324</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23326</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23328</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23330</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23332</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23334</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23336</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23338</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23340</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Frequency</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>1</p></td>
+<td><p>Hz</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23354</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor Total</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23355</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor L1</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23356</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor L2</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23357</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor L3</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23358</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant Total</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23359</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant L1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23360</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant L2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23361</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant L3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23368</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi Total</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23369</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi L1</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23370</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi L2</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23371</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi L3</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23372</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase Sequence</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25344</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Communication Status Register</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25352</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Digital Input Status</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25368</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Input Counter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>25856</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25857</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>25863</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25872</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26032</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26033</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26039</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26048</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26208</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26209</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26215</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26224</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>51</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>26384</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26385</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26391</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26400</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35072</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Serial Number</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35080</p></td>
+<td><p>ASCII</p></td>
+<td><p>Firmware Version</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>8</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35089</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Slave ID</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35097</p></td>
+<td><p>ASCII</p></td>
+<td><p>Product type tag name</p></td>
+<td><p>5</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35168</p></td>
+<td><p>ASCII</p></td>
+<td><p>Type Designator</p></td>
+<td><p>6</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35174</p></td>
+<td><p>ASCII</p></td>
+<td><p>Product Name</p></td>
+<td><p>15</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35195</p></td>
+<td><p>Unsigned</p></td>
+<td><p>MID Certification</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35335</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current Active Tariff</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35844</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current Transfomer Ratio Numerator</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35846</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage Transfomer Ratio Numerator</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35848</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current Transfomer Ratio Denominator</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35850</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage Transfomer Ratio Denominator</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35852</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Function I/O Port 1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35853</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Function I/O Port 2</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35856</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Pulse Output configuration Enable</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35857</p></td>
+<td><p>None</p></td>
+<td><p>Pulse Output Configuration Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>5</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35862</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Pulse Input At Port</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35863</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Output Always ON</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35864</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Output Always OFF</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35865</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Output Via Communication</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35936</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarm Instance / Set Alarm To Output</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35937</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Measurement Parameter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35940</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Threshold</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35944</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Hysteresis</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35945</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Delay</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35947</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Type</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35948</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Action</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35984</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Tariff Source</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Wirte</p></td>
+<td><p>35985</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Input Configuration</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36064</p></td>
+<td><p>Unsigned</p></td>
+<td><p>CO2 Conversion Factor</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36066</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Currency Import Conversion Factor</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36068</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Led Source</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36069</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Wiring Setting</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36093</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Display Brightness</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36096</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Standby Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36097</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Autoscroll Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36099</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Autoscroll Page</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36100</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Standby Brightness</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36619</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Input Counter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36635</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable active energy import</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36636</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable active energy export</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36637</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable reactive energy import</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36638</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable reactive energy export</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36657</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset system logs (Errors Logs)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36658</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset event logs (Warnings Logs)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36659</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Net Quality logs (Alarms Logs)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36695</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Logs</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36698</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Resettable Registers</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="d13modbusmap">
+<h3>D13ModbusMap<a class="headerlink" href="#d13modbusmap" title="Link to this heading">¶</a></h3>
+<p><strong>Total Registers:</strong> 142</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Access</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data_Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Quantities</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20480</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20484</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20488</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20492</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20496</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20500</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20512</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20516</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Equivalent CO2 on Active Imp. Energy Tot.</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>4</p></td>
+<td><p>g/KWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20532</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Equivalent Currency on Active Imp. Energy Tot</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>Currency/KWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20848</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20880</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20912</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Rective Import Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20944</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Rective Export Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20976</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy Total Tariff</p></td>
+<td><p>4</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21600</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21604</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21608</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Import Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21612</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21616</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21620</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active Export Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21624</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21628</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21632</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Net energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21636</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21640</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21644</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Import Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21648</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21652</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21656</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive Export Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21660</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21664</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21668</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Net energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVArh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21696</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21700</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21704</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Energy L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21804</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Active Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21808</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Active Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21812</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Reactive Import Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21816</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Partial Reactive Export Energy Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23296</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L1-N</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23298</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L2-N</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23300</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L3-N</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23302</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L1-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23304</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L2-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23306</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage L1-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23308</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23310</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23312</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23314</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current IN</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23316</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23318</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23320</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23322</p></td>
+<td><p>Signed</p></td>
+<td><p>Active Power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23324</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23326</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23328</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23330</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive Power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>Var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23332</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23334</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23336</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23338</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent Power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23340</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Frequency</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>1</p></td>
+<td><p>Hz</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23354</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor Total</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23355</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor L1</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23356</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor L2</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23357</p></td>
+<td><p>Signed</p></td>
+<td><p>Power Factor L3</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23358</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant Total</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23359</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant L1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23360</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant L2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23361</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Quadrant L3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23368</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi Total</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23369</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi L1</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23370</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi L2</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23371</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosine Phi L3</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23372</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase Sequence</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25344</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Communication Status Register</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25352</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Digital Input Status</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25368</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Input Counter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>25856</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25857</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>25863</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25872</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Error Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26032</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26033</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26039</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26048</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26208</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26209</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26215</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26224</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>51</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>26384</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26385</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26391</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26400</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warning Logs: Data Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35072</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Serial Number</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35080</p></td>
+<td><p>ASCII</p></td>
+<td><p>Firmware Version</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>8</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35089</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Slave ID</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35097</p></td>
+<td><p>ASCII</p></td>
+<td><p>Product type tag name</p></td>
+<td><p>5</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35168</p></td>
+<td><p>ASCII</p></td>
+<td><p>Type Designator</p></td>
+<td><p>6</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35174</p></td>
+<td><p>ASCII</p></td>
+<td><p>Product Name</p></td>
+<td><p>15</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35195</p></td>
+<td><p>Unsigned</p></td>
+<td><p>MID Certification</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35335</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current Active Tariff</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35844</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current Transfomer Ratio Numerator</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35846</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage Transfomer Ratio Numerator</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35848</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current Transfomer Ratio Denominator</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35850</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Voltage Transfomer Ratio Denominator</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35852</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Function I/O Port 1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35853</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Function I/O Port 2</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35856</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Pulse Output configuration Enable</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35857</p></td>
+<td><p>None</p></td>
+<td><p>Pulse Output Configuration Block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>5</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35862</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Pulse Input At Port</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35863</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Output Always ON</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35864</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Output Always OFF</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35865</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Set Output Via Communication</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35936</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarm Instance / Set Alarm To Output</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35937</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Measurement Parameter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35940</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Threshold</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35944</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Hysteresis</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35945</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Delay</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35947</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Type</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35948</p></td>
+<td><p>None</p></td>
+<td><p>Alarm Action</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35984</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Tariff Source</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Wirte</p></td>
+<td><p>35985</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Input Configuration</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36064</p></td>
+<td><p>Unsigned</p></td>
+<td><p>CO2 Conversion Factor</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36066</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Currency Import Conversion Factor</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>2</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36068</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Led Source</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36069</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Wiring Setting</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36093</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Display Brightness</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36096</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Standby Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36097</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Autoscroll Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36099</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Autoscroll Page</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36100</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Standby Brightness</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36619</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Input Counter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36635</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable active energy import</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36636</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable active energy export</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36637</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable reactive energy import</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36638</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset resettable reactive energy export</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36657</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset system logs (Errors Logs)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36658</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset event logs (Warnings Logs)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36659</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Net Quality logs (Alarms Logs)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36695</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Logs</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36698</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Resettable Registers</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>No Unit</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="m4mmodbusmap">
+<h3>M4MModbusMap<a class="headerlink" href="#m4mmodbusmap" title="Link to this heading">¶</a></h3>
+<p><strong>Total Registers:</strong> 396</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Access</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data_Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Quantities</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20480</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - import 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20484</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - export 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20488</p></td>
+<td><p>Signed</p></td>
+<td><p>Active energy - net 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20492</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive energy - import 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20496</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive energy - export 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20500</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive energy - net 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20504</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent energy - import 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20508</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent energy - export 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20512</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent energy - net 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20516</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - import kg_kWh</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>4</p></td>
+<td><p>kg / kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20532</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - import cu_kWh</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>4</p></td>
+<td><p>Currency / kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20848</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - import (Tariffs)</p></td>
+<td><p>6</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20880</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - export (Tariffs)</p></td>
+<td><p>6</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>20912</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive energy - import (Tariffs)</p></td>
+<td><p>6</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>20944</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive energy - export (Tariffs)</p></td>
+<td><p>6</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21600</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - import</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21612</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Active energy - export</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21624</p></td>
+<td><p>Signed</p></td>
+<td><p>Active energy - net</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21636</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive energy - import</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21648</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reactive energy - export</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21660</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive energy - net</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21672</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent energy - import</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>21684</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Apparent energy - export</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>21696</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent energy - net</p></td>
+<td><p>3</p></td>
+<td><p>0.01</p></td>
+<td><p>4</p></td>
+<td><p>kVA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23296</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Three phase system voltage</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23298</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase voltage L1</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23300</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase voltage L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23302</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase voltage L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23304</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Line voltage L1-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23306</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Line voltage L3-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23308</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Line voltage L1-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23310</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Three phase system current</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23312</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase current L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23314</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase current L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23316</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase current L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23318</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Neutral Current</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23322</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23324</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23326</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23328</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23330</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23332</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23334</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23336</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23338</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power Total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23340</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23342</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23344</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23346</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Frequency</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>1</p></td>
+<td><p>Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23347</p></td>
+<td><p>Signed</p></td>
+<td><p>Phase angles power</p></td>
+<td><p>4</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23351</p></td>
+<td><p>Signed</p></td>
+<td><p>Phase angles voltage</p></td>
+<td><p>3</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23357</p></td>
+<td><p>Signed</p></td>
+<td><p>Phase angles current</p></td>
+<td><p>3</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23360</p></td>
+<td><p>Signed</p></td>
+<td><p>Power factors total</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23361</p></td>
+<td><p>Signed</p></td>
+<td><p>Power factors L1</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23362</p></td>
+<td><p>Signed</p></td>
+<td><p>Power factors L2</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23363</p></td>
+<td><p>Signed</p></td>
+<td><p>Power factors L3</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23364</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current quadrant</p></td>
+<td><p>4</p></td>
+<td><p>1.0</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23368</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosphi (displacement factor) 3-phase</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23369</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosphi (displacement factor) L1</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23370</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosphi (displacement factor) L2</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23371</p></td>
+<td><p>Signed</p></td>
+<td><p>Cosphi (displacement factor) L3</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>1</p></td>
+<td><p>°</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23508</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average current L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23510</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average current L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23512</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average current L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23514</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average current neutral</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23516</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average voltage L1</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23518</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average voltage L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23520</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average voltage L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23522</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average voltage L1-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23524</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average voltage L2-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23526</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Average voltage L1-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23528</p></td>
+<td><p>Signed</p></td>
+<td><p>Average active power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23530</p></td>
+<td><p>Signed</p></td>
+<td><p>Average active power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23532</p></td>
+<td><p>Signed</p></td>
+<td><p>Average active power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23534</p></td>
+<td><p>Signed</p></td>
+<td><p>Average active power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23536</p></td>
+<td><p>Signed</p></td>
+<td><p>Average reactive power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23538</p></td>
+<td><p>Signed</p></td>
+<td><p>Average reactive power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23540</p></td>
+<td><p>Signed</p></td>
+<td><p>Average reactive power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23542</p></td>
+<td><p>Signed</p></td>
+<td><p>Average reactive power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23544</p></td>
+<td><p>Signed</p></td>
+<td><p>Average apparent power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23546</p></td>
+<td><p>Signed</p></td>
+<td><p>Average apparent power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23548</p></td>
+<td><p>Signed</p></td>
+<td><p>Average apparent power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23550</p></td>
+<td><p>Signed</p></td>
+<td><p>Average apparent power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23568</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23570</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23572</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23574</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current neutral</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23576</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L1</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23578</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23580</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23582</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L1-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23584</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L2-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23586</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L1-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23588</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum active power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23590</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum active power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23592</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum active power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23594</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum active power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23596</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum reactive power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23598</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum reactive power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23600</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum reactive power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23602</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum reactive power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23604</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum apparent power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23606</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum apparent power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23608</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum apparent power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23610</p></td>
+<td><p>Signed</p></td>
+<td><p>Maximum apparent power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23628</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23630</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23632</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23634</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum current neutral timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23636</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23638</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23640</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23642</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L1-L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23644</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L2-L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23646</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum voltage L1-L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23648</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum active power total timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23650</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum active power L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23652</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum active power L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23654</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum active power L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23656</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum reactive power total timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23658</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum reactive power L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23660</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum reactive power L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23662</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum reactive power L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23664</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum apparent power total timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23666</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum apparent power L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23668</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum apparent power L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23670</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Maximum apparent power L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23688</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23690</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23692</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23694</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current neutral</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23696</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L1</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23698</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23700</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23702</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L1-L2</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23704</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L2-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23706</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L1-L3</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23708</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum active power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23710</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum active power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23712</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum active power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23714</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum active power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23716</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum reactive power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23718</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum reactive power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23720</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum reactive power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23722</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum reactive power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>var</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23724</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum apparent power total</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23726</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum apparent power L1</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23728</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum apparent power L2</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23730</p></td>
+<td><p>Signed</p></td>
+<td><p>Minimum apparent power L3</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23748</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23750</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23752</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23754</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum current neutral timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23756</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23758</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23760</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23762</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L1-L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23764</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L2-L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23766</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum voltage L1-L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23768</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum active power total timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23770</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum active power L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23772</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum active power L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23774</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum active power L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23776</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum reactive power total timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23778</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum reactive power L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23780</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum reactive power L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23782</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum reactive power L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23784</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum apparent power total timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23786</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum apparent power L1 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23788</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum apparent power L2 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23790</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Minimum apparent power L3 timestamp</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23808</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L1 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23809</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L1 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>23936</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L2 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>23937</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L2 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24064</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L3 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24065</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L3 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24192</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L1 L2 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24193</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L1 L2 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24320</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L3 L2 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24321</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L3 L2 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24448</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L1 L3 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24449</p></td>
+<td><p>Unsigned</p></td>
+<td><p>L1 L3 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24576</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L1 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24577</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L1 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24704</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L2 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24705</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L2 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24832</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L3 (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24833</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current L3 (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>24960</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current N (THD)</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>24961</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current N (2nd,3rd…63th)</p></td>
+<td><p>62</p></td>
+<td><p>0.1</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25088</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase Phase voltage unbalances</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25090</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Phase Line voltage unbalances</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25092</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Line current unbalances</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>2</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>25344</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Outputs</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25345</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Output 2</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>25346</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Output 3</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25347</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Output 4</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>25348</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Output 5 (Extended I/O 1)</p></td>
+<td><p>1</p></td>
+<td><p>Unsigned</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25349</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Output 6 (Extended I/O 2)</p></td>
+<td><p>1</p></td>
+<td><p>Unsigned</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25352</p></td>
+<td><p>None</p></td>
+<td><p>Inputs</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25353</p></td>
+<td><p>None</p></td>
+<td><p>Input 2</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25354</p></td>
+<td><p>None</p></td>
+<td><p>Input 3</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25355</p></td>
+<td><p>None</p></td>
+<td><p>Input 4</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25356</p></td>
+<td><p>None</p></td>
+<td><p>Input 5 (Extended I/O 1)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25357</p></td>
+<td><p>None</p></td>
+<td><p>Input 6 (Extended I/O 2)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>0: OFF, 1: ON</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25368</p></td>
+<td><p>None</p></td>
+<td><p>Inputs Counter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25372</p></td>
+<td><p>None</p></td>
+<td><p>Input Counter 2</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25376</p></td>
+<td><p>None</p></td>
+<td><p>Input Counter 3</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25380</p></td>
+<td><p>None</p></td>
+<td><p>Input Counter 4</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>25384</p></td>
+<td><p>None</p></td>
+<td><p>Input Counter 5 (Extended I/O 1)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25388</p></td>
+<td><p>None</p></td>
+<td><p>Input Counter 6 (Extended I/O 2)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>25856</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Errors Log - Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>25857</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Errors Log - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>25863</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Errors Log - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>25872</p></td>
+<td><p>None</p></td>
+<td><p>Errors Log - Data block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26032</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms log - Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26033</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms log - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26039</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Alarms log - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26048</p></td>
+<td><p>None</p></td>
+<td><p>Alarms log - Data block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26208</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Log - Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26209</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Log - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26215</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Log - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26224</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Audit Log - Data block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>68</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26384</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warnings log</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26385</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warnings Header - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26391</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Warnings Header - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26400</p></td>
+<td><p>None</p></td>
+<td><p>Data block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>26560</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Power Outage - Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>26561</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Power Outage - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>26567</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Power Outage - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>26576</p></td>
+<td><p>None</p></td>
+<td><p>Power Outage Data block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>105</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>32768</p></td>
+<td><p>None</p></td>
+<td><p>Energy Cumulative</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>32769</p></td>
+<td><p>None</p></td>
+<td><p>Header - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>32772</p></td>
+<td><p>None</p></td>
+<td><p>Header - Date Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>32775</p></td>
+<td><p>None</p></td>
+<td><p>Header - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>32784</p></td>
+<td><p>None</p></td>
+<td><p>Data block Energy Cumulative</p></td>
+<td><p>7</p></td>
+<td><p>None</p></td>
+<td><p>96</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>33536</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Energy Snapshots Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>33537</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Energy Snapshot Header - Entry Number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>33540</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Energy Snapshot Header - Date Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>33543</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Energy Snapshot Header - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>33552</p></td>
+<td><p>None</p></td>
+<td><p>Data block Energy Snapshots</p></td>
+<td><p>7</p></td>
+<td><p>None</p></td>
+<td><p>96</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>34560</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Load profile - Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>34563</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Load Header - Entry number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>34564</p></td>
+<td><p>None</p></td>
+<td><p>Load Header - Date / Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>34567</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Load Header - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>34576</p></td>
+<td><p>None</p></td>
+<td><p>Channel information - quantity</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>34579</p></td>
+<td><p>None</p></td>
+<td><p>Channel information - scaler</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>34580</p></td>
+<td><p>None</p></td>
+<td><p>Channel information - interval</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>34582</p></td>
+<td><p>None</p></td>
+<td><p>Channel information - datatype</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>34592</p></td>
+<td><p>None</p></td>
+<td><p>Load Profile Data block</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>120</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35072</p></td>
+<td><p>ASCII</p></td>
+<td><p>Serial number(s)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>5</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35080</p></td>
+<td><p>ASCII</p></td>
+<td><p>Meter firmware version</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>8</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35088</p></td>
+<td><p>None</p></td>
+<td><p>Product type number ID</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35089</p></td>
+<td><p>None</p></td>
+<td><p>Slave ID</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>8</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35097</p></td>
+<td><p>ASCII</p></td>
+<td><p>Product tag name</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>5</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35168</p></td>
+<td><p>ASCII</p></td>
+<td><p>Type designation</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>6</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35174</p></td>
+<td><p>ASCII</p></td>
+<td><p>Product Name</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>8</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35328</p></td>
+<td><p>None</p></td>
+<td><p>Date Time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35331</p></td>
+<td><p>None</p></td>
+<td><p>Day of week</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35333</p></td>
+<td><p>None</p></td>
+<td><p>Active day type</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35334</p></td>
+<td><p>None</p></td>
+<td><p>Active season</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35335</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Current tariff</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35347</p></td>
+<td><p>None</p></td>
+<td><p>Error flags</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35353</p></td>
+<td><p>None</p></td>
+<td><p>Information flags</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>25 Alarm flags</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35359</p></td>
+<td><p>None</p></td>
+<td><p>Warning flags</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>35365</p></td>
+<td><p>None</p></td>
+<td><p>Alarm flags</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35840</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Transformer ratios</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35842</p></td>
+<td><p>Unsigned</p></td>
+<td><p>CT L1,L2,L3 ratio (Denominator)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35844</p></td>
+<td><p>Unsigned</p></td>
+<td><p>VT ratio (Numerator)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35846</p></td>
+<td><p>Unsigned</p></td>
+<td><p>VT ratio (Denominator)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35848</p></td>
+<td><p>Unsigned</p></td>
+<td><p>CT Neutral ratio (Numerator)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35850</p></td>
+<td><p>Unsigned</p></td>
+<td><p>CT Neutral ratio (Denominator)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35852</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O settings - Function</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35853</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O port 2</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35854</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O port 3</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35855</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O port 4</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35856</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O port 5 (Extended I/O 1)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35857</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O port 6 (Extended I/O 2)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35858</p></td>
+<td><p>None</p></td>
+<td><p>I/O settings - Pulse input/output instance</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35859</p></td>
+<td><p>None</p></td>
+<td><p>I/O settings - Pulse outputs configuration</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35860</p></td>
+<td><p>None</p></td>
+<td><p>Energy parameter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>OBIS code</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35863</p></td>
+<td><p>None</p></td>
+<td><p>Pulse frequency active energy</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35865</p></td>
+<td><p>None</p></td>
+<td><p>Pulse frequency reactive energy</p></td>
+<td><p>1</p></td>
+<td><p>0.01</p></td>
+<td><p>2</p></td>
+<td><p>kvarh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35867</p></td>
+<td><p>None</p></td>
+<td><p>Pulse length</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>milliseconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35869</p></td>
+<td><p>None</p></td>
+<td><p>Turn off pulse output</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35872</p></td>
+<td><p>None</p></td>
+<td><p>Load profile settings</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35873</p></td>
+<td><p>None</p></td>
+<td><p>Load profile Parameter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>OBIS code</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35876</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Load profile Interval</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>minutes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35878</p></td>
+<td><p>None</p></td>
+<td><p>Load profile Max number of snapshot</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35888</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand settings</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35889</p></td>
+<td><p>None</p></td>
+<td><p>Parameter number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35890</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Parameter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>OBIS code</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35893</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Level of Min/Max</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>OBIS code</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35896</p></td>
+<td><p>None</p></td>
+<td><p>Number of levels</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35897</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Interval</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>minutes</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35898</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Sub interval</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>minutes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35899</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Period</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35920</p></td>
+<td><p>None</p></td>
+<td><p>Energy Cumulative/Snapshots settings</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>35921</p></td>
+<td><p>None</p></td>
+<td><p>Energy Historicals Channel number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35922</p></td>
+<td><p>None</p></td>
+<td><p>Energy Historicals Quantity</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>OBIS code</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35925</p></td>
+<td><p>None</p></td>
+<td><p>Energy Historicals Period</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35936</p></td>
+<td><p>None</p></td>
+<td><p>Alarm settings</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>14</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35968</p></td>
+<td><p>None</p></td>
+<td><p>Complex Alarms</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35969</p></td>
+<td><p>None</p></td>
+<td><p>Components</p></td>
+<td><p>4</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35973</p></td>
+<td><p>None</p></td>
+<td><p>Operators</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35974</p></td>
+<td><p>None</p></td>
+<td><p>Action - complex alarm triggered</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>35984</p></td>
+<td><p>None</p></td>
+<td><p>Tariff settings</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>35985</p></td>
+<td><p>None</p></td>
+<td><p>Input configuration</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36045</p></td>
+<td><p>None</p></td>
+<td><p>Number of day profile</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>36046</p></td>
+<td><p>None</p></td>
+<td><p>Day profile number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36047</p></td>
+<td><p>None</p></td>
+<td><p>Number of actions</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>36048</p></td>
+<td><p>None</p></td>
+<td><p>Action number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36049</p></td>
+<td><p>None</p></td>
+<td><p>Action (time, action)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36064</p></td>
+<td><p>Unsigned</p></td>
+<td><p>CO2 conversion factor actIive energy</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>2</p></td>
+<td><p>kg / kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36066</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Currency conversion factor active enenrgy</p></td>
+<td><p>1</p></td>
+<td><p>0.001</p></td>
+<td><p>2</p></td>
+<td><p>Currency / kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36068</p></td>
+<td><p>None</p></td>
+<td><p>LED source</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36069</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Wires</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36070</p></td>
+<td><p>None</p></td>
+<td><p>DST start</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36072</p></td>
+<td><p>None</p></td>
+<td><p>DST end</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36074</p></td>
+<td><p>None</p></td>
+<td><p>DST enabled</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36075</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Modbus RTU</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36076</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Baudrate: 9600, 19200, 38400, 57600, 115200</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36078</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Parity: 2- none; 1-even; 0- odd</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36079</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Modbus TCP/IP</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36080</p></td>
+<td><p>Unsigned</p></td>
+<td><p>IP: A.B.C.D -&gt; 0xAABBCCDD</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36082</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Mask: A.B.C.D -&gt; 0xAABBCCDD</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36084</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Gateway: A.B.C.D -&gt; 0xAABBCCDD</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36086</p></td>
+<td><p>Unsigned</p></td>
+<td><p>TCP Port: 502(default), 0xFFFF (max value)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>36087</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Up/Down Counters</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>36089</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Down Counter</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36091</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Down Counter Reset Value</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36093</p></td>
+<td><p>Unsigned</p></td>
+<td><p>HMI Config</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36094</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Language (range: 0-max language number)</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36604</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Bluetooth Enable</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36624</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O settings - Pulse input ratio</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>2</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36626</p></td>
+<td><p>Unsigned</p></td>
+<td><p>I/O settings - Pulse input unit</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36695</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Logs</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36696</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset historical functionality</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36697</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Timer</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36698</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Energy</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>36699</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Factory setting default</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Write</p></td>
+<td><p>36700</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Reset Max / Min / Average</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36722</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Header - Get Next</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36723</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Header - Entry number</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read/Write</p></td>
+<td><p>36726</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Header - Date / time</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>3</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read/Write</p></td>
+<td><p>36729</p></td>
+<td><p>Unsigned</p></td>
+<td><p>Max/Min Demand Header - Direction</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+<td><p>1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>36738</p></td>
+<td><p>None</p></td>
+<td><p>Data Block Max/Min Demand</p></td>
+<td><p>19</p></td>
+<td><p>None</p></td>
+<td><p>128</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>51994</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>51996</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>51998</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52000</p></td>
+<td><p>Signed</p></td>
+<td><p>Active power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52002</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52004</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52006</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52008</p></td>
+<td><p>Signed</p></td>
+<td><p>Reactive power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52010</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52012</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52014</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52016</p></td>
+<td><p>Signed</p></td>
+<td><p>Apparent power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52200</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Active power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52202</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Active power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52204</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Active power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52206</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Active power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52208</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Reactive power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52210</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Reactive power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52212</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Reactive power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52214</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Reactive power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52216</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Apparent power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52218</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Apparent power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52220</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Apparent power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52222</p></td>
+<td><p>Signed</p></td>
+<td><p>Average Apparent power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52260</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Active power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52262</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Active power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52264</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Active power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52266</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Active power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52268</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Reactive power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52270</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Reactive power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52272</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Reactive power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52274</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Reactive power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52276</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Apparent power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52278</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Apparent power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52280</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Apparent power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52282</p></td>
+<td><p>Signed</p></td>
+<td><p>Max Apparent power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52380</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Active power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52382</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Active power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52384</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Active power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52386</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Active power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52388</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Reactive power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52390</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Reactive power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52392</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Reactive power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52394</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Reactive power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VAR</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52396</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Apparent power total Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52398</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Apparent power L1 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>52400</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Apparent power L2 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read</p></td>
+<td><p>52402</p></td>
+<td><p>Signed</p></td>
+<td><p>Min Apparent power L3 Scaler 1</p></td>
+<td><p>1</p></td>
+<td><p>1.0</p></td>
+<td><p>2</p></td>
+<td><p>VA</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 <section id="module-reference">

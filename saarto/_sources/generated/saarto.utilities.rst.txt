@@ -1,4 +1,4 @@
-saarto.utilities
+﻿saarto.utilities
 ================
 
 .. automodule:: saarto.utilities
@@ -9,6 +9,7 @@ saarto.utilities
    .. autosummary::
    
       extract_blocks
+      find_by_name
       find_item_path
       hr_test_logic
       inject

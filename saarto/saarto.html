@@ -215,19 +215,24 @@ Result: .robot.j2 with all blocks injected, Jinja2 variables intact.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="saarto.api.create_temp_toml">
-<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">create_temp_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_case</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.create_temp_toml" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">create_temp_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_case</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.create_temp_toml" title="Link to this definition">¶</a></dt>
 <dd><p>Create a temporary TOML file from a CSV file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>test_name</strong> – name of the test task, should be in TEST_DIR</p></li>
 <li><p><strong>test_case</strong> – name of the test case, should be in TC_DIR</p></li>
+<li><p><strong>parameters</strong> – list of dicts of parameter [{“name”: “”, “value”: “”}, {…}]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None, creates a new TOML file in the test task folder</p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For parameters argument, this function checks the name of the DynVarMat table and fetch the value from “parameters” (list of dicts) to export to temp.tomml</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -295,13 +300,14 @@ If output is “list”, returns a list of steps.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="saarto.api.init">
-<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_case</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.init" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_case</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.init" title="Link to this definition">¶</a></dt>
 <dd><p>Create test folder and inject TOML blocks into config.ext.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>test_name</strong> – name of the test task to be created</p></li>
 <li><p><strong>test_case</strong> – name of the test case to be used for this test task, should be in TC_DIR</p></li>
+<li><p><strong>parameters</strong> – list of parameters from a creation dict, dict[“parameters”] = [{“name”: “”, “value”: “”}, {…}, …]</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -353,31 +359,16 @@ If output is “list”, returns a list of steps.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="saarto.api.load_config">
-<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.load_config" title="Link to this definition">¶</a></dt>
-<dd><p>Recieved dict from API request, then create test task with the data and build the template</p>
+<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.load_config" title="Link to this definition">¶</a></dt>
+<dd><p>Create test task data (config.cmconf and instrument.toml) based on the input dict, then build the template.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> – dict with keys “test_task”, “test_case”, “structural_elements” (list of SE names)</p>
+<dd class="field-odd"><p><strong>data</strong> – dict or list of dicts with keys “test_task”, “test_case”, “structural_elements” (list of SE names)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None, creates a new test task folder with config.ext file in TEST_DIR, then builds the template</p>
+<dd class="field-even"><p>None, creates a new test task folder with config.ext file in TEST_DIR, then builds</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span><span class="p">{</span>
-</span><span data-line="2"><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;test_case&quot;</span><span class="p">:</span> <span class="s2">&quot;PMD-0000&quot;</span><span class="p">,</span>
-</span><span data-line="3"><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;test_task&quot;</span><span class="p">:</span> <span class="s2">&quot;BJEQ-1100&quot;</span><span class="p">,</span>
-</span><span data-line="4"><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;structural_elements&quot;</span><span class="p">:</span> <span class="p">[</span>
-</span><span data-line="5"><span class="gp">&gt;&gt;&gt; </span>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;BJEQ-4444&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;AutoTestLib__m4m_tcp&quot;</span><span class="p">},</span>
-</span><span data-line="6"><span class="gp">&gt;&gt;&gt; </span>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;BJEQ-5555&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;AutoTestLib__mt786&quot;</span><span class="p">},</span>
-</span><span data-line="7"><span class="gp">&gt;&gt;&gt; </span><span class="p">],</span>
-</span><span data-line="8"><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;WireConfiguration&quot;</span><span class="p">:</span> <span class="s2">&quot;3P4W3CT&quot;</span><span class="p">},</span>
-</span><span data-line="9"><span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
-</span><span data-line="10"><span class="gp">&gt;&gt;&gt; </span><span class="n">load_config</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span><span data-line="11"><span class="go">This will create a new test task named BJEQ-1100 with PMD-0000 as the test case, then inject the SE references into config.cmconf based on the SE titles and build the template.</span>
-</span><span data-line="12"><span class="go">After that it will fetch the instrument definitions from the SEs and create instrument.toml in the test task folder.</span>
-</span></pre></div>
-</div>
 </dd></dl>
 
 <dl class="py function">

@@ -9,6 +9,9 @@ AutoTestLib Documentation
 .. include:: ../../README.md
    :parser: myst_parser.sphinx_
 
+.. include:: ../../registers.md
+   :parser: myst_parser.sphinx_
+
 Module Reference
 -----------------
 

@@ -132,6 +132,7 @@ data-aria-dark="Switch to auto color mode">
 </li>
 <li><a class="reference internal" href="#module-saarto.utilities.utilities">saarto.utilities.utilities module</a><ul>
 <li><a class="reference internal" href="#saarto.utilities.utilities.extract_blocks"><code class="docutils literal notranslate"><span class="pre">extract_blocks()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.utilities.utilities.find_by_name"><code class="docutils literal notranslate"><span class="pre">find_by_name()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.utilities.utilities.find_item_path"><code class="docutils literal notranslate"><span class="pre">find_item_path()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.utilities.utilities.hr_test_logic"><code class="docutils literal notranslate"><span class="pre">hr_test_logic()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.utilities.utilities.inject"><code class="docutils literal notranslate"><span class="pre">inject()</span></code></a></li>
@@ -287,12 +288,14 @@ data-aria-dark="Switch to auto color mode">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="saarto.utilities.DynParam.DynVarMat.export_toml">
-<span class="sig-name descname"><span class="pre">export_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'temp.toml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.utilities.DynParam.DynVarMat.export_toml" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">export_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'temp.toml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.utilities.DynParam.DynVarMat.export_toml" title="Link to this definition">¶</a></dt>
 <dd><p>Export the dynamic parameter matrix to a TOML file in the specified test folder.
 :param test_folder_path: The path to the test folder where the TOML file will be saved.
 :type test_folder_path: str or Path
 :param fname: The name of the TOML file to be created (default is “temp.toml”).
-:type fname: str</p>
+:type fname: str
+:param target: The column that get exported. If target is [], everything is exported
+:type target: list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None, creates a TOML file with the dynamic parameters in the specified location.</p>
@@ -523,6 +526,23 @@ data: Section data (dict, list, or scalar)</p></li>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.utilities.utilities.find_by_name">
+<span class="sig-prename descclassname"><span class="pre">saarto.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">find_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.utilities.utilities.find_by_name" title="Link to this definition">¶</a></dt>
+<dd><p>Find a dictionary in the list by its ‘name’ field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – List of dictionaries with ‘name’ and ‘value’ keys</p></li>
+<li><p><strong>name</strong> – The name to search for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The matching dictionary, or None if not found</p>
 </dd>
 </dl>
 </dd></dl>

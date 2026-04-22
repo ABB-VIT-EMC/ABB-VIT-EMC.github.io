@@ -154,7 +154,7 @@ data-aria-dark="Switch to auto color mode">
 <tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.clean" title="saarto.api.clean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean</span></code></a>(test_name)</p></td>
 <td><p>Remove built and rendered files.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.create_temp_toml" title="saarto.api.create_temp_toml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_temp_toml</span></code></a>(test_name, test_case)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.create_temp_toml" title="saarto.api.create_temp_toml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_temp_toml</span></code></a>(test_name, test_case[, ...])</p></td>
 <td><p>Create a temporary TOML file from a CSV file.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.fetch" title="saarto.api.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(test_name)</p></td>
@@ -169,7 +169,7 @@ data-aria-dark="Switch to auto color mode">
 <tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.get_steps" title="saarto.api.get_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_steps</span></code></a>(test_name[, output])</p></td>
 <td><p>Extract TEST_STEPS block from test case and SEs, then process it with hr_test_logic to get the final test steps.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.init" title="saarto.api.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(test_name, test_case)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.init" title="saarto.api.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(test_name, test_case[, suffix, parameters])</p></td>
 <td><p>Create test folder and inject TOML blocks into config.ext.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.list_strucural_elements" title="saarto.api.list_strucural_elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_strucural_elements</span></code></a>()</p></td>
@@ -182,7 +182,7 @@ data-aria-dark="Switch to auto color mode">
 <td><p>List all test tasks in tasks directory.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.load_config" title="saarto.api.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a>(data)</p></td>
-<td><p>Recieved dict from API request, then create test task with the data and build the template</p></td>
+<td><p>Create test task data (config.cmconf and instrument.toml) based on the input dict, then build the template.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.read_text" title="saarto.api.read_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_text</span></code></a>(se_name[, module_separator])</p></td>
 <td><p>Read the content of a structural element file.</p></td>
