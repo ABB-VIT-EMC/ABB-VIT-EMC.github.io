@@ -3,19 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-SAARTO Documentation
-====================
+saarto Documentation
+=========================
 
-   readme
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
 
 Module Reference
 -----------------
 
 .. toctree::
-   readme
-   api
-   util
+   :maxdepth: 4
+   :caption: API Reference
 
+   modules
 
 
 

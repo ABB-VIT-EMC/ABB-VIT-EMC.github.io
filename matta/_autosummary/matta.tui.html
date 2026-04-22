@@ -57,7 +57,11 @@ data-aria-dark="Switch to auto color mode">
   <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
-        <div class="globaltoc" data-expand-depth="0">
+        <div class="globaltoc" data-expand-depth="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tui.html">TUI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render.html">Render Module</a></li>
+</ul>
+
         </div>
       </div>
     </div>
@@ -133,44 +137,45 @@ data-aria-dark="Switch to auto color mode">
 </div><article class="yue" role="main">
           <section id="module-matta.tui">
 <span id="matta-tui"></span><h1>matta.tui<a class="headerlink" href="#module-matta.tui" title="Link to this heading">¶</a></h1>
+<p>Matta TUI - Terminal User Interface functions for displaying information and interacting with the user.</p>
 <p class="rubric">Functions</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.tui.add_extension_if_missing" title="matta.tui.add_extension_if_missing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_extension_if_missing</span></code></a>(filename[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tui.html#matta.tui.add_extension_if_missing" title="matta.tui.add_extension_if_missing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_extension_if_missing</span></code></a>(filename[, ...])</p></td>
 <td><p>Check if filename has an extension and add the default if missing.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.tui.ask_yes_no" title="matta.tui.ask_yes_no"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ask_yes_no</span></code></a>(question[, default])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../tui.html#matta.tui.ask_yes_no" title="matta.tui.ask_yes_no"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ask_yes_no</span></code></a>(question[, default])</p></td>
 <td><p>Prompt user for a yes/no question interactively.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.tui.ensure_folder" title="matta.tui.ensure_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ensure_folder</span></code></a>(path[, interactive, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tui.html#matta.tui.ensure_folder" title="matta.tui.ensure_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ensure_folder</span></code></a>(path[, interactive, ...])</p></td>
 <td><p>Ensure a folder exists, optionally creating it with user confirmation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.tui.get_log_level_priority" title="matta.tui.get_log_level_priority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_log_level_priority</span></code></a>(level_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../tui.html#matta.tui.get_log_level_priority" title="matta.tui.get_log_level_priority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_log_level_priority</span></code></a>(level_name)</p></td>
 <td><p>Get the numeric priority of a log level.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.tui.is_called_from_robot" title="matta.tui.is_called_from_robot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_called_from_robot</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tui.html#matta.tui.is_called_from_robot" title="matta.tui.is_called_from_robot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_called_from_robot</span></code></a>()</p></td>
 <td><p>Check if the current code is being executed from Robot Framework.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.tui.is_valid_filename" title="matta.tui.is_valid_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_filename</span></code></a>(name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../tui.html#matta.tui.is_valid_filename" title="matta.tui.is_valid_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_filename</span></code></a>(name)</p></td>
 <td><p>Validate if a string is a valid filename for most filesystems.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.tui.list_directory" title="matta.tui.list_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_directory</span></code></a>([path, content, match_extension])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tui.html#matta.tui.list_directory" title="matta.tui.list_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_directory</span></code></a>([path, content, match_extension])</p></td>
 <td><p>List subdirectories or files in a given path with optional filtering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.tui.list_picker" title="matta.tui.list_picker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_picker</span></code></a>(items[, title])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../tui.html#matta.tui.list_picker" title="matta.tui.list_picker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_picker</span></code></a>(items[, title])</p></td>
 <td><p>Display an interactive TUI list picker for user selection.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.tui.log_message" title="matta.tui.log_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_message</span></code></a>(level, message[, level_attr, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tui.html#matta.tui.log_message" title="matta.tui.log_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_message</span></code></a>(level, message[, level_attr, ...])</p></td>
 <td><p>Log a message with level filtering and optional timestamp.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.tui.printc" title="matta.tui.printc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">printc</span></code></a>(text[, color, sep, end, file, flush])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../tui.html#matta.tui.printc" title="matta.tui.printc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">printc</span></code></a>(text[, color, sep, end, file, flush])</p></td>
 <td><p>Print colored text to console using ANSI escape codes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.tui.set_log_level" title="matta.tui.set_log_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_log_level</span></code></a>(level)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tui.html#matta.tui.set_log_level" title="matta.tui.set_log_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_log_level</span></code></a>(level)</p></td>
 <td><p>Set the global log level for message filtering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.tui.show_directory" title="matta.tui.show_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_directory</span></code></a>([path, text, content, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../tui.html#matta.tui.show_directory" title="matta.tui.show_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_directory</span></code></a>([path, text, content, ...])</p></td>
 <td><p>Display folders/files in a path with formatted output.</p></td>
 </tr>
 </tbody>

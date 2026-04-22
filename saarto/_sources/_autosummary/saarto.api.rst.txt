@@ -1,4 +1,4 @@
-saarto.api
+﻿saarto.api
 ==========
 
 .. automodule:: saarto.api
@@ -12,6 +12,7 @@ saarto.api
       clean
       create_temp_toml
       fetch
+      flatten_device_tree
       generate_doc
       get_steps
       init

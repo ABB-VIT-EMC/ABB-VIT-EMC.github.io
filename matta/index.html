@@ -72,7 +72,21 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#matta">matta</a></li>
+<li><a class="reference internal" href="#matta">matta</a><ul>
+<li><a class="reference internal" href="#tui-module">TUI Module</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#colored-output">Colored Output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#render-module">Render Module</a><ul>
+<li><a class="reference internal" href="#quickstart">Quickstart</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-reference">Module Reference</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
@@ -145,11 +159,83 @@ data-aria-dark="Switch to auto color mode">
 <h2>matta<a class="headerlink" href="#matta" title="Link to this heading">¶</a></h2>
 <p><strong>matta</strong> or <strong>M</strong>ake <strong>A</strong> <strong>T</strong>erminal <strong>T</strong>asteful <strong>A</strong>gain is a terminal utilities library that is used by</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/ITLAVIT/AutoTestLib">AutoTestLib</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ITLAVIT/PolarionComLib">PolarionComLib</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ITLAVIT/saarto">saarto</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ABB-VIT-EMC/AutoTestLib">AutoTestLib</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ABB-VIT-EMC/PolarionComLib">PolarionComLib</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ABB-VIT-EMC/saarto">saarto</a></p></li>
 </ul>
-<p>This library is mainly utilized for logging, printing, i.e., general tasks that involve terminal emulator.</p>
+<p>This library is mainly utilized for logging, printing, i.e., general tasks that involve terminal emulator. There are two modules in <strong>matta</strong></p>
+<section id="tui-module">
+<h3>TUI Module<a class="headerlink" href="#tui-module" title="Link to this heading">¶</a></h3>
+<p>This module handle general printing</p>
+<ul class="simple">
+<li><p><strong>Colored console output</strong> with ANSI escape codes</p></li>
+<li><p><strong>Level-based logging</strong> with timestamp support</p></li>
+<li><p><strong>Interactive prompts</strong> for user confirmation</p></li>
+<li><p><strong>Directory management</strong> with automatic creation</p></li>
+<li><p><strong>List selection picker</strong> for user choice</p></li>
+<li><p><strong>File validation</strong> for cross-platform compatibility</p></li>
+<li><p><strong>Directory listing</strong> with filtering</p></li>
+<li><p><strong>Robot Framework integration</strong> for automation testing</p></li>
+<li><p>and more….</p></li>
+</ul>
+<section id="installation">
+<h4>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;matta @ git+https://github.com/ABB-VIT-EMC/matta&quot;</span>
+</span></pre></div>
+</div>
+</section>
+<section id="quick-start">
+<h4>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h4>
+<section id="colored-output">
+<h5>Colored Output<a class="headerlink" href="#colored-output" title="Link to this heading">¶</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">matta</span><span class="w"> </span><span class="kn">import</span> <span class="n">tui</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="c1"># Print in different colors</span>
+</span><span data-line="4"><span class="n">tui</span><span class="o">.</span><span class="n">printc</span><span class="p">(</span><span class="s2">&quot;Success!&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+</span><span data-line="5"><span class="n">tui</span><span class="o">.</span><span class="n">printc</span><span class="p">(</span><span class="s2">&quot;Warning!&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+</span><span data-line="6"><span class="n">tui</span><span class="o">.</span><span class="n">printc</span><span class="p">(</span><span class="s2">&quot;Error!&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1"># Semantic colors</span>
+</span><span data-line="9"><span class="n">tui</span><span class="o">.</span><span class="n">printc</span><span class="p">(</span><span class="s2">&quot;Debug info&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
+</span><span data-line="10"><span class="n">tui</span><span class="o">.</span><span class="n">printc</span><span class="p">(</span><span class="s2">&quot;Success message&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">matta</span><span class="w"> </span><span class="kn">import</span> <span class="n">tui</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="c1"># Set log level</span>
+</span><span data-line="4"><span class="n">tui</span><span class="o">.</span><span class="n">set_log_level</span><span class="p">(</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+</span><span data-line="5">
+</span><span data-line="6"><span class="c1"># Log messages (only shows if priority &gt;= current level)</span>
+</span><span data-line="7"><span class="n">tui</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="s2">&quot;Debug information&quot;</span><span class="p">)</span>
+</span><span data-line="8"><span class="n">tui</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="s2">&quot;Information message&quot;</span><span class="p">)</span>
+</span><span data-line="9"><span class="n">tui</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;WARNING&quot;</span><span class="p">,</span> <span class="s2">&quot;This is a warning&quot;</span><span class="p">)</span>
+</span><span data-line="10"><span class="n">tui</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="s2">&quot;An error occurred&quot;</span><span class="p">)</span>
+</span><span data-line="11"><span class="n">tui</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span> <span class="s2">&quot;Operation successful!&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="render-module">
+<h3>Render Module<a class="headerlink" href="#render-module" title="Link to this heading">¶</a></h3>
+<p>The Render module provides utilities for:</p>
+<ul class="simple">
+<li><p><strong>Table rendering</strong> from dictionaries and CSV files</p></li>
+<li><p><strong>Directory tree visualization</strong> with ASCII art</p></li>
+<li><p><strong>Markdown and plaintext formatting</strong> options</p></li>
+<li><p><strong>CSV parsing</strong> with test case variations</p></li>
+<li><p><strong>Value formatting</strong> with markdown styling</p></li>
+<li><p><strong>Recursive tree building</strong> from filesystem paths</p></li>
+<li><p>and more…</p></li>
+<li></li>
+</ul>
+<section id="quickstart">
+<h4>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">from<span class="w"> </span>matta<span class="w"> </span>import<span class="w"> </span>render
+</span></pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="module-reference">
 <h2>Module Reference<a class="headerlink" href="#module-reference" title="Link to this heading">¶</a></h2>

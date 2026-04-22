@@ -57,7 +57,11 @@ data-aria-dark="Switch to auto color mode">
   <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
-        <div class="globaltoc" data-expand-depth="0">
+        <div class="globaltoc" data-expand-depth="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tui.html">TUI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render.html">Render Module</a></li>
+</ul>
+
         </div>
       </div>
     </div>
@@ -133,26 +137,27 @@ data-aria-dark="Switch to auto color mode">
 </div><article class="yue" role="main">
           <section id="module-matta.render">
 <span id="matta-render"></span><h1>matta.render<a class="headerlink" href="#module-matta.render" title="Link to this heading">¶</a></h1>
+<p>Matta Render - Functions for rendering data structures as tables and trees.</p>
 <p class="rubric">Functions</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.render.build_tree_from_path" title="matta.render.build_tree_from_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_tree_from_path</span></code></a>([path, max_depth, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render.html#matta.render.build_tree_from_path" title="matta.render.build_tree_from_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_tree_from_path</span></code></a>([path, max_depth, ...])</p></td>
 <td><p>Build a tree structure dictionary from filesystem paths.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.render.render_csv_table" title="matta.render.render_csv_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_csv_table</span></code></a>(csv_file[, format])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../render.html#matta.render.render_csv_table" title="matta.render.render_csv_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_csv_table</span></code></a>(csv_file[, format])</p></td>
 <td><p>Render CSV test variations as a formatted table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.render.render_dict_as_table" title="matta.render.render_dict_as_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_dict_as_table</span></code></a>(data[, key_col, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render.html#matta.render.render_dict_as_table" title="matta.render.render_dict_as_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_dict_as_table</span></code></a>(data[, key_col, ...])</p></td>
 <td><p>Render a flat dictionary as a formatted table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.render.render_tree" title="matta.render.render_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_tree</span></code></a>([tree_data, path, max_depth])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../render.html#matta.render.render_tree" title="matta.render.render_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_tree</span></code></a>([tree_data, path, max_depth])</p></td>
 <td><p>Render a directory tree with ASCII art formatting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#matta.render.render_tree_dict" title="matta.render.render_tree_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_tree_dict</span></code></a>(tree_dict[, root_name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render.html#matta.render.render_tree_dict" title="matta.render.render_tree_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_tree_dict</span></code></a>(tree_dict[, root_name])</p></td>
 <td><p>Render a manually created tree dictionary with ASCII art formatting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#matta.render.render_value" title="matta.render.render_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_value</span></code></a>(value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../render.html#matta.render.render_value" title="matta.render.render_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_value</span></code></a>(value)</p></td>
 <td><p>Render a scalar value as markdown inline code.</p></td>
 </tr>
 </tbody>

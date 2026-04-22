@@ -57,7 +57,17 @@ data-aria-dark="Switch to auto color mode">
   <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
-        <div class="globaltoc" data-expand-depth="0">
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">saarto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../saarto.html">saarto package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../saarto.utilities.html">saarto.utilities package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
         </div>
       </div>
     </div>
@@ -133,50 +143,54 @@ data-aria-dark="Switch to auto color mode">
 </div><article class="yue" role="main">
           <section id="module-saarto.api">
 <span id="saarto-api"></span><h1>saarto.api<a class="headerlink" href="#module-saarto.api" title="Link to this heading">¶</a></h1>
+<p>SAARTO API - Core functions for template compilation, parameter injection, and test task management.</p>
 <p class="rubric">Functions</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.build" title="saarto.api.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(test_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.build" title="saarto.api.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(test_name)</p></td>
 <td><p>Copy base template, then inject all ROBOT blocks from test case and SEs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.clean" title="saarto.api.clean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean</span></code></a>(test_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.clean" title="saarto.api.clean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean</span></code></a>(test_name)</p></td>
 <td><p>Remove built and rendered files.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.create_temp_toml" title="saarto.api.create_temp_toml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_temp_toml</span></code></a>(test_name, test_case)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.create_temp_toml" title="saarto.api.create_temp_toml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_temp_toml</span></code></a>(test_name, test_case)</p></td>
 <td><p>Create a temporary TOML file from a CSV file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.fetch" title="saarto.api.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(test_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.fetch" title="saarto.api.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(test_name)</p></td>
 <td><p>Extract INSTRUMENT_DEFINITION blocks -&gt; instrument.toml.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.generate_doc" title="saarto.api.generate_doc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_doc</span></code></a>(test_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.flatten_device_tree" title="saarto.api.flatten_device_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten_device_tree</span></code></a>(data)</p></td>
+<td><p>Flatten nested device tree dictionary into a list with parent paths.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.generate_doc" title="saarto.api.generate_doc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_doc</span></code></a>(test_name)</p></td>
 <td><p>Generate README.md for the test task by extracting info from config.toml and instrument.toml, then applying them to the README template.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.get_steps" title="saarto.api.get_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_steps</span></code></a>(test_name[, output])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.get_steps" title="saarto.api.get_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_steps</span></code></a>(test_name[, output])</p></td>
 <td><p>Extract TEST_STEPS block from test case and SEs, then process it with hr_test_logic to get the final test steps.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.init" title="saarto.api.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(test_name, test_case)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.init" title="saarto.api.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(test_name, test_case)</p></td>
 <td><p>Create test folder and inject TOML blocks into config.ext.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.list_strucural_elements" title="saarto.api.list_strucural_elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_strucural_elements</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.list_strucural_elements" title="saarto.api.list_strucural_elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_strucural_elements</span></code></a>()</p></td>
 <td><p>List all structural elements in SE directory.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.list_test_cases" title="saarto.api.list_test_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_test_cases</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.list_test_cases" title="saarto.api.list_test_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_test_cases</span></code></a>()</p></td>
 <td><p>List all test cases in test cases directory.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.list_tests" title="saarto.api.list_tests"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_tests</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.list_tests" title="saarto.api.list_tests"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_tests</span></code></a>()</p></td>
 <td><p>List all test tasks in tasks directory.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.load_config" title="saarto.api.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.load_config" title="saarto.api.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a>(data)</p></td>
 <td><p>Recieved dict from API request, then create test task with the data and build the template</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.read_text" title="saarto.api.read_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_text</span></code></a>(se_name[, module_separator])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.read_text" title="saarto.api.read_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_text</span></code></a>(se_name[, module_separator])</p></td>
 <td><p>Read the content of a structural element file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#saarto.api.render" title="saarto.api.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>(test_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.render" title="saarto.api.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>(test_name)</p></td>
 <td><p>Read .robot.j2 and apply Jinja2 context from config.ext + instrument.toml</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index.html#saarto.api.run" title="saarto.api.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>(test_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.run" title="saarto.api.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>(test_name)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
