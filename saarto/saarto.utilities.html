@@ -139,6 +139,7 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#saarto.utilities.utilities.load_main_config"><code class="docutils literal notranslate"><span class="pre">load_main_config()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.utilities.utilities.load_toml"><code class="docutils literal notranslate"><span class="pre">load_toml()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.utilities.utilities.run_api_request"><code class="docutils literal notranslate"><span class="pre">run_api_request()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.utilities.utilities.tar_with_hash"><code class="docutils literal notranslate"><span class="pre">tar_with_hash()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-saarto.utilities">Module contents</a></li>
@@ -659,6 +660,49 @@ e.g. “AutoTestLib__m4m_tcp”</p>
 <dd class="field-even"><p>Result of ModuleName.api.request_se(“method_name”)</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.utilities.utilities.tar_with_hash">
+<span class="sig-prename descclassname"><span class="pre">saarto.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">tar_with_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_tar_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.utilities.utilities.tar_with_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Create tar.gz from files, hash it, then rename tar with hash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_files</strong> (<em>list</em><em> of </em><em>str</em><em> or </em><em>Path</em>) – Paths to source files to archive.</p></li>
+<li><p><strong>output_tar_dir</strong> (<em>str</em><em> or </em><em>Path</em>) – Directory to store the compressed tar.gz file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary containing:</dt><dd><ul class="simple">
+<li><p>’tar’ (Path): Path to the created tar.gz file.</p></li>
+<li><p>’hash’ (str): SHA256 hash (first 8 characters) of the tar file.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If any source file does not exist.</p></li>
+<li><p><strong>PermissionError</strong> – If lacks permissions to write directory.</p></li>
+<li><p><strong>ValueError</strong> – If source_files is empty.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">tar_with_hash</span><span class="p">(</span>
+</span><span data-line="2"><span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;/path/file1.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/file2.txt&quot;</span><span class="p">],</span>
+</span><span data-line="3"><span class="gp">... </span>    <span class="s2">&quot;/output/tars&quot;</span>
+</span><span data-line="4"><span class="gp">... </span><span class="p">)</span>
+</span><span data-line="5"><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;tar&#39;</span><span class="p">])</span>
+</span><span data-line="6"><span class="go">PosixPath(&#39;/output/tars/a1b2c3d4.tar.gz&#39;)</span>
+</span></pre></div>
+</div>
 </dd></dl>
 
 </section>

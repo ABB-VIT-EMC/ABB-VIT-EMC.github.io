@@ -16,4 +16,5 @@
       load_main_config
       load_toml
       run_api_request
+      tar_with_hash
    

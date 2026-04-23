@@ -84,18 +84,20 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#saarto.api.build"><code class="docutils literal notranslate"><span class="pre">build()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.clean"><code class="docutils literal notranslate"><span class="pre">clean()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.create_temp_toml"><code class="docutils literal notranslate"><span class="pre">create_temp_toml()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.api.execute"><code class="docutils literal notranslate"><span class="pre">execute()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.fetch"><code class="docutils literal notranslate"><span class="pre">fetch()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.flatten_device_tree"><code class="docutils literal notranslate"><span class="pre">flatten_device_tree()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.generate_doc"><code class="docutils literal notranslate"><span class="pre">generate_doc()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.get_steps"><code class="docutils literal notranslate"><span class="pre">get_steps()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.api.list_results"><code class="docutils literal notranslate"><span class="pre">list_results()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.list_strucural_elements"><code class="docutils literal notranslate"><span class="pre">list_strucural_elements()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.list_test_cases"><code class="docutils literal notranslate"><span class="pre">list_test_cases()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.list_tests"><code class="docutils literal notranslate"><span class="pre">list_tests()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.read_text"><code class="docutils literal notranslate"><span class="pre">read_text()</span></code></a></li>
 <li><a class="reference internal" href="#saarto.api.render"><code class="docutils literal notranslate"><span class="pre">render()</span></code></a></li>
-<li><a class="reference internal" href="#saarto.api.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.api.validate"><code class="docutils literal notranslate"><span class="pre">validate()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-saarto">Module contents</a></li>
@@ -236,6 +238,11 @@ Result: .robot.j2 with all blocks injected, Jinja2 variables intact.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="saarto.api.execute">
+<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebuild</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_instance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'untitiled'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saarto.api.execute" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="saarto.api.fetch">
 <span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">fetch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.fetch" title="Link to this definition">¶</a></dt>
 <dd><p>Extract INSTRUMENT_DEFINITION blocks -&gt; instrument.toml.</p>
@@ -322,6 +329,20 @@ If output is “list”, returns a list of steps.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="saarto.api.list_results">
+<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">list_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.api.list_results" title="Link to this definition">¶</a></dt>
+<dd><p>LIst all results in RESULTS_DIR</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None, prints the list of result folders</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="saarto.api.list_strucural_elements">
 <span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">list_strucural_elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.api.list_strucural_elements" title="Link to this definition">¶</a></dt>
 <dd><p>List all structural elements in SE directory.</p>
@@ -403,9 +424,21 @@ If output is “list”, returns a list of steps.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="saarto.api.run">
-<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.api.run" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="saarto.api.validate">
+<span class="sig-prename descclassname"><span class="pre">saarto.api.</span></span><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#saarto.api.validate" title="Link to this definition">¶</a></dt>
+<dd><p>validate the test task of test_name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>test_name</strong> (<em>str</em>) – name of the test_task</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>return True if config.ext and instrument.toml exist, else return False, also print log</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>flag (boolean)</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-saarto">

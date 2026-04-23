@@ -1,4 +1,4 @@
-saarto.cli
+﻿saarto.cli
 ==========
 
 .. automodule:: saarto.cli
@@ -13,6 +13,7 @@ saarto.cli
       cmd_clean
       cmd_compile
       cmd_create
+      cmd_execute
       cmd_fetch
       cmd_paths
       cmd_render
@@ -20,6 +21,7 @@ saarto.cli
       cmd_ses
       cmd_show
       cmd_tests
+      cmd_validate
       generate_commands_markdown
       inject_commands_to_readme
       main

@@ -157,20 +157,26 @@ data-aria-dark="Switch to auto color mode">
 <tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.create_temp_toml" title="saarto.api.create_temp_toml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_temp_toml</span></code></a>(test_name, test_case[, ...])</p></td>
 <td><p>Create a temporary TOML file from a CSV file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.fetch" title="saarto.api.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(test_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.execute" title="saarto.api.execute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">execute</span></code></a>(test_name[, rebuild, test_instance])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.fetch" title="saarto.api.fetch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch</span></code></a>(test_name)</p></td>
 <td><p>Extract INSTRUMENT_DEFINITION blocks -&gt; instrument.toml.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.flatten_device_tree" title="saarto.api.flatten_device_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten_device_tree</span></code></a>(data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.flatten_device_tree" title="saarto.api.flatten_device_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten_device_tree</span></code></a>(data)</p></td>
 <td><p>Flatten nested device tree dictionary into a list with parent paths.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.generate_doc" title="saarto.api.generate_doc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_doc</span></code></a>(test_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.generate_doc" title="saarto.api.generate_doc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_doc</span></code></a>(test_name)</p></td>
 <td><p>Generate README.md for the test task by extracting info from config.toml and instrument.toml, then applying them to the README template.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.get_steps" title="saarto.api.get_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_steps</span></code></a>(test_name[, output])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.get_steps" title="saarto.api.get_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_steps</span></code></a>(test_name[, output])</p></td>
 <td><p>Extract TEST_STEPS block from test case and SEs, then process it with hr_test_logic to get the final test steps.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.init" title="saarto.api.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(test_name, test_case[, suffix, parameters])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.init" title="saarto.api.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(test_name, test_case[, suffix, parameters])</p></td>
 <td><p>Create test folder and inject TOML blocks into config.ext.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.list_results" title="saarto.api.list_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_results</span></code></a>()</p></td>
+<td><p>LIst all results in RESULTS_DIR</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.list_strucural_elements" title="saarto.api.list_strucural_elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_strucural_elements</span></code></a>()</p></td>
 <td><p>List all structural elements in SE directory.</p></td>
@@ -190,8 +196,8 @@ data-aria-dark="Switch to auto color mode">
 <tr class="row-even"><td><p><a class="reference internal" href="../saarto.html#saarto.api.render" title="saarto.api.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>(test_name)</p></td>
 <td><p>Read .robot.j2 and apply Jinja2 context from config.ext + instrument.toml</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.run" title="saarto.api.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>(test_name)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../saarto.html#saarto.api.validate" title="saarto.api.validate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code></a>(test_name)</p></td>
+<td><p>validate the test task of test_name</p></td>
 </tr>
 </tbody>
 </table>

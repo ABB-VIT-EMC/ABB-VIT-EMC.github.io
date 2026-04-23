@@ -11,16 +11,18 @@
       build
       clean
       create_temp_toml
+      execute
       fetch
       flatten_device_tree
       generate_doc
       get_steps
       init
+      list_results
       list_strucural_elements
       list_test_cases
       list_tests
       load_config
       read_text
       render
-      run
+      validate
    

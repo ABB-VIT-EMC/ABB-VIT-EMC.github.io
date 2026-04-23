@@ -87,6 +87,9 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-AutoTestLib.ATLMath">AutoTestLib.ATLMath module</a><ul>
 <li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath"><code class="docutils literal notranslate"><span class="pre">ATLMath</span></code></a><ul>
+<li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.check_value_scalar"><code class="docutils literal notranslate">check_value_scalar()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.check_values"><code class="docutils literal notranslate">check_values()</span></code></a></li>
+<li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.convert_arg"><code class="docutils literal notranslate">convert_arg()</span></code></a></li>
 <li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.should_be_in_range"><code class="docutils literal notranslate">should_be_in_range()</span></code></a></li>
 <li><a class="reference internal" href="#AutoTestLib.ATLMath.ATLMath.should_be_within_percentage"><code class="docutils literal notranslate">should_be_within_percentage()</span></code></a></li>
 </ul>
@@ -251,16 +254,73 @@ data-aria-dark="Switch to auto color mode">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">AutoTestLib.ATLMath.</span></span><span class="sig-name descname"><span class="pre">ATLMath</span></span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.should_be_in_range">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">should_be_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.should_be_in_range" title="Link to this definition">¶</a></dt>
-<dd><p>Check if value(s) are within range.</p>
-<p>Verifies that values fall within [expected - tolerance, expected + tolerance].
-Performs element-by-element comparison where False matches False.</p>
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.check_value_scalar">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">check_value_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.check_value_scalar" title="Link to this definition">¶</a></dt>
+<dd><p>Root method for checking a SINGLE value against expected with tolerance.</p>
+<p>Handles False/non-False matching and numeric comparisons using different modes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>val</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single value or list of values (supports strings from Robot Framework).
-Can be string representation like “[180, 180, 180]” or contain False for invalid data.</p></li>
+<li><p><strong>val</strong> – Single value (numeric or False)</p></li>
+<li><p><strong>val_expected</strong> – Single expected value (numeric or False)</p></li>
+<li><p><strong>tol</strong> – Single tolerance value</p></li>
+<li><p><strong>mode</strong> – ‘percentage’ or ‘range’
+- ‘percentage’: checks if abs((val - expected) / expected) * 100 &lt;= tol
+- ‘range’: checks if expected - tol &lt;= val &lt;= expected + tol</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If value fails check</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.check_values">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">check_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_msg_prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.check_values" title="Link to this definition">¶</a></dt>
+<dd><p>Root method for checking value(s) against expected with tolerance.</p>
+<p>Unified handler for both scalar and list inputs. Delegates to check_value_scalar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> – Single value or list of values</p></li>
+<li><p><strong>val_expected</strong> – Single expected value or list of expected values</p></li>
+<li><p><strong>tol</strong> – Single tolerance or list of tolerances</p></li>
+<li><p><strong>mode</strong> – ‘percentage’ or ‘range’</p></li>
+<li><p><strong>error_msg_prefix</strong> – Prefix for error message</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Passes silently if all values match</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If any value fails check</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.convert_arg">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">convert_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.convert_arg" title="Link to this definition">¶</a></dt>
+<dd><p>Convert Robot Framework argument to appropriate numeric type.</p>
+<p>Handles strings, numbers, and list strings like “[180, 180, 180]”.
+Also converts string “False” to boolean False.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.should_be_in_range">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">should_be_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.should_be_in_range" title="Link to this definition">¶</a></dt>
+<dd><p>Check if value(s) are within range.</p>
+<p>Handles both scalar and list inputs. For lists, checks each element
+using range tolerance mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single value or list of values.
+Can be string representation like “[180, 180, 180]” or “[180, False, 100]”</p></li>
 <li><p><strong>val_expected</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single expected value or list of expected values.</p></li>
 <li><p><strong>tol</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single tolerance or list of tolerances.</p></li>
 </ul>
@@ -272,38 +332,29 @@ Can be string representation like “[180, 180, 180]” or contain False for inv
 <dd class="field-odd"><p>None</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>AssertionError</strong> – If any value is outside range or False/non-False mismatch occurs.</p>
+<dd class="field-even"><p><strong>AssertionError</strong> – If any value is outside range or mismatch occurs.</p>
 </dd>
 </dl>
 <dl class="simple">
 <dt>Examples (Robot):</dt><dd><p>Should Be In Range    val=95    val_expected=100    tol=5
 Should Be In Range    val=[95, 105]    val_expected=[100, 100]    tol=10
-Should Be In Range    val=[180, 180, False]    val_expected=[180, 180, False]    tol=0
-Should Be In Range    val=[180, 180, 1]    val_expected=[180, 180, False]    tol=0</p>
+Should Be In Range    val=[180, False, 100]    val_expected=[180, False, 100]    tol=0</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>Performs element-by-element comparison between val and val_expected lists.</p></li>
-<li><p>False values match False, indicating invalid/missing data.</p></li>
-<li><p>If val contains False and val_expected contains a number at same index, fails with mismatch error.</p></li>
-<li><p>All argument lists must have matching lengths after broadcasting.</p></li>
-<li><p>Automatically converts string arguments from Robot Framework to numeric types.</p></li>
-<li><p>Range is inclusive: lower_bound &lt;= value &lt;= upper_bound</p></li>
-<li><p>Lower bound = expected - tolerance, Upper bound = expected + tolerance</p></li>
-</ul>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="AutoTestLib.ATLMath.ATLMath.should_be_within_percentage">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">should_be_within_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_expected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoTestLib.ATLMath.ATLMath.should_be_within_percentage" title="Link to this definition">¶</a></dt>
 <dd><p>Check if value(s) are within percentage tolerance.</p>
+<p>Handles both scalar and list inputs. For lists, checks each element
+using percentage tolerance mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>val</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single value or list of values (supports strings from Robot Framework).
-Can be string representation like “[180, 180, 180]” or contain False for invalid data.</p></li>
-<li><p><strong>val_expected</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single expected value or list of expected values to compare against.</p></li>
+<li><p><strong>val</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single value or list of values.
+Can be string representation like “[180, 180, 180]” or “[180, False, 100]”</p></li>
+<li><p><strong>val_expected</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single expected value or list of expected values.</p></li>
 <li><p><strong>tol_percent</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>list</em>) – Single tolerance percentage or list of tolerances (default: 5).</p></li>
 </ul>
 </dd>
@@ -314,26 +365,15 @@ Can be string representation like “[180, 180, 180]” or contain False for inv
 <dd class="field-odd"><p>None</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>AssertionError</strong> – If any value fails percentage tolerance check or False/non-False mismatch occurs.</p>
+<dd class="field-even"><p><strong>AssertionError</strong> – If any value fails percentage tolerance check.</p>
 </dd>
 </dl>
 <dl class="simple">
 <dt>Examples (Robot):</dt><dd><p>Should Be Within Percentage    val=100    val_expected=100    tol_percent=5
 Should Be Within Percentage    val=[95, 105]    val_expected=[100, 100]    tol_percent=10
-Should Be Within Percentage    val=[180, 120, False]    val_expected=[180, 120, False]    tol_percent=5
-Should Be Within Percentage    val=[180, 120, 1]    val_expected=[180, 120, False]    tol_percent=5</p>
+Should Be Within Percentage    val=[180, False, 100]    val_expected=[180, False, 100]    tol_percent=5</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>Performs element-by-element comparison between val and val_expected lists.</p></li>
-<li><p>False values match False, indicating invalid/missing data.</p></li>
-<li><p>If val contains False and val_expected contains a number at same index, fails with mismatch error.</p></li>
-<li><p>If val_expected is a scalar, it’s broadcast to match val list length.</p></li>
-<li><p>If tol_percent is a scalar, it’s broadcast to match val list length.</p></li>
-<li><p>Error is calculated as: abs((value - expected) / expected) * 100</p></li>
-<li><p>All list lengths must match after broadcasting.</p></li>
-</ul>
 </dd></dl>
 
 </dd></dl>
