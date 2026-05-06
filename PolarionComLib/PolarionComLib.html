@@ -79,26 +79,31 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#polarioncomlib-pclrf-module">PolarionComLib.PCLRF module</a></li>
 <li><a class="reference internal" href="#module-PolarionComLib.PolarionComLib">PolarionComLib.PolarionComLib module</a><ul>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager"><code class="docutils literal notranslate"><span class="pre">PolarionSessionManager</span></code></a><ul>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.fetch_test_tasks_from_polarion_test_run"><code class="docutils literal notranslate">fetch_test_tasks_from_polarion_test_run()</span></code></a></li>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.find_test_runs_to_process"><code class="docutils literal notranslate">find_test_runs_to_process()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.add_test_record_iterations"><code class="docutils literal notranslate">add_test_record_iterations()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.ensure_parameter_matrix_for_test_task"><code class="docutils literal notranslate">ensure_parameter_matrix_for_test_task()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_executor_test_case_id"><code class="docutils literal notranslate">get_executor_test_case_id()</span></code></a></li>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_list_of_dicts"><code class="docutils literal notranslate">get_list_of_dicts()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_polarion_api_headers"><code class="docutils literal notranslate">get_polarion_api_headers()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_polarion_test_run_details"><code class="docutils literal notranslate">get_polarion_test_run_details()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_polling_interval"><code class="docutils literal notranslate">get_polling_interval()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_se_list"><code class="docutils literal notranslate">get_se_list()</span></code></a></li>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_execution_context"><code class="docutils literal notranslate">get_test_execution_context()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_parameters_for_iteration"><code class="docutils literal notranslate">get_test_parameters_for_iteration()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_steps_and_parameters_for_test_task"><code class="docutils literal notranslate">get_test_steps_and_parameters_for_test_task()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_task_context"><code class="docutils literal notranslate">get_test_task_context()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_testrun_ready_query"><code class="docutils literal notranslate">get_testrun_ready_query()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_workitem_details"><code class="docutils literal notranslate">get_workitem_details()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.is_tr_locked"><code class="docutils literal notranslate">is_tr_locked()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.is_tr_unlocked"><code class="docutils literal notranslate">is_tr_unlocked()</span></code></a></li>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_test_record"><code class="docutils literal notranslate">patch_test_record()</span></code></a></li>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.process_test_run_found_by_poller"><code class="docutils literal notranslate">process_test_run_found_by_poller()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_runs"><code class="docutils literal notranslate">list_test_runs()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_tasks"><code class="docutils literal notranslate">list_test_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_tasks_names"><code class="docutils literal notranslate">list_test_tasks_names()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch"><code class="docutils literal notranslate">patch()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_and_upload"><code class="docutils literal notranslate">patch_and_upload()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_and_upload_from_toml"><code class="docutils literal notranslate">patch_and_upload_from_toml()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_from_toml"><code class="docutils literal notranslate">patch_from_toml()</span></code></a></li>
+<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.post_test_parameters_by_iteration"><code class="docutils literal notranslate">post_test_parameters_by_iteration()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.set_polarion_base_url"><code class="docutils literal notranslate">set_polarion_base_url()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.set_polarion_test_run_status"><code class="docutils literal notranslate">set_polarion_test_run_status()</span></code></a></li>
 <li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.set_verify_ssl"><code class="docutils literal notranslate">set_verify_ssl()</span></code></a></li>
-<li><a class="reference internal" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.upload_attachment_to_test_record"><code class="docutils literal notranslate">upload_attachment_to_test_record()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -188,45 +193,27 @@ data-aria-dark="Switch to auto color mode">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">PolarionComLib.PolarionComLib.</span></span><span class="sig-name descname"><span class="pre">PolarionSessionManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_case_project_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.fetch_test_tasks_from_polarion_test_run">
-<span class="sig-name descname"><span class="pre">fetch_test_tasks_from_polarion_test_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.fetch_test_tasks_from_polarion_test_run" title="Link to this definition">¶</a></dt>
-<dd><p>Retrieve test tasks in “waiting” status (i.e., those without results) for a given Test Run.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>full_test_run_id</strong> – The full test run ID</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A list of dictionaries, each containing ‘tc_id’ and ‘iteration’ for waiting test tasks.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.add_test_record_iterations">
+<span class="sig-name descname"><span class="pre">add_test_record_iterations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.add_test_record_iterations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.find_test_runs_to_process">
-<span class="sig-name descname"><span class="pre">find_test_runs_to_process</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.find_test_runs_to_process" title="Link to this definition">¶</a></dt>
-<dd><p>Find Test Runs in the specified project that are in the “unlocked” status and ready to be processed by the poller.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A list of full Test Run IDs that are ready for processing.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list</p>
-</dd>
-</dl>
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.ensure_parameter_matrix_for_test_task">
+<span class="sig-name descname"><span class="pre">ensure_parameter_matrix_for_test_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values_by_iteration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.ensure_parameter_matrix_for_test_task" title="Link to this definition">¶</a></dt>
+<dd><p>Ensure that a test task has all iterations required by values_by_iteration
+and set the given parameter on each iteration.</p>
+<p>If iteration 0 has no parameters at all, nothing is done.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_executor_test_case_id">
-<span class="sig-name descname"><span class="pre">get_executor_test_case_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_executor_test_case_id" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_executor_test_case_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_executor_test_case_id" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve the Test Case ID of the executor linked to a Test Task via ‘executed_by’ role backlink.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>full_test_run_id</strong> – The full test run ID</p></li>
-<li><p><strong>tc_id</strong> – The test task ID</p></li>
+<li><p><strong>tt_id</strong> – The test task ID</p></li>
 <li><p><strong>iteration</strong> – The iteration number of the test task</p></li>
 </ul>
 </dd>
@@ -235,23 +222,6 @@ data-aria-dark="Switch to auto color mode">
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_list_of_dicts">
-<span class="sig-name descname"><span class="pre">get_list_of_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_list_of_dicts" title="Link to this definition">¶</a></dt>
-<dd><p>Build a list of dictionaries for all test tasks waiting in the test run.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>full_test_run_id</strong> – The full test run ID</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>List of dicts, each containing test execution context for a single test task + iteration</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -297,13 +267,13 @@ data-aria-dark="Switch to auto color mode">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_se_list">
-<span class="sig-name descname"><span class="pre">get_se_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_se_list" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_se_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_se_list" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve the list of structural elements (workitems) linked to a Test Task via ‘verifies’ role backlinks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>full_test_run_id</strong> – The full test run ID</p></li>
-<li><p><strong>tc_id</strong> – The test task ID</p></li>
+<li><p><strong>tt_id</strong> – The test task ID</p></li>
 <li><p><strong>iteratioon</strong> – The iteration number</p></li>
 </ul>
 </dd>
@@ -317,19 +287,24 @@ data-aria-dark="Switch to auto color mode">
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_execution_context">
-<span class="sig-name descname"><span class="pre">get_test_execution_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_execution_context" title="Link to this definition">¶</a></dt>
-<dd><p>Create a dictionary containing the test execution context for a specific test task.</p>
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_parameters_for_iteration">
+<span class="sig-name descname"><span class="pre">get_test_parameters_for_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_parameters_for_iteration" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_steps_and_parameters_for_test_task">
+<span class="sig-name descname"><span class="pre">get_test_steps_and_parameters_for_test_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_steps_and_parameters_for_test_task" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve test steps and parameters for a specific Test Task in a Test Run.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>full_test_run_id</strong> – The full test run ID</p></li>
-<li><p><strong>tc_id</strong> – The test task</p></li>
-<li><p><strong>iteration</strong> – The iteration number</p></li>
+<li><p><strong>tt_id</strong> – The test task ID</p></li>
+<li><p><strong>iteration</strong> – The iteration number of the test task</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dictionary containing the test execution context, including the executor test case ID, structural elements, and parameters.</p>
+<dd class="field-even"><p>A dictionary containing ‘steps’ (list of test steps) and ‘parameters’ (list of dictonary of parameters with name and data)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
@@ -338,19 +313,19 @@ data-aria-dark="Switch to auto color mode">
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_steps_and_parameters_for_test_task">
-<span class="sig-name descname"><span class="pre">get_test_steps_and_parameters_for_test_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_steps_and_parameters_for_test_task" title="Link to this definition">¶</a></dt>
-<dd><p>Retrieve test steps and parameters for a specific Test Task in a Test Run.</p>
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_task_context">
+<span class="sig-name descname"><span class="pre">get_test_task_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.get_test_task_context" title="Link to this definition">¶</a></dt>
+<dd><p>Create a dictionary containing the test execution context for a specific test task.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>full_test_run_id</strong> – The full test run ID</p></li>
-<li><p><strong>tc_id</strong> – The test task ID</p></li>
-<li><p><strong>iteration</strong> – The iteration number of the test task</p></li>
+<li><p><strong>tt_id</strong> – The test task</p></li>
+<li><p><strong>iteration</strong> – The iteration number</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dictionary containing ‘steps’ (list of test steps) and ‘parameters’ (list of dictonary of parameters with name and data)</p>
+<dd class="field-even"><p>A dictionary containing the test execution context, including the executor test case ID, structural elements, and parameters.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
@@ -392,21 +367,75 @@ data-aria-dark="Switch to auto color mode">
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.patch_test_record">
-<span class="sig-name descname"><span class="pre">patch_test_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_report_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_test_record" title="Link to this definition">¶</a></dt>
-<dd><p>Patch a specific test record with execution results and  upload an HTML report as an attachment.</p>
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_runs">
+<span class="sig-name descname"><span class="pre">list_test_runs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_runs" title="Link to this definition">¶</a></dt>
+<dd><p>Find Test Runs in the specified project that are in the “unlocked” status and ready to be processed by the poller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of full Test Run IDs that are ready for processing.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_tasks">
+<span class="sig-name descname"><span class="pre">list_test_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_tasks" title="Link to this definition">¶</a></dt>
+<dd><p>Build a list of dictionaries for all test tasks waiting in the test run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>full_test_run_id</strong> – The full test run ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of dicts, each containing test execution context for a single test task + iteration</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_tasks_names">
+<span class="sig-name descname"><span class="pre">list_test_tasks_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.list_test_tasks_names" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve test tasks in “waiting” status (i.e., those without results) for a given Test Run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>full_test_run_id</strong> – The full test run ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of dictionaries, each containing ‘tt_id’ and ‘iteration’ for waiting test tasks.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.patch">
+<span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_instance_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_to_attatch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'log.html'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch" title="Link to this definition">¶</a></dt>
+<dd><p>Patch a Polarion test record from a SAARTO/Polarion context dictionary
+and upload log.html.</p>
+<dl class="simple">
+<dt>Expected context keys:</dt><dd><p>project
+tc_project
+test_run
+test_task
+iteration</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>full_test_run_id</strong> – The full test run ID</p></li>
-<li><p><strong>tc_id</strong> – The test task ID</p></li>
-<li><p><strong>iteration</strong> – the iteration number</p></li>
-<li><p><strong>test_results</strong> – A dictionary containing test execution results with keys like ‘outcome’, ‘executed_timestamp_utc_iso’, ‘duration_seconds’, and optionally ‘comment_text’.</p></li>
-<li><p><strong>html_report_path</strong> – Optional local file path to an HTML report to upload as an attachment to the test record.</p></li>
+<li><p><strong>context</strong> – Dictionary created from Polarion data and used by SAARTO.</p></li>
+<li><p><strong>test_instance_folder</strong> – Folder inside results directory containing Robot output folders.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the patch (and optional attachment upload) was successful, False otherwise.</p>
+<dd class="field-even"><p>True if patch and upload succeed, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
@@ -415,17 +444,90 @@ data-aria-dark="Switch to auto color mode">
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.process_test_run_found_by_poller">
-<span class="sig-name descname"><span class="pre">process_test_run_found_by_poller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.process_test_run_found_by_poller" title="Link to this definition">¶</a></dt>
-<dd><p>This is the main function to process a test run found by the poller. It finds all the test in waiting state, builds the execution context and then build the template dictionary to be used by load_config</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>full_test_run_id</strong> – The full test run ID to process</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None (but it will call load_config with the right dictionary to trigger the execution in saarto)</p>
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.patch_and_upload">
+<span class="sig-name descname"><span class="pre">patch_and_upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_instance_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_to_attatch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'log.html'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_and_upload" title="Link to this definition">¶</a></dt>
+<dd><p>Patch a Polarion test record from a SAARTO/Polarion context dictionary
+and upload log.html.</p>
+<dl class="simple">
+<dt>Expected context keys:</dt><dd><p>project
+tc_project
+test_run
+test_task
+iteration</p>
 </dd>
 </dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> – Dictionary created from Polarion data and used by SAARTO.</p></li>
+<li><p><strong>test_instance_folder</strong> – Folder inside results directory containing Robot output folders.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if patch and upload succeed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.patch_and_upload_from_toml">
+<span class="sig-name descname"><span class="pre">patch_and_upload_from_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toml_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_instance_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_to_attatch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'log.html'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_and_upload_from_toml" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper for ‘patch_and_upload’ that accepts a dictionary parsed from config.cmconf.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>toml_dict</strong> – Dictionary parsed from the tar’s config.cmconf file.</p></li>
+<li><p><strong>test_instance_folder</strong> – Folder inside results directory.</p></li>
+<li><p><strong>results_folder</strong> – Path to the main results folder.</p></li>
+<li><p><strong>file_to_attatch</strong> – Name of the file to attach.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if patch and upload succeed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.patch_from_toml">
+<span class="sig-name descname"><span class="pre">patch_from_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toml_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_instance_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_to_attatch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'log.html'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.patch_from_toml" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper for ‘patch’ that accepts a dictionary parsed from config.cmconf.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>toml_dict</strong> – Dictionary parsed from the tar’s config.cmconf file.</p></li>
+<li><p><strong>test_instance_folder</strong> – Folder inside results directory.</p></li>
+<li><p><strong>results_folder</strong> – Path to the main results folder.</p></li>
+<li><p><strong>file_to_attatch</strong> – Name of the file to attach.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if patch succeeds, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.post_test_parameters_by_iteration">
+<span class="sig-name descname"><span class="pre">post_test_parameters_by_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values_by_iteration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.post_test_parameters_by_iteration" title="Link to this definition">¶</a></dt>
+<dd><p>Set one Polarion test parameter value for multiple test record iterations.</p>
+<p class="rubric">Example</p>
+<dl class="simple">
+<dt>values_by_iteration = {</dt><dd><p>1: “3P3W2CT”,
+2: “1P2W1CT”,
+3: “3P4W3CT”,</p>
+</dd>
+</dl>
+<p>}</p>
 </dd></dl>
 
 <dl class="py method">
@@ -457,23 +559,6 @@ data-aria-dark="Switch to auto color mode">
 <dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.set_verify_ssl">
 <span class="sig-name descname"><span class="pre">set_verify_ssl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verify_ssl</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.set_verify_ssl" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="PolarionComLib.PolarionComLib.PolarionSessionManager.upload_attachment_to_test_record">
-<span class="sig-name descname"><span class="pre">upload_attachment_to_test_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_test_run_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name_for_polarion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PolarionComLib.PolarionComLib.PolarionSessionManager.upload_attachment_to_test_record" title="Link to this definition">¶</a></dt>
-<dd><p>Upload an attachment to a specific test task in Polarion.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>full_test_run_id</strong> – The full test run ID</p></li>
-<li><p><strong>tc_id</strong> – The local test case ID associated with the test task</p></li>
-<li><p><strong>iteration</strong> – The iteration number of the test record to update</p></li>
-<li><p><strong>file_path</strong> – The local file path of the attachment to upload</p></li>
-<li><p><strong>file_name_for_polarion</strong> – The name to assign to the file in Polarion (e.g., “report.html”)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
 
 </dd></dl>
 

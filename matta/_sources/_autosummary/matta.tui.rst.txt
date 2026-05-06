@@ -1,4 +1,4 @@
-matta.tui
+﻿matta.tui
 =========
 
 .. automodule:: matta.tui
@@ -19,5 +19,6 @@ matta.tui
       log_message
       printc
       set_log_level
+      set_ui_callback
       show_directory
    

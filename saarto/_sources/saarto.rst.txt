@@ -7,7 +7,8 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   saarto.utilities
+   saarto.core
+   saarto.integration
 
 Submodules
 ----------
@@ -20,13 +21,29 @@ saarto.api module
    :show-inheritance:
    :undoc-members:
 
-.. saarto.cli module
-.. -----------------
+saarto.cli module
+-----------------
 
-.. .. automodule:: saarto.cli
-..    :members:
-..    :show-inheritance:
-..    :undoc-members:
+.. automodule:: saarto.cli
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.pipeline module
+----------------------
+
+.. automodule:: saarto.pipeline
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.query module
+-------------------
+
+.. automodule:: saarto.query
+   :members:
+   :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------

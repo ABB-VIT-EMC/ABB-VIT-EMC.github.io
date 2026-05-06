@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="violet" data-content_root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>saartoria.ui.components package - saarto 1.0.0 documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="saartoria.ui package" href="saartoria.ui.html" />
+      <link rel="canonical" href="https://ABB-VIT-EMC.github.io/saarto/saartoria.ui.components.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=44020203" />
+    <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ABB-VIT-EMC.github.io/saarto/saartoria.ui.components.html"/>
+  <meta property="og:title" content="saartoria.ui.components package"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="index.html">
+      
+      
+      <strong>saarto</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="saarto.html">saarto package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saarto.core.html">saarto.core package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="saarto.core.utilities.html">saarto.core.utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="saarto.integration.html">saarto.integration package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="saartoria.html">saartoria package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="saartoria.handlers.html">saartoria.handlers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.models.html">saartoria.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.services.html">saartoria.services package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="saartoria.ui.html">saartoria.ui package</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">saartoria.ui.components package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.common_instrument_editor">saartoria.ui.components.common_instrument_editor module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.common_instrument_editor.CommonInstrumentEditor"><code class="docutils literal notranslate"><span class="pre">CommonInstrumentEditor</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.common_instrument_editor.CommonInstrumentEditor.get_controls"><code class="docutils literal notranslate">get_controls()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.dialogs">saartoria.ui.components.dialogs module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.dialogs.CreateTaskDialog"><code class="docutils literal notranslate"><span class="pre">CreateTaskDialog</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.dialogs.CreateTaskDialog.page"><code class="docutils literal notranslate">page</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.dialogs.CreateTaskDialog.dialog"><code class="docutils literal notranslate">dialog</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.dialogs.CreateTaskDialog.close_dialog"><code class="docutils literal notranslate">close_dialog()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.dialogs.CreateTaskDialog.proceed"><code class="docutils literal notranslate">proceed()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.dialogs.CreateTaskDialog.show"><code class="docutils literal notranslate">show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.log_console">saartoria.ui.components.log_console module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.log_console.LogConsole"><code class="docutils literal notranslate"><span class="pre">LogConsole</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.log_console.LogConsole.expanded"><code class="docutils literal notranslate">expanded</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.log_console.LogConsole.log_list"><code class="docutils literal notranslate">log_list</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.log_console.LogConsole.toggle"><code class="docutils literal notranslate">toggle()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.log_console.LogConsole.write"><code class="docutils literal notranslate">write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.notifications">saartoria.ui.components.notifications module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.notifications.ExecutionBanner"><code class="docutils literal notranslate"><span class="pre">ExecutionBanner</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.notifications.SharedBanner"><code class="docutils literal notranslate"><span class="pre">SharedBanner</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.panels">saartoria.ui.components.panels module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.LeftSidebar"><code class="docutils literal notranslate"><span class="pre">LeftSidebar</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.LeftSidebar.width"><code class="docutils literal notranslate">width</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel"><code class="docutils literal notranslate"><span class="pre">RightPanel</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel.title"><code class="docutils literal notranslate">title</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel.custom_content"><code class="docutils literal notranslate">custom_content</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel.close"><code class="docutils literal notranslate">close()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel.set_title"><code class="docutils literal notranslate">set_title()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel.toggle"><code class="docutils literal notranslate">toggle()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.RightPanel.toggle_with_config"><code class="docutils literal notranslate">toggle_with_config()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.panels.TopBar"><code class="docutils literal notranslate"><span class="pre">TopBar</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.task_item">saartoria.ui.components.task_item module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.task_item.TaskItem"><code class="docutils literal notranslate"><span class="pre">TaskItem</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.task_item.TaskItem.task"><code class="docutils literal notranslate">task</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.task_item.TaskItem.checkbox"><code class="docutils literal notranslate">checkbox</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.task_item.TaskItem.tag_chip"><code class="docutils literal notranslate">tag_chip</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.task_item.TaskItem.all_structural_elements_set"><code class="docutils literal notranslate">all_structural_elements_set</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components.toml_editor">saartoria.ui.components.toml_editor module</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.DictEditor"><code class="docutils literal notranslate"><span class="pre">DictEditor</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.DictEditor.create_field_control"><code class="docutils literal notranslate">create_field_control()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.DictEditor.create_section_fields"><code class="docutils literal notranslate">create_section_fields()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.DictEditor.get_control_value"><code class="docutils literal notranslate">get_control_value()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.DictEditor.get_edited_data"><code class="docutils literal notranslate">get_edited_data()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor"><code class="docutils literal notranslate"><span class="pre">TomlEditor</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.toml_path"><code class="docutils literal notranslate">toml_path</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.toml_data"><code class="docutils literal notranslate">toml_data</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.controls_map"><code class="docutils literal notranslate">controls_map</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.on_save"><code class="docutils literal notranslate">on_save</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.create_field_control"><code class="docutils literal notranslate">create_field_control()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.create_section_fields"><code class="docutils literal notranslate">create_section_fields()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.create_ui"><code class="docutils literal notranslate">create_ui()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.get_control_value"><code class="docutils literal notranslate">get_control_value()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.load_toml"><code class="docutils literal notranslate">load_toml()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.toml_editor.TomlEditor.save_changes"><code class="docutils literal notranslate">save_changes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saartoria.ui.components">Module contents</a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.CommonInstrumentEditor"><code class="docutils literal notranslate"><span class="pre">CommonInstrumentEditor</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.CommonInstrumentEditor.get_controls"><code class="docutils literal notranslate">get_controls()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.CreateTaskDialog"><code class="docutils literal notranslate"><span class="pre">CreateTaskDialog</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.CreateTaskDialog.page"><code class="docutils literal notranslate">page</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.CreateTaskDialog.dialog"><code class="docutils literal notranslate">dialog</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.CreateTaskDialog.close_dialog"><code class="docutils literal notranslate">close_dialog()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.CreateTaskDialog.proceed"><code class="docutils literal notranslate">proceed()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.CreateTaskDialog.show"><code class="docutils literal notranslate">show()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.LeftSidebar"><code class="docutils literal notranslate"><span class="pre">LeftSidebar</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.LeftSidebar.width"><code class="docutils literal notranslate">width</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.LogConsole"><code class="docutils literal notranslate"><span class="pre">LogConsole</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.LogConsole.expanded"><code class="docutils literal notranslate">expanded</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.LogConsole.log_list"><code class="docutils literal notranslate">log_list</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.LogConsole.toggle"><code class="docutils literal notranslate">toggle()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.LogConsole.write"><code class="docutils literal notranslate">write()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel"><code class="docutils literal notranslate"><span class="pre">RightPanel</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel.title"><code class="docutils literal notranslate">title</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel.custom_content"><code class="docutils literal notranslate">custom_content</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel.close"><code class="docutils literal notranslate">close()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel.set_title"><code class="docutils literal notranslate">set_title()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel.toggle"><code class="docutils literal notranslate">toggle()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.RightPanel.toggle_with_config"><code class="docutils literal notranslate">toggle_with_config()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.SharedBanner"><code class="docutils literal notranslate"><span class="pre">SharedBanner</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TaskItem"><code class="docutils literal notranslate"><span class="pre">TaskItem</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.TaskItem.task"><code class="docutils literal notranslate">task</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TaskItem.checkbox"><code class="docutils literal notranslate">checkbox</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TaskItem.tag_chip"><code class="docutils literal notranslate">tag_chip</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TaskItem.all_structural_elements_set"><code class="docutils literal notranslate">all_structural_elements_set</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor"><code class="docutils literal notranslate"><span class="pre">TomlEditor</span></code></a><ul>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.toml_path"><code class="docutils literal notranslate">toml_path</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.toml_data"><code class="docutils literal notranslate">toml_data</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.controls_map"><code class="docutils literal notranslate">controls_map</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.on_save"><code class="docutils literal notranslate">on_save</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.create_field_control"><code class="docutils literal notranslate">create_field_control()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.create_section_fields"><code class="docutils literal notranslate">create_section_fields()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.create_ui"><code class="docutils literal notranslate">create_ui()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.get_control_value"><code class="docutils literal notranslate">get_control_value()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.load_toml"><code class="docutils literal notranslate">load_toml()</span></code></a></li>
+<li><a class="reference internal" href="#saartoria.ui.components.TomlEditor.save_changes"><code class="docutils literal notranslate">save_changes()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saartoria.ui.components.TopBar"><code class="docutils literal notranslate"><span class="pre">TopBar</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">saarto</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="modules.html"><span itemprop="name">&lt;no title&gt;</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="saartoria.html"><span itemprop="name">saartoria package</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="3" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="saartoria.ui.html"><span itemprop="name">saartoria.ui package</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="4" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">saartoria.ui.components package</strong>
+        <meta itemprop="position" content="5" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <div class="copy-page-wrapper relative pb-4 lg:absolute lg:top-8 lg:right-6 xl:right-12">
+  <div id="copy-page-trigger">
+    <button
+      type="button"
+      class="js-copy px-3 py-1 inline-flex items-center gap-1"
+      data-url="https://ABB-VIT-EMC.github.io/saarto/_sources/saartoria.ui.components.rst.txt"
+    >
+      <i class="i-lucide" data-icon="copy"></i>
+      <span>Copy page</span>
+    </button>
+    <button class="js-menu px-2 py-1" type="button" aria-label="More actions"
+      aria-haspopup="menu" aria-expanded="false" aria-controls="copy-page-content">
+      <i class="i-lucide chevron-down"></i>
+    </button>
+  </div>
+  <div id="copy-page-content" role="menu" aria-orientation="vertical" aria-hidden="true">
+    <div role="presentation">
+      <div class="flex flex-col" role="group">
+        <button class="js-copy" type="button" role="menuitem"
+          data-url="https://ABB-VIT-EMC.github.io/saarto/_sources/saartoria.ui.components.rst.txt">
+          <span class="iconify-icon">
+            <i class="i-lucide" data-icon="copy"></i>
+          </span>
+          <span>Copy page</span>
+        </button>
+        <a role="menuitem" href="https://ABB-VIT-EMC.github.io/saarto/_sources/saartoria.ui.components.rst.txt" target="_blank" rel="nofollow"><iconify-icon icon="bi:code-slash"></iconify-icon>
+            <span>View Source</span></a><a role="menuitem" href="https://chatgpt.com/?hints=search&q=Read%20https%3A//ABB-VIT-EMC.github.io/saarto/_sources/saartoria.ui.components.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:openai"></iconify-icon>
+          <span>Open in ChatGPT</span>
+        </a><a role="menuitem" href="https://claude.ai/new?q=Read%20https%3A//ABB-VIT-EMC.github.io/saarto/_sources/saartoria.ui.components.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:claude"></iconify-icon>
+          <span>Open in Claude</span>
+        </a></div>
+    </div>
+  </div>
+</div><article class="yue" role="main">
+          <section id="saartoria-ui-components-package">
+<h1>saartoria.ui.components package<a class="headerlink" href="#saartoria-ui-components-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-saartoria.ui.components.common_instrument_editor">
+<span id="saartoria-ui-components-common-instrument-editor-module"></span><h2>saartoria.ui.components.common_instrument_editor module<a class="headerlink" href="#module-saartoria.ui.components.common_instrument_editor" title="Link to this heading">¶</a></h2>
+<p>Common instrument editor for editing instruments across multiple test tasks.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.common_instrument_editor.CommonInstrumentEditor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.common_instrument_editor.</span></span><span class="sig-name descname"><span class="pre">CommonInstrumentEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_panel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Container</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.common_instrument_editor.CommonInstrumentEditor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper for creating and managing common instrument editor UI.</p>
+<p>Generates the UI controls (using DictEditor) and handles API calls
+to save changes. Designed to work with RightPanel.toggle_with_config().</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.common_instrument_editor.CommonInstrumentEditor.get_controls">
+<span class="sig-name descname"><span class="pre">get_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#saartoria.ui.components.common_instrument_editor.CommonInstrumentEditor.get_controls" title="Link to this definition">¶</a></dt>
+<dd><p>Generate the editor UI controls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of Flet controls to display in RightPanel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components.dialogs">
+<span id="saartoria-ui-components-dialogs-module"></span><h2>saartoria.ui.components.dialogs module<a class="headerlink" href="#module-saartoria.ui.components.dialogs" title="Link to this heading">¶</a></h2>
+<p>Dialog components for user input.</p>
+<p>This module contains reusable dialog components for various user interactions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.dialogs.CreateTaskDialog">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.dialogs.</span></span><span class="sig-name descname"><span class="pre">CreateTaskDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_create_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.dialogs.CreateTaskDialog" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dialog for creating new test tasks.</p>
+<p>Prompts user for task name and test case information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.dialogs.CreateTaskDialog.page">
+<span class="sig-name descname"><span class="pre">page</span></span><a class="headerlink" href="#saartoria.ui.components.dialogs.CreateTaskDialog.page" title="Link to this definition">¶</a></dt>
+<dd><p>Flet page reference.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.dialogs.CreateTaskDialog.dialog">
+<span class="sig-name descname"><span class="pre">dialog</span></span><a class="headerlink" href="#saartoria.ui.components.dialogs.CreateTaskDialog.dialog" title="Link to this definition">¶</a></dt>
+<dd><p>The AlertDialog control.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.dialogs.CreateTaskDialog.close_dialog">
+<span class="sig-name descname"><span class="pre">close_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.dialogs.CreateTaskDialog.close_dialog" title="Link to this definition">¶</a></dt>
+<dd><p>Close the dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.dialogs.CreateTaskDialog.proceed">
+<span class="sig-name descname"><span class="pre">proceed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.dialogs.CreateTaskDialog.proceed" title="Link to this definition">¶</a></dt>
+<dd><p>Validate and proceed with task creation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.dialogs.CreateTaskDialog.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.dialogs.CreateTaskDialog.show" title="Link to this definition">¶</a></dt>
+<dd><p>Show the dialog.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components.log_console">
+<span id="saartoria-ui-components-log-console-module"></span><h2>saartoria.ui.components.log_console module<a class="headerlink" href="#module-saartoria.ui.components.log_console" title="Link to this heading">¶</a></h2>
+<p>Log console component for displaying application logs.</p>
+<p>This module provides a collapsible log console for displaying
+activity and debug messages.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.log_console.LogConsole">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.log_console.</span></span><span class="sig-name descname"><span class="pre">LogConsole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.log_console.LogConsole" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Collapsible log console for displaying application messages.</p>
+<p>The console can be toggled between expanded (showing logs) and
+collapsed (showing only the title and last message).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.log_console.LogConsole.expanded">
+<span class="sig-name descname"><span class="pre">expanded</span></span><a class="headerlink" href="#saartoria.ui.components.log_console.LogConsole.expanded" title="Link to this definition">¶</a></dt>
+<dd><p>Current expansion state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.log_console.LogConsole.log_list">
+<span class="sig-name descname"><span class="pre">log_list</span></span><a class="headerlink" href="#saartoria.ui.components.log_console.LogConsole.log_list" title="Link to this definition">¶</a></dt>
+<dd><p>ListView containing log messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.log_console.LogConsole.toggle">
+<span class="sig-name descname"><span class="pre">toggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.log_console.LogConsole.toggle" title="Link to this definition">¶</a></dt>
+<dd><p>Toggle console expanded/collapsed state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object (optional).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.log_console.LogConsole.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.log_console.LogConsole.write" title="Link to this definition">¶</a></dt>
+<dd><p>Write a message to the log console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> – Message text to display.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components.notifications">
+<span id="saartoria-ui-components-notifications-module"></span><h2>saartoria.ui.components.notifications module<a class="headerlink" href="#module-saartoria.ui.components.notifications" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.notifications.ExecutionBanner">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.notifications.</span></span><span class="sig-name descname"><span class="pre">ExecutionBanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="saarto.core.html#saarto.core.dataclass.Result" title="saarto.core.dataclass.Result"><span class="pre">Result</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Hide'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.notifications.ExecutionBanner" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_BaseBanner</span></code></p>
+<p>Banner for test execution results.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.notifications.SharedBanner">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.notifications.</span></span><span class="sig-name descname"><span class="pre">SharedBanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="saarto.core.html#saarto.core.dataclass.Result" title="saarto.core.dataclass.Result"><span class="pre">Result</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Hide'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.notifications.SharedBanner" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_BaseBanner</span></code></p>
+<p>General-purpose banner.</p>
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components.panels">
+<span id="saartoria-ui-components-panels-module"></span><h2>saartoria.ui.components.panels module<a class="headerlink" href="#module-saartoria.ui.components.panels" title="Link to this heading">¶</a></h2>
+<p>UI panel components for the application.</p>
+<p>This module contains the left sidebar, right panel, and top bar components.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.LeftSidebar">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.panels.</span></span><span class="sig-name descname"><span class="pre">LeftSidebar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_add_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_fetch_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_verify_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_clean_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_execute_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_results_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.panels.LeftSidebar" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Left sidebar with action buttons for task operations.</p>
+<p>Provides quick access to task creation, fetching, cleaning, and execution.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.LeftSidebar.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#saartoria.ui.components.panels.LeftSidebar.width" title="Link to this definition">¶</a></dt>
+<dd><p>Fixed sidebar width (70px).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.panels.</span></span><span class="sig-name descname"><span class="pre">RightPanel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">320</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Configurable right-side panel for displaying settings and configurations.</p>
+<p>This panel manages its own visibility state and can display dynamic content.
+Only one RightPanel instance can be active at a time.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel.title" title="Link to this definition">¶</a></dt>
+<dd><p>Panel title text control.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel.custom_content">
+<span class="sig-name descname"><span class="pre">custom_content</span></span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel.custom_content" title="Link to this definition">¶</a></dt>
+<dd><p>Column control for dynamic content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel.close" title="Link to this definition">¶</a></dt>
+<dd><p>Close the panel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object (optional).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel.set_title" title="Link to this definition">¶</a></dt>
+<dd><p>Update panel title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_title</strong> – New title text.</p></li>
+<li><p><strong>size</strong> – Font size for the title.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel.toggle">
+<span class="sig-name descname"><span class="pre">toggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel.toggle" title="Link to this definition">¶</a></dt>
+<dd><p>Toggle panel visibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object (optional).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.RightPanel.toggle_with_config">
+<span class="sig-name descname"><span class="pre">toggle_with_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_controls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.panels.RightPanel.toggle_with_config" title="Link to this definition">¶</a></dt>
+<dd><p>Update panel content and open it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>custom_controls</strong> – List of controls to display in the panel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.panels.TopBar">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.panels.</span></span><span class="sig-name descname"><span class="pre">TopBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_toggle_footer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_menu_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.panels.TopBar" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Top navigation bar with app title and settings buttons.</p>
+<p>Provides access to settings and log console toggle.</p>
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components.task_item">
+<span id="saartoria-ui-components-task-item-module"></span><h2>saartoria.ui.components.task_item module<a class="headerlink" href="#module-saartoria.ui.components.task_item" title="Link to this heading">¶</a></h2>
+<p>Task item component for displaying individual tasks.</p>
+<p>This module contains the TaskItem component that represents a single
+task in the list view.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.task_item.TaskItem">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.task_item.</span></span><span class="sig-name descname"><span class="pre">TaskItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_selected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_selected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_delete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.task_item.TaskItem" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></p>
+<p>Individual task item widget.</p>
+<p>Displays task information with checkbox, edit, and delete buttons.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.task_item.TaskItem.task">
+<span class="sig-name descname"><span class="pre">task</span></span><a class="headerlink" href="#saartoria.ui.components.task_item.TaskItem.task" title="Link to this definition">¶</a></dt>
+<dd><p>Task data dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.task_item.TaskItem.checkbox">
+<span class="sig-name descname"><span class="pre">checkbox</span></span><a class="headerlink" href="#saartoria.ui.components.task_item.TaskItem.checkbox" title="Link to this definition">¶</a></dt>
+<dd><p>Selection checkbox control.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.task_item.TaskItem.tag_chip">
+<span class="sig-name descname"><span class="pre">tag_chip</span></span><a class="headerlink" href="#saartoria.ui.components.task_item.TaskItem.tag_chip" title="Link to this definition">¶</a></dt>
+<dd><p>Source tag indicator.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="saartoria.ui.components.task_item.TaskItem.all_structural_elements_set">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">all_structural_elements_set</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#saartoria.ui.components.task_item.TaskItem.all_structural_elements_set" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components.toml_editor">
+<span id="saartoria-ui-components-toml-editor-module"></span><h2>saartoria.ui.components.toml_editor module<a class="headerlink" href="#module-saartoria.ui.components.toml_editor" title="Link to this heading">¶</a></h2>
+<p>TOML file editor component with save callbacks.</p>
+<p>This module provides a component for editing TOML configuration files
+with automatic type detection and validation, plus callback support
+when changes are saved.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.DictEditor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.toml_editor.</span></span><span class="sig-name descname"><span class="pre">DictEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.toml_editor.DictEditor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Generic dictionary editor with nested section support.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.DictEditor.create_field_control">
+<span class="sig-name descname"><span class="pre">create_field_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Control</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.DictEditor.create_field_control" title="Link to this definition">¶</a></dt>
+<dd><p>Create appropriate input control based on value type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.DictEditor.create_section_fields">
+<span class="sig-name descname"><span class="pre">create_section_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Container</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.DictEditor.create_section_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Create controls for a TOML section.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.DictEditor.get_control_value">
+<span class="sig-name descname"><span class="pre">get_control_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.toml_editor.DictEditor.get_control_value" title="Link to this definition">¶</a></dt>
+<dd><p>Extract value from control using its original type context.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.DictEditor.get_edited_data">
+<span class="sig-name descname"><span class="pre">get_edited_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.DictEditor.get_edited_data" title="Link to this definition">¶</a></dt>
+<dd><p>Read all controls and return the updated dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.toml_editor.</span></span><span class="sig-name descname"><span class="pre">TomlEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toml_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>TOML file editor with nested section support and callbacks.</p>
+<p>Automatically detects field types (bool, int, float, string) and
+creates appropriate input controls. Supports callbacks when changes
+are saved.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.toml_path">
+<span class="sig-name descname"><span class="pre">toml_path</span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.toml_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the TOML file being edited.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.toml_data">
+<span class="sig-name descname"><span class="pre">toml_data</span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.toml_data" title="Link to this definition">¶</a></dt>
+<dd><p>Parsed TOML data dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.controls_map">
+<span class="sig-name descname"><span class="pre">controls_map</span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.controls_map" title="Link to this definition">¶</a></dt>
+<dd><p>Map of field names to their controls.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.on_save">
+<span class="sig-name descname"><span class="pre">on_save</span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.on_save" title="Link to this definition">¶</a></dt>
+<dd><p>Optional callback function to call when config is saved.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.create_field_control">
+<span class="sig-name descname"><span class="pre">create_field_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Control</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.create_field_control" title="Link to this definition">¶</a></dt>
+<dd><p>Create appropriate input control based on value type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_name</strong> – Full field name path.</p></li>
+<li><p><strong>label</strong> – Display label for the field.</p></li>
+<li><p><strong>value</strong> – Current field value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Appropriate Flet control for the value type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.create_section_fields">
+<span class="sig-name descname"><span class="pre">create_section_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Container</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.create_section_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Create controls for a TOML section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>section_name</strong> – Name of the section.</p></li>
+<li><p><strong>section_data</strong> – Section data dictionary.</p></li>
+<li><p><strong>depth</strong> – Nesting depth for indentation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Container with section controls.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.create_ui">
+<span class="sig-name descname"><span class="pre">create_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.create_ui" title="Link to this definition">¶</a></dt>
+<dd><p>Create UI controls based on TOML structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.get_control_value">
+<span class="sig-name descname"><span class="pre">get_control_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.get_control_value" title="Link to this definition">¶</a></dt>
+<dd><p>Extract value from control with type conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>control</strong> – Flet control to get value from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Converted value appropriate to the original type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.load_toml">
+<span class="sig-name descname"><span class="pre">load_toml</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.load_toml" title="Link to this definition">¶</a></dt>
+<dd><p>Load and parse TOML file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.toml_editor.TomlEditor.save_changes">
+<span class="sig-name descname"><span class="pre">save_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.toml_editor.TomlEditor.save_changes" title="Link to this definition">¶</a></dt>
+<dd><p>Save modified values back to TOML file and call on_save callback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saartoria.ui.components">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-saartoria.ui.components" title="Link to this heading">¶</a></h2>
+<p>Reusable UI components.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.CommonInstrumentEditor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">CommonInstrumentEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_panel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Container</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.CommonInstrumentEditor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper for creating and managing common instrument editor UI.</p>
+<p>Generates the UI controls (using DictEditor) and handles API calls
+to save changes. Designed to work with RightPanel.toggle_with_config().</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.CommonInstrumentEditor.get_controls">
+<span class="sig-name descname"><span class="pre">get_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#saartoria.ui.components.CommonInstrumentEditor.get_controls" title="Link to this definition">¶</a></dt>
+<dd><p>Generate the editor UI controls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of Flet controls to display in RightPanel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.CreateTaskDialog">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">CreateTaskDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_create_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.CreateTaskDialog" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dialog for creating new test tasks.</p>
+<p>Prompts user for task name and test case information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.CreateTaskDialog.page">
+<span class="sig-name descname"><span class="pre">page</span></span><a class="headerlink" href="#saartoria.ui.components.CreateTaskDialog.page" title="Link to this definition">¶</a></dt>
+<dd><p>Flet page reference.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.CreateTaskDialog.dialog">
+<span class="sig-name descname"><span class="pre">dialog</span></span><a class="headerlink" href="#saartoria.ui.components.CreateTaskDialog.dialog" title="Link to this definition">¶</a></dt>
+<dd><p>The AlertDialog control.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.CreateTaskDialog.close_dialog">
+<span class="sig-name descname"><span class="pre">close_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.CreateTaskDialog.close_dialog" title="Link to this definition">¶</a></dt>
+<dd><p>Close the dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.CreateTaskDialog.proceed">
+<span class="sig-name descname"><span class="pre">proceed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.CreateTaskDialog.proceed" title="Link to this definition">¶</a></dt>
+<dd><p>Validate and proceed with task creation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.CreateTaskDialog.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.CreateTaskDialog.show" title="Link to this definition">¶</a></dt>
+<dd><p>Show the dialog.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.LeftSidebar">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">LeftSidebar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_add_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_fetch_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_verify_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_clean_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_execute_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_results_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.LeftSidebar" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Left sidebar with action buttons for task operations.</p>
+<p>Provides quick access to task creation, fetching, cleaning, and execution.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.LeftSidebar.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#saartoria.ui.components.LeftSidebar.width" title="Link to this definition">¶</a></dt>
+<dd><p>Fixed sidebar width (70px).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.LogConsole">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">LogConsole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.LogConsole" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Collapsible log console for displaying application messages.</p>
+<p>The console can be toggled between expanded (showing logs) and
+collapsed (showing only the title and last message).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.LogConsole.expanded">
+<span class="sig-name descname"><span class="pre">expanded</span></span><a class="headerlink" href="#saartoria.ui.components.LogConsole.expanded" title="Link to this definition">¶</a></dt>
+<dd><p>Current expansion state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.LogConsole.log_list">
+<span class="sig-name descname"><span class="pre">log_list</span></span><a class="headerlink" href="#saartoria.ui.components.LogConsole.log_list" title="Link to this definition">¶</a></dt>
+<dd><p>ListView containing log messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.LogConsole.toggle">
+<span class="sig-name descname"><span class="pre">toggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.LogConsole.toggle" title="Link to this definition">¶</a></dt>
+<dd><p>Toggle console expanded/collapsed state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object (optional).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.LogConsole.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.LogConsole.write" title="Link to this definition">¶</a></dt>
+<dd><p>Write a message to the log console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> – Message text to display.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">RightPanel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">320</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.RightPanel" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Configurable right-side panel for displaying settings and configurations.</p>
+<p>This panel manages its own visibility state and can display dynamic content.
+Only one RightPanel instance can be active at a time.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#saartoria.ui.components.RightPanel.title" title="Link to this definition">¶</a></dt>
+<dd><p>Panel title text control.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel.custom_content">
+<span class="sig-name descname"><span class="pre">custom_content</span></span><a class="headerlink" href="#saartoria.ui.components.RightPanel.custom_content" title="Link to this definition">¶</a></dt>
+<dd><p>Column control for dynamic content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.RightPanel.close" title="Link to this definition">¶</a></dt>
+<dd><p>Close the panel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object (optional).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.RightPanel.set_title" title="Link to this definition">¶</a></dt>
+<dd><p>Update panel title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_title</strong> – New title text.</p></li>
+<li><p><strong>size</strong> – Font size for the title.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel.toggle">
+<span class="sig-name descname"><span class="pre">toggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.RightPanel.toggle" title="Link to this definition">¶</a></dt>
+<dd><p>Toggle panel visibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object (optional).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.RightPanel.toggle_with_config">
+<span class="sig-name descname"><span class="pre">toggle_with_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_controls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.RightPanel.toggle_with_config" title="Link to this definition">¶</a></dt>
+<dd><p>Update panel content and open it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>custom_controls</strong> – List of controls to display in the panel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.SharedBanner">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">SharedBanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="saarto.core.html#saarto.core.dataclass.Result" title="saarto.core.dataclass.Result"><span class="pre">Result</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Hide'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.SharedBanner" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_BaseBanner</span></code></p>
+<p>General-purpose banner.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.TaskItem">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">TaskItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_selected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_selected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_delete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.TaskItem" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></p>
+<p>Individual task item widget.</p>
+<p>Displays task information with checkbox, edit, and delete buttons.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TaskItem.task">
+<span class="sig-name descname"><span class="pre">task</span></span><a class="headerlink" href="#saartoria.ui.components.TaskItem.task" title="Link to this definition">¶</a></dt>
+<dd><p>Task data dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TaskItem.checkbox">
+<span class="sig-name descname"><span class="pre">checkbox</span></span><a class="headerlink" href="#saartoria.ui.components.TaskItem.checkbox" title="Link to this definition">¶</a></dt>
+<dd><p>Selection checkbox control.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TaskItem.tag_chip">
+<span class="sig-name descname"><span class="pre">tag_chip</span></span><a class="headerlink" href="#saartoria.ui.components.TaskItem.tag_chip" title="Link to this definition">¶</a></dt>
+<dd><p>Source tag indicator.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="saartoria.ui.components.TaskItem.all_structural_elements_set">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">all_structural_elements_set</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#saartoria.ui.components.TaskItem.all_structural_elements_set" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">TomlEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toml_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.TomlEditor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>TOML file editor with nested section support and callbacks.</p>
+<p>Automatically detects field types (bool, int, float, string) and
+creates appropriate input controls. Supports callbacks when changes
+are saved.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.toml_path">
+<span class="sig-name descname"><span class="pre">toml_path</span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.toml_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the TOML file being edited.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.toml_data">
+<span class="sig-name descname"><span class="pre">toml_data</span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.toml_data" title="Link to this definition">¶</a></dt>
+<dd><p>Parsed TOML data dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.controls_map">
+<span class="sig-name descname"><span class="pre">controls_map</span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.controls_map" title="Link to this definition">¶</a></dt>
+<dd><p>Map of field names to their controls.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.on_save">
+<span class="sig-name descname"><span class="pre">on_save</span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.on_save" title="Link to this definition">¶</a></dt>
+<dd><p>Optional callback function to call when config is saved.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.create_field_control">
+<span class="sig-name descname"><span class="pre">create_field_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Control</span></span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.create_field_control" title="Link to this definition">¶</a></dt>
+<dd><p>Create appropriate input control based on value type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_name</strong> – Full field name path.</p></li>
+<li><p><strong>label</strong> – Display label for the field.</p></li>
+<li><p><strong>value</strong> – Current field value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Appropriate Flet control for the value type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.create_section_fields">
+<span class="sig-name descname"><span class="pre">create_section_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Container</span></span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.create_section_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Create controls for a TOML section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>section_name</strong> – Name of the section.</p></li>
+<li><p><strong>section_data</strong> – Section data dictionary.</p></li>
+<li><p><strong>depth</strong> – Nesting depth for indentation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Container with section controls.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.create_ui">
+<span class="sig-name descname"><span class="pre">create_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.create_ui" title="Link to this definition">¶</a></dt>
+<dd><p>Create UI controls based on TOML structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.get_control_value">
+<span class="sig-name descname"><span class="pre">get_control_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.get_control_value" title="Link to this definition">¶</a></dt>
+<dd><p>Extract value from control with type conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>control</strong> – Flet control to get value from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Converted value appropriate to the original type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.load_toml">
+<span class="sig-name descname"><span class="pre">load_toml</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.load_toml" title="Link to this definition">¶</a></dt>
+<dd><p>Load and parse TOML file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saartoria.ui.components.TomlEditor.save_changes">
+<span class="sig-name descname"><span class="pre">save_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#saartoria.ui.components.TomlEditor.save_changes" title="Link to this definition">¶</a></dt>
+<dd><p>Save modified values back to TOML file and call on_save callback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – Event object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saartoria.ui.components.TopBar">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saartoria.ui.components.</span></span><span class="sig-name descname"><span class="pre">TopBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_toggle_footer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_menu_click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saartoria.ui.components.TopBar" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+<p>Top navigation bar with app title and settings buttons.</p>
+<p>Provides access to settings and log console toggle.</p>
+</dd></dl>
+
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="saartoria.ui.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">saartoria.ui package</div></div>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2026, Thanapong Chuangyanyong</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/shibuya.js?v=cac61aee"></script></body>
+</html>

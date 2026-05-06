@@ -83,6 +83,7 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#matta.tui.log_message"><code class="docutils literal notranslate"><span class="pre">log_message()</span></code></a></li>
 <li><a class="reference internal" href="#matta.tui.printc"><code class="docutils literal notranslate"><span class="pre">printc()</span></code></a></li>
 <li><a class="reference internal" href="#matta.tui.set_log_level"><code class="docutils literal notranslate"><span class="pre">set_log_level()</span></code></a></li>
+<li><a class="reference internal" href="#matta.tui.set_ui_callback"><code class="docutils literal notranslate"><span class="pre">set_ui_callback()</span></code></a></li>
 <li><a class="reference internal" href="#matta.tui.show_directory"><code class="docutils literal notranslate"><span class="pre">show_directory()</span></code></a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
@@ -245,23 +246,6 @@ the caller’s file directory. Defaults to True.</p></li>
 <dt class="sig sig-object py" id="matta.tui.get_log_level_priority">
 <span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">get_log_level_priority</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matta.tui.get_log_level_priority" title="Link to this definition">¶</a></dt>
 <dd><p>Get the numeric priority of a log level.</p>
-<p>Used internally for log level filtering. Higher priority values indicate
-more critical messages (e.g., CRITICAL has higher priority than DEBUG).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>level_name</strong> (<em>str</em>) – The log level name. Case-insensitive.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>Priority value. DEBUG=1, INFO/SUCCESS=2, WARNING=3, ERROR=4,</dt><dd><p>CRITICAL=5. Returns 0 for unknown levels.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -320,7 +304,7 @@ Compatible with Windows and Linux/Unix systems.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="matta.tui.list_directory">
-<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">list_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'folder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matta.tui.list_directory" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">list_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'folder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#matta.tui.list_directory" title="Link to this definition">¶</a></dt>
 <dd><p>List subdirectories or files in a given path with optional filtering.</p>
 <p>Uses pathlib for cross-platform compatibility.</p>
 <dl class="field-list simple">
@@ -334,7 +318,7 @@ Example: ‘py’ to match only .py files. Only applies to files.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Sorted list of item names (strings). Returns False on error.</p>
+<dd class="field-even"><p>Sorted list of item names (strings).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
@@ -391,25 +375,6 @@ or user cancels.</p>
 <dt class="sig sig-object py" id="matta.tui.log_message">
 <span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">log_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_datetime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matta.tui.log_message" title="Link to this definition">¶</a></dt>
 <dd><p>Log a message with level filtering and optional timestamp.</p>
-<p>Checks multiple sources for the minimum log level to display:
-global LOG_LEVEL variable, __main__ module, or Robot Framework variable.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>level</strong> (<em>str</em>) – Message level. Supported values: DEBUG, INFO, SUCCESS,
-WARNING, ERROR, CRITICAL. Case-insensitive.</p></li>
-<li><p><strong>message</strong> (<em>str</em>) – The message text to log.</p></li>
-<li><p><strong>level_attr</strong> (<em>str</em>) – Minimum level to display. If None, uses LOG_LEVEL
-from globals, __main__, or Robot Framework. Defaults to ‘INFO’.</p></li>
-<li><p><strong>show_datetime</strong> (<em>bool</em>) – Whether to prepend timestamp to message.
-Defaults to True.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Output format: [YYYY-MM-DD HH:MM:SS.fff] [LEVEL]: message</p>
-</div>
 </dd></dl>
 
 <dl class="py function">
@@ -448,19 +413,18 @@ flush (bool): Whether to forcibly flush the stream. Defaults to False.</p>
 <dt class="sig sig-object py" id="matta.tui.set_log_level">
 <span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">set_log_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matta.tui.set_log_level" title="Link to this definition">¶</a></dt>
 <dd><p>Set the global log level for message filtering.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="matta.tui.set_ui_callback">
+<span class="sig-prename descclassname"><span class="pre">matta.tui.</span></span><span class="sig-name descname"><span class="pre">set_ui_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback_func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matta.tui.set_ui_callback" title="Link to this definition">¶</a></dt>
+<dd><p>Registers a UI callback function to receive log messages.
+Useful for sending logs to GUI applications like Flet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>level</strong> (<em>str</em>) – Log level to set. Supported values: DEBUG, INFO, SUCCESS,
-WARNING, ERROR, CRITICAL. Case-insensitive.</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>No exceptions raised; invalid levels are logged as info.</strong> – </p>
+<dd class="field-odd"><p><strong>callback_func</strong> (<em>callable</em>) – A function that takes a single string argument.</p>
 </dd>
 </dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The log level is stored in the global LOG_LEVEL variable.</p>
-</div>
 </dd></dl>
 
 <dl class="py function">

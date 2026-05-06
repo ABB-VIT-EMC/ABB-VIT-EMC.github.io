@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="violet" data-content_root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>saarto.core.utilities package - saarto 1.0.0 documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="saarto.integration package" href="saarto.integration.html" /><link rel="prev" title="saarto.core package" href="saarto.core.html" />
+      <link rel="canonical" href="https://ABB-VIT-EMC.github.io/saarto/saarto.core.utilities.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=44020203" />
+    <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ABB-VIT-EMC.github.io/saarto/saarto.core.utilities.html"/>
+  <meta property="og:title" content="saarto.core.utilities package"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="index.html">
+      
+      
+      <strong>saarto</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="saarto.html">saarto package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="saarto.core.html">saarto.core package</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">saarto.core.utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="saarto.integration.html">saarto.integration package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="saartoria.html">saartoria package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.handlers.html">saartoria.handlers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.models.html">saartoria.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.services.html">saartoria.services package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.ui.html">saartoria.ui package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="saartoria.ui.components.html">saartoria.ui.components package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-saarto.core.utilities.DynParam">saarto.core.utilities.DynParam module</a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.DynParam.DynVar"><code class="docutils literal notranslate"><span class="pre">DynVar</span></code></a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.DynParam.DynVar.smart_type_parser"><code class="docutils literal notranslate">smart_type_parser()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saarto.core.utilities.DynParam.DynVarMat"><code class="docutils literal notranslate"><span class="pre">DynVarMat</span></code></a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.DynParam.DynVarMat.export_toml"><code class="docutils literal notranslate">export_toml()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saarto.core.utilities.FakeInstruments">saarto.core.utilities.FakeInstruments module</a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator"><code class="docutils literal notranslate"><span class="pre">FakeGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.connect"><code class="docutils literal notranslate">connect()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.current_on"><code class="docutils literal notranslate">current_on()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.disconnect"><code class="docutils literal notranslate">disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.power_on"><code class="docutils literal notranslate">power_on()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.set_current"><code class="docutils literal notranslate">set_current()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.set_voltage"><code class="docutils literal notranslate">set_voltage()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.voltage_on"><code class="docutils literal notranslate">voltage_on()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter"><code class="docutils literal notranslate"><span class="pre">FakePowerMeter</span></code></a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.connect"><code class="docutils literal notranslate">connect()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.disconnect"><code class="docutils literal notranslate">disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.get_data"><code class="docutils literal notranslate">get_data()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.get_sn"><code class="docutils literal notranslate">get_sn()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.set_data"><code class="docutils literal notranslate">set_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saarto.core.utilities.HumanTestLogic">saarto.core.utilities.HumanTestLogic module</a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.HumanTestLogic.hr_test_logic"><code class="docutils literal notranslate"><span class="pre">hr_test_logic()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saarto.core.utilities.MDWriter">saarto.core.utilities.MDWriter module</a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.MDWriter.generate_readme"><code class="docutils literal notranslate"><span class="pre">generate_readme()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.MDWriter.render_instrument_section"><code class="docutils literal notranslate"><span class="pre">render_instrument_section()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.MDWriter.render_section"><code class="docutils literal notranslate"><span class="pre">render_section()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.MDWriter.resolve_path"><code class="docutils literal notranslate"><span class="pre">resolve_path()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.MDWriter.snake_to_title_case"><code class="docutils literal notranslate"><span class="pre">snake_to_title_case()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saarto.core.utilities.PathConfig">saarto.core.utilities.PathConfig module</a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.PathConfig.PathConfig"><code class="docutils literal notranslate"><span class="pre">PathConfig</span></code></a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.PathConfig.PathConfig.get"><code class="docutils literal notranslate">get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saarto.core.utilities.utilities">saarto.core.utilities.utilities module</a><ul>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.extract_blocks"><code class="docutils literal notranslate"><span class="pre">extract_blocks()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.find_by_name"><code class="docutils literal notranslate"><span class="pre">find_by_name()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.find_item_path"><code class="docutils literal notranslate"><span class="pre">find_item_path()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.flatten_device_tree"><code class="docutils literal notranslate"><span class="pre">flatten_device_tree()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.get_config_path"><code class="docutils literal notranslate"><span class="pre">get_config_path()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.inject"><code class="docutils literal notranslate"><span class="pre">inject()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.load_main_config"><code class="docutils literal notranslate"><span class="pre">load_main_config()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.load_toml"><code class="docutils literal notranslate"><span class="pre">load_toml()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.read_config_from_result"><code class="docutils literal notranslate"><span class="pre">read_config_from_result()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.resolve_task_dir"><code class="docutils literal notranslate"><span class="pre">resolve_task_dir()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.run_api_request"><code class="docutils literal notranslate"><span class="pre">run_api_request()</span></code></a></li>
+<li><a class="reference internal" href="#saarto.core.utilities.utilities.tar_with_hash"><code class="docutils literal notranslate"><span class="pre">tar_with_hash()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-saarto.core.utilities">Module contents</a></li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="index.html"><span itemprop="name">saarto</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="modules.html"><span itemprop="name">&lt;no title&gt;</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="saarto.html"><span itemprop="name">saarto package</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="3" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="saarto.core.html"><span itemprop="name">saarto.core package</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="4" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">saarto.core.utilities package</strong>
+        <meta itemprop="position" content="5" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <div class="copy-page-wrapper relative pb-4 lg:absolute lg:top-8 lg:right-6 xl:right-12">
+  <div id="copy-page-trigger">
+    <button
+      type="button"
+      class="js-copy px-3 py-1 inline-flex items-center gap-1"
+      data-url="https://ABB-VIT-EMC.github.io/saarto/_sources/saarto.core.utilities.rst.txt"
+    >
+      <i class="i-lucide" data-icon="copy"></i>
+      <span>Copy page</span>
+    </button>
+    <button class="js-menu px-2 py-1" type="button" aria-label="More actions"
+      aria-haspopup="menu" aria-expanded="false" aria-controls="copy-page-content">
+      <i class="i-lucide chevron-down"></i>
+    </button>
+  </div>
+  <div id="copy-page-content" role="menu" aria-orientation="vertical" aria-hidden="true">
+    <div role="presentation">
+      <div class="flex flex-col" role="group">
+        <button class="js-copy" type="button" role="menuitem"
+          data-url="https://ABB-VIT-EMC.github.io/saarto/_sources/saarto.core.utilities.rst.txt">
+          <span class="iconify-icon">
+            <i class="i-lucide" data-icon="copy"></i>
+          </span>
+          <span>Copy page</span>
+        </button>
+        <a role="menuitem" href="https://ABB-VIT-EMC.github.io/saarto/_sources/saarto.core.utilities.rst.txt" target="_blank" rel="nofollow"><iconify-icon icon="bi:code-slash"></iconify-icon>
+            <span>View Source</span></a><a role="menuitem" href="https://chatgpt.com/?hints=search&q=Read%20https%3A//ABB-VIT-EMC.github.io/saarto/_sources/saarto.core.utilities.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:openai"></iconify-icon>
+          <span>Open in ChatGPT</span>
+        </a><a role="menuitem" href="https://claude.ai/new?q=Read%20https%3A//ABB-VIT-EMC.github.io/saarto/_sources/saarto.core.utilities.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:claude"></iconify-icon>
+          <span>Open in Claude</span>
+        </a></div>
+    </div>
+  </div>
+</div><article class="yue" role="main">
+          <section id="saarto-core-utilities-package">
+<h1>saarto.core.utilities package<a class="headerlink" href="#saarto-core-utilities-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-saarto.core.utilities.DynParam">
+<span id="saarto-core-utilities-dynparam-module"></span><h2>saarto.core.utilities.DynParam module<a class="headerlink" href="#module-saarto.core.utilities.DynParam" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="saarto.core.utilities.DynParam.DynVar">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.DynParam.</span></span><span class="sig-name descname"><span class="pre">DynVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.DynParam.DynVar" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to represent a single dynamic variable with its name, description, and data values</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.DynParam.DynVar.smart_type_parser">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">smart_type_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.DynParam.DynVar.smart_type_parser" title="Link to this definition">¶</a></dt>
+<dd><p>Parse string value to appropriate Python type:
+- “3P3W2CT”          → str
+- “True” / “False”   → bool
+- “123” / “1.23”     → int / float
+- “213/123/None”     → list of int/float/None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> (<em>str</em>) – The string value to be parsed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed value in the appropriate Python type (str, bool, int, float, list).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saarto.core.utilities.DynParam.DynVarMat">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.DynParam.</span></span><span class="sig-name descname"><span class="pre">DynVarMat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.DynParam.DynVarMat" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle dynamic parameter matrix from CSV or XLSX file, and export to TOML format for test configuration</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.DynParam.DynVarMat.export_toml">
+<span class="sig-name descname"><span class="pre">export_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'temp.toml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.DynParam.DynVarMat.export_toml" title="Link to this definition">¶</a></dt>
+<dd><p>Export the dynamic parameter matrix to a TOML file in the specified test folder.</p>
+<dl class="simple">
+<dt>For a single page (CSV or single-sheet XLSX), the original structure is preserved:</dt><dd><p>{“test”: …, “parameter”: {“dynamic”: {…}}}</p>
+</dd>
+<dt>For multiple sheets (multi-page XLSX), a list of page dicts is written under “pages”:</dt><dd><p>{“test”: …, “pages”: [{“parameter”: {“dynamic”: {…}}}, …]}</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>test_folder_path</strong> (<em>str</em><em> or </em><em>Path</em>) – The path to the test folder where the TOML file will be saved.</p></li>
+<li><p><strong>fname</strong> (<em>str</em>) – The name of the TOML file to be created (default is “temp.toml”).</p></li>
+<li><p><strong>target</strong> (<em>list</em>) – The columns to export. If empty, everything is exported.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None, creates a TOML file with the dynamic parameters in the specified location.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saarto.core.utilities.FakeInstruments">
+<span id="saarto-core-utilities-fakeinstruments-module"></span><h2>saarto.core.utilities.FakeInstruments module<a class="headerlink" href="#module-saarto.core.utilities.FakeInstruments" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.FakeInstruments.</span></span><span class="sig-name descname"><span class="pre">FakeGenerator</span></span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.connect" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.current_on">
+<span class="sig-name descname"><span class="pre">current_on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.current_on" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.disconnect" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.power_on">
+<span class="sig-name descname"><span class="pre">power_on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.power_on" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.set_current">
+<span class="sig-name descname"><span class="pre">set_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.set_current" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.set_voltage">
+<span class="sig-name descname"><span class="pre">set_voltage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.set_voltage" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakeGenerator.voltage_on">
+<span class="sig-name descname"><span class="pre">voltage_on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakeGenerator.voltage_on" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakePowerMeter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.FakeInstruments.</span></span><span class="sig-name descname"><span class="pre">FakePowerMeter</span></span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakePowerMeter.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipv4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.connect" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakePowerMeter.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.disconnect" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakePowerMeter.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.get_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakePowerMeter.get_sn">
+<span class="sig-name descname"><span class="pre">get_sn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.get_sn" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.FakeInstruments.FakePowerMeter.set_data">
+<span class="sig-name descname"><span class="pre">set_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.FakeInstruments.FakePowerMeter.set_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saarto.core.utilities.HumanTestLogic">
+<span id="saarto-core-utilities-humantestlogic-module"></span><h2>saarto.core.utilities.HumanTestLogic module<a class="headerlink" href="#module-saarto.core.utilities.HumanTestLogic" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.HumanTestLogic.hr_test_logic">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.HumanTestLogic.</span></span><span class="sig-name descname"><span class="pre">hr_test_logic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.HumanTestLogic.hr_test_logic" title="Link to this definition">¶</a></dt>
+<dd><p>Convert Robot Framework test template to human-readable test logic.</p>
+<p>Parses Robot Framework syntax and transforms it into natural language
+descriptions of test steps, removing code-specific syntax and path prefixes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_string</strong> (<em>str</em>) – Robot Framework test template as multi-line string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of human-readable test step descriptions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-saarto.core.utilities.MDWriter">
+<span id="saarto-core-utilities-mdwriter-module"></span><h2>saarto.core.utilities.MDWriter module<a class="headerlink" href="#module-saarto.core.utilities.MDWriter" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.MDWriter.generate_readme">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.MDWriter.</span></span><span class="sig-name descname"><span class="pre">generate_readme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toml_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'README.md'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_section</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'instrument'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_sections</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#saarto.core.utilities.MDWriter.generate_readme" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a GitHub README from TOML configs and a CSV test variation file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>toml_files</strong> – List of TOML files.
+First  = main config (drives the README structure).
+Others = lookup configs (e.g. instrument definitions).</p></li>
+<li><p><strong>csv_file</strong> – Semicolon-delimited CSV with test variations.</p></li>
+<li><p><strong>output_file</strong> – Output path for the generated README (default: “README.md”).</p></li>
+<li><p><strong>title_path</strong> – Dot-separated path to the title field in main TOML,
+e.g. “info.test_case.name”. Falls back to the file name.</p></li>
+<li><p><strong>instrument_section</strong> – Key in main TOML holding instrument alias-&gt;class mappings.
+Set to None to skip instrument cross-referencing.</p></li>
+<li><p><strong>skip_sections</strong> – Top-level TOML keys to exclude from the README.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Generated README content as a string.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl class="simple">
+<dt>generate_readme(</dt><dd><p>toml_files=[“main_config.toml”, “instruments_config.toml”],
+csv_file=”test_variations.csv”,
+output_file=”README.md”,
+title_path=”info.test_case.name”,</p>
+</dd>
+</dl>
+<p>)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.MDWriter.render_instrument_section">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.MDWriter.</span></span><span class="sig-name descname"><span class="pre">render_instrument_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instruments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#saarto.core.utilities.MDWriter.render_instrument_section" title="Link to this definition">¶</a></dt>
+<dd><p>Render instrument section with cross-reference lookup from other TOML files.
+Each instrument alias maps to a key searched in the lookup dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instruments</strong> – dict mapping instrument aliases to lookup keys (e.g. class names).</p></li>
+<li><p><strong>lookup</strong> – dict containing instrument configurations keyed by the lookup keys.</p></li>
+<li><p><strong>level</strong> – markdown heading level for the section title.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Markdown string for the instrument section.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.MDWriter.render_section">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.MDWriter.</span></span><span class="sig-name descname"><span class="pre">render_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#saarto.core.utilities.MDWriter.render_section" title="Link to this definition">¶</a></dt>
+<dd><p>Recursively render any TOML section as readable markdown.
+- Flat dict   -&gt; markdown table
+- Nested dict -&gt; subsections (recursive)
+- List        -&gt; bullet points
+- Scalar      -&gt; inline code value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Section title (e.g. “test_case”)
+data: Section data (dict, list, or scalar)</p></li>
+<li><p><strong>level</strong> – Markdown heading level (default: 2 for H2)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Markdown string representing the section content.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.MDWriter.resolve_path">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.MDWriter.</span></span><span class="sig-name descname"><span class="pre">resolve_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dot_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#saarto.core.utilities.MDWriter.resolve_path" title="Link to this definition">¶</a></dt>
+<dd><p>Resolve a dot-separated key path from a nested dict (e.g. ‘info.test_case.name’).
+:param data: The nested dictionary to search.
+:type data: dict
+:param dot_path: The dot-separated path to the desired key.
+:type dot_path: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value associated with the key path, or None if not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.MDWriter.snake_to_title_case">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.MDWriter.</span></span><span class="sig-name descname"><span class="pre">snake_to_title_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">snake_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.MDWriter.snake_to_title_case" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-saarto.core.utilities.PathConfig">
+<span id="saarto-core-utilities-pathconfig-module"></span><h2>saarto.core.utilities.PathConfig module<a class="headerlink" href="#module-saarto.core.utilities.PathConfig" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="saarto.core.utilities.PathConfig.PathConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.PathConfig.</span></span><span class="sig-name descname"><span class="pre">PathConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config.toml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saarto.core.utilities.PathConfig.PathConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Load and manage project paths from TOML configuration.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="saarto.core.utilities.PathConfig.PathConfig.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.core.utilities.PathConfig.PathConfig.get" title="Link to this definition">¶</a></dt>
+<dd><p>Get path with fallback default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Path attribute name to retrieve.</p></li>
+<li><p><strong>default</strong> (<em>Path</em><em> | </em><em>None</em>) – Default value if path not found. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resolved path or default value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-saarto.core.utilities.utilities">
+<span id="saarto-core-utilities-utilities-module"></span><h2>saarto.core.utilities.utilities module<a class="headerlink" href="#module-saarto.core.utilities.utilities" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.extract_blocks">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">extract_blocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.extract_blocks" title="Link to this definition">¶</a></dt>
+<dd><p>Extract content from markdown code blocks with markers.</p>
+<p>Parses markdown text and extracts named blocks delimited by marker comments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – Markdown text containing code blocks.</p></li>
+<li><p><strong>tag</strong> (<em>str</em>) – Tag name to identify blocks (e.g., “PYTHON”, “ROBOT”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary mapping block names to their content.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.find_by_name">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">find_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.find_by_name" title="Link to this definition">¶</a></dt>
+<dd><p>Find a dictionary in a list by its ‘name’ field.</p>
+<p>Searches through a list of dictionaries for one matching the specified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>list</em><em>[</em><em>dict</em><em>]</em>) – List of dictionaries with ‘name’ and ‘value’ keys.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name field value to search for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The matching dictionary, or None if not found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.find_item_path">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">find_item_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.find_item_path" title="Link to this definition">¶</a></dt>
+<dd><p>Find the path to an item in a nested config dictionary.</p>
+<p>Recursively searches through nested dictionary structure to locate
+target item within ‘items’ lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_dict</strong> (<em>dict</em>) – The nested dictionary to search.</p></li>
+<li><p><strong>target_item</strong> (<em>any</em>) – The item to find.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>List of keys representing the path to the item,</dt><dd><p>or None if not found.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str] | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.flatten_device_tree">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">flatten_device_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.flatten_device_tree" title="Link to this definition">¶</a></dt>
+<dd><p>Flatten nested device tree dictionary into a list with parent paths.</p>
+<p>Converts a nested dictionary structure containing device types and
+configurations into a flat list with parent path information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – Nested dictionary with device types and their configurations.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of dictionaries with ‘parent’, ‘name’, and ‘alias’ keys.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.get_config_path">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">get_config_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.get_config_path" title="Link to this definition">¶</a></dt>
+<dd><p>Resolve configuration file path from venv or system location.</p>
+<p>Attempts to find configuration file in the virtual environment parent
+directory first, then falls back to the system config location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_file</strong> (<em>str</em>) – Name of the configuration file to locate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resolved path to the configuration file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.inject">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">inject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.inject" title="Link to this definition">¶</a></dt>
+<dd><p>Replace content between INJECTION-POINT markers with block content.</p>
+<p>Substitutes placeholder regions in a template with extracted block content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>template</strong> (<em>str</em>) – Template text containing injection point markers.</p></li>
+<li><p><strong>blocks</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Dictionary of block names and content to inject.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Template with injected content.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.load_main_config">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">load_main_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.load_main_config" title="Link to this definition">¶</a></dt>
+<dd><p>Load main configuration from TOML file with fallback to system default.</p>
+<p>Attempts to load user-specific config from virtual environment parent directory,
+falling back to system config if not found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_file</strong> (<em>str</em>) – Name of the configuration file to load.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed TOML configuration dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If config file cannot be found in any location.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.load_toml">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">load_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.load_toml" title="Link to this definition">¶</a></dt>
+<dd><p>Load a TOML file and return its contents as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>Path</em><em> | </em><em>str</em>) – The file path to the TOML file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The contents of the TOML file as a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="saarto.core.html#saarto.core.dataclass.ConfigurationError" title="saarto.core.dataclass.ConfigurationError"><strong>ConfigurationError</strong></a> – If the file cannot be found, read, or contains invalid TOML syntax.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.read_config_from_result">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">read_config_from_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.read_config_from_result" title="Link to this definition">¶</a></dt>
+<dd><p>Resolves the folder for <cite>test_name</cite>, finds the .tar.gz archive inside it,
+and reads the ‘config.cmconf’ (TOML format) directly from the archive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>test_name</strong> (<em>str</em>) – The name of the test folder.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed TOML configuration as a dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the directory, archive, or ‘config.cmconf’ is missing.</p></li>
+<li><p><strong>ValueError</strong> – If multiple .tar.gz files exist, or the config file isn’t a regular file.</p></li>
+<li><p><strong>tomllib.TOMLDecodeError</strong> – If the file is not valid TOML.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.resolve_task_dir">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">resolve_task_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.resolve_task_dir" title="Link to this definition">¶</a></dt>
+<dd><p>Resolve task directory path from test name.</p>
+<p>Shared path resolver used by both Pipeline and Query modules.
+Prioritizes Polarion folder path over local path if it exists.
+Avoids circular imports between pipeline.py and query.py.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>test_name</strong> (<em>str</em>) – Name of the test to locate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resolved path to the task directory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.run_api_request">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">run_api_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dotted_input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_saparator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'__'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.run_api_request" title="Link to this definition">¶</a></dt>
+<dd><p>Parse and dynamically execute API request on specified module.</p>
+<p>Parses input string to extract module name and request name, then
+dynamically imports the module and calls its api.request_se method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dotted_input</strong> (<em>str</em>) – Input string in the format “ModuleName.method_name”.
+e.g. “AutoTestLib__m4m_tcp”.</p></li>
+<li><p><strong>module_saparator</strong> (<em>str</em>) – Separator character between module and request names.
+Defaults to “__”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Result of ModuleName.api.request_se(“method_name”), which is the content of the file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If input format is invalid.</p></li>
+<li><p><strong>ModuleNotFoundError</strong> – If specified module cannot be imported.</p></li>
+<li><p><strong>AttributeError</strong> – If module lacks expected api.request interface.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saarto.core.utilities.utilities.tar_with_hash">
+<span class="sig-prename descclassname"><span class="pre">saarto.core.utilities.utilities.</span></span><span class="sig-name descname"><span class="pre">tar_with_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_tar_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#saarto.core.utilities.utilities.tar_with_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Create tar.gz from files, hash it, then rename tar with hash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_files</strong> (<em>list</em><em>[</em><em>Path</em><em>]</em>) – Paths to source files to archive.</p></li>
+<li><p><strong>output_tar_dir</strong> (<em>Path</em>) – Directory to store the compressed tar.gz file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary containing:</dt><dd><ul class="simple">
+<li><p>’tar’ (Path): Path to the created tar.gz file.</p></li>
+<li><p>’hash’ (str): SHA256 hash (first 8 characters) of the tar file.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If any source file does not exist.</p></li>
+<li><p><strong>PermissionError</strong> – If lacks permissions to write directory.</p></li>
+<li><p><strong>ValueError</strong> – If source_files is empty.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">tar_with_hash</span><span class="p">(</span>
+</span><span data-line="2"><span class="gp">... </span>    <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/file1.txt&quot;</span><span class="p">),</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/file2.txt&quot;</span><span class="p">)],</span>
+</span><span data-line="3"><span class="gp">... </span>    <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/output/tars&quot;</span><span class="p">)</span>
+</span><span data-line="4"><span class="gp">... </span><span class="p">)</span>
+</span><span data-line="5"><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;tar&#39;</span><span class="p">])</span>
+</span><span data-line="6"><span class="go">PosixPath(&#39;/output/tars/a1b2c3d4.tar.gz&#39;)</span>
+</span></pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-saarto.core.utilities">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-saarto.core.utilities" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="saarto.core.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">saarto.core package</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="saarto.integration.html">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">saarto.integration package</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2026, Thanapong Chuangyanyong</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/shibuya.js?v=cac61aee"></script></body>
+</html>

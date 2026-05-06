@@ -1,0 +1,69 @@
+saartoria.ui.components package
+===============================
+
+Submodules
+----------
+
+saartoria.ui.components.common\_instrument\_editor module
+---------------------------------------------------------
+
+.. automodule:: saartoria.ui.components.common_instrument_editor
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.components.dialogs module
+--------------------------------------
+
+.. automodule:: saartoria.ui.components.dialogs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.components.log\_console module
+-------------------------------------------
+
+.. automodule:: saartoria.ui.components.log_console
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.components.notifications module
+--------------------------------------------
+
+.. automodule:: saartoria.ui.components.notifications
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.components.panels module
+-------------------------------------
+
+.. automodule:: saartoria.ui.components.panels
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.components.task\_item module
+-----------------------------------------
+
+.. automodule:: saartoria.ui.components.task_item
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.components.toml\_editor module
+-------------------------------------------
+
+.. automodule:: saartoria.ui.components.toml_editor
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saartoria.ui.components
+   :members:
+   :show-inheritance:
+   :undoc-members:

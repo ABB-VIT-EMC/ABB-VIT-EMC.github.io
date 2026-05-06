@@ -76,7 +76,7 @@ data-aria-dark="Switch to auto color mode">
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
 <li><a class="reference internal" href="#polarion-communication-library">Polarion Communication Library</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#architecture">Architecture</a><ul>
 <li><a class="reference internal" href="#polarionsessionmanager">1. <code class="docutils literal notranslate"><span class="pre">PolarionSessionManager</span></code></a></li>
 <li><a class="reference internal" href="#poller-main-script">2. Poller (main script)</a></li>
@@ -86,6 +86,10 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#test-run-polling">Test Run Polling</a></li>
 <li><a class="reference internal" href="#test-task-processing">Test Task Processing</a></li>
 <li><a class="reference internal" href="#execution-context-builder">Execution Context Builder</a></li>
+<li><a class="reference internal" href="#authentication">Authentication</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -160,32 +164,32 @@ data-aria-dark="Switch to auto color mode">
 <h1>PolarionComLib Documentation<a class="headerlink" href="#polarioncomlib-documentation" title="Link to this heading">¶</a></h1>
 <section id="polarion-communication-library">
 <h2>Polarion Communication Library<a class="headerlink" href="#polarion-communication-library" title="Link to this heading">¶</a></h2>
-<section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h3>
-<p>This module provides an automated integration between <strong>Polarion ALM</strong> and <strong>Saarto execution engine</strong>.</p>
-<p>It enables:</p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h3>
+<p>This module provides an automated integration between <strong>Siemens POLARION software</strong> and <strong>saarto execution framework</strong> library. This program is created in EMC and Smart Building Lab in ABB Vittuone, Italy. It enables a fully automated pipeline for retrieving, executing, and reporting test tasks.</p>
+<p>Core Capabilities:</p>
 <ul class="simple">
 <li><p>Polling of Polarion Test Runs</p></li>
 <li><p>Extraction of Test Tasks (TT) in <em>waiting</em> state</p></li>
 <li><p>Resolution of test context (steps, parameters, structural elements)</p></li>
-<li><p>Execution orchestration via Robot Framework</p></li>
 <li><p>Automatic update of Polarion test results and attachments</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="architecture">
 <h3>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">¶</a></h3>
-<p>The system is composed of:</p>
+<p>The system is composed of two main components:</p>
 <section id="polarionsessionmanager">
 <h4>1. <code class="docutils literal notranslate"><span class="pre">PolarionSessionManager</span></code><a class="headerlink" href="#polarionsessionmanager" title="Link to this heading">¶</a></h4>
 <p>Handles all communication with Polarion REST API:</p>
 <ul class="simple">
 <li><p>Test Run discovery</p></li>
 <li><p>Test Task retrieval</p></li>
-<li><p>Test Case &amp; executor resolution</p></li>
+<li><p>Test Case resolution</p></li>
 <li><p>Test steps and parameters extraction</p></li>
-<li><p>Structural element (SE) resolution</p></li>
-<li><p>PATCH updates and attachments upload</p></li>
+<li><p>Structural elements (SEs) resolution</p></li>
+<li><p>Results patching</p></li>
+<li><p>Attachments upload (HTML reports)</p></li>
 </ul>
 </section>
 <section id="poller-main-script">
@@ -235,9 +239,47 @@ data-aria-dark="Switch to auto color mode">
 </span><span data-line="4">  <span class="s2">&quot;iteration&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 </span><span data-line="5">  <span class="s2">&quot;structural_elements&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
 </span><span data-line="6">  <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</span><span data-line="7"><span class="p">}</span>
+</span><span data-line="7"><span class="p">}</span> 
 </span></pre></div>
 </div>
+<p>This is passed to the execution layer as a single unified input structure containing all resolved Test Task contexts for a Test Run, allowing Saarto to process and execute all test cases in a single execution cycle without additional transformation steps.</p>
+<p>After execution:</p>
+<ul class="simple">
+<li><p>Test outcome (passed/failed)</p></li>
+<li><p>Execution duration</p></li>
+<li><p>Comments</p></li>
+<li><p>HTML report attachment upload</p></li>
+</ul>
+<p>All results are patched back into Polarion automatically.</p>
+</section>
+<section id="authentication">
+<h4>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">¶</a></h4>
+<p>Authentication is handled via Personal Access Token (PAT). PAT is stored inside PolarionComLib.toml .</p>
+</section>
+<section id="usage">
+<h4>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h4>
+<p>Run Poller</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"> <span class="n">polarion_polling</span><span class="o">.</span><span class="n">py</span>
+</span></pre></div>
+</div>
+</section>
+<section id="requirements">
+<h4>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Python 3.10+</p></li>
+<li><p>requests</p></li>
+<li><p>beautifulsoup4</p></li>
+<li><p>urllib3</p></li>
+<li><p>Saarto API</p></li>
+</ul>
+</section>
+<section id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Designed for ABB Polarion ALM environment</p></li>
+<li><p>SSL verification disabled by default (internal usage)</p></li>
+<li><p>Built for automated regression execution pipelines</p></li>
+</ul>
 </section>
 </section>
 </section>

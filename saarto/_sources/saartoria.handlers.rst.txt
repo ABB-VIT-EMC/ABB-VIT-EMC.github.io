@@ -1,0 +1,21 @@
+saartoria.handlers package
+==========================
+
+Submodules
+----------
+
+saartoria.handlers.event\_handlers module
+-----------------------------------------
+
+.. automodule:: saartoria.handlers.event_handlers
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saartoria.handlers
+   :members:
+   :show-inheritance:
+   :undoc-members:

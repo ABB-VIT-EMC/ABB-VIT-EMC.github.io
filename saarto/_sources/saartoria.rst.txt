@@ -1,0 +1,40 @@
+saartoria package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   saartoria.handlers
+   saartoria.models
+   saartoria.services
+   saartoria.ui
+
+Submodules
+----------
+
+saartoria.config module
+-----------------------
+
+.. automodule:: saartoria.config
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.main module
+---------------------
+
+.. automodule:: saartoria.main
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saartoria
+   :members:
+   :show-inheritance:
+   :undoc-members:

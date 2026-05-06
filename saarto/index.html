@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="violet" data-content_root="./">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>saarto 1.0.0 documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="saarto" href="modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>saarto 1.0.0 documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="&lt;no title&gt;" href="modules.html" />
       <link rel="canonical" href="https://ABB-VIT-EMC.github.io/saarto/" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
@@ -57,11 +57,22 @@ data-aria-dark="Switch to auto color mode">
   <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
-        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">API Reference</span></p>
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">saarto</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="saarto.html">saarto package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="saarto.utilities.html">saarto.utilities package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saarto.html">saarto package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saarto.core.html">saarto.core package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="saarto.core.utilities.html">saarto.core.utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="saarto.integration.html">saarto.integration package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="saartoria.html">saartoria package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.handlers.html">saartoria.handlers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.models.html">saartoria.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.services.html">saartoria.services package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.ui.html">saartoria.ui package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="saartoria.ui.components.html">saartoria.ui.components package</a></li>
 </ul>
 </li>
 </ul>
@@ -78,20 +89,38 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#saarto">saarto</a><ul>
+<li><a class="reference internal" href="#saarto">saarto</a></li>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#project-structure-and-paths">Project Structure and Paths</a><ul>
+<li><a class="reference internal" href="#project-structure-and-paths">Project Structure and Paths</a></li>
+<li><a class="reference internal" href="#configuration-resolution-scheme">Configuration Resolution Scheme</a><ul>
+<li><a class="reference internal" href="#how-it-works">How It Works</a><ul>
+<li><a class="reference internal" href="#user-virtual-environment-config-priority">1. User/Virtual Environment Config (Priority)</a></li>
+<li><a class="reference internal" href="#system-default-config-fallback">2. System/Default Config (Fallback)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
 <li><a class="reference internal" href="#structural-element-import">Structural Element Import</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#commands">Commands</a></li>
-<li><a class="reference internal" href="#api">API</a></li>
-<li><a class="reference internal" href="#results">Results</a><ul>
-<li><a class="reference internal" href="#tracing-configurations">Tracing Configurations</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#saarto-core-api-pipeline-query">SAARTO Core API: Pipeline &amp; Query</a><ul>
+<li><a class="reference internal" href="#api-pipeline">1. <code class="docutils literal notranslate">Pipeline</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-result-management">Test Result Management</a><ul>
+<li><a class="reference internal" href="#execution-and-directory-structure">Execution and Directory Structure</a></li>
+<li><a class="reference internal" href="#how-results-are-archived">How Results are Archived</a></li>
+<li><a class="reference internal" href="#siemens-polarion-integration">Siemens Polarion Integration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#error-handling-custom-dataclasses-and-exceptions">Error Handling, Custom Dataclasses, and Exceptions</a><ul>
+<li><a class="reference internal" href="#the-result-dataclass">1. The <code class="docutils literal notranslate"><span class="pre">Result</span></code> Dataclass</a></li>
+<li><a class="reference internal" href="#custom-exceptions">2. Custom Exceptions</a></li>
+<li><a class="reference internal" href="#simple-examples">Simple Examples</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-reference">Module Reference</a></li>
@@ -165,8 +194,9 @@ data-aria-dark="Switch to auto color mode">
 <section id="saarto">
 <h2>saarto<a class="headerlink" href="#saarto" title="Link to this heading">¶</a></h2>
 <p><strong>S</strong>ystem for <strong>A</strong>utomated, <strong>A</strong>nti-<strong>R</strong>edundancy <strong>T</strong>est <strong>O</strong>rchestrator or <strong>saarto</strong> is an automatic test orchestrator that relies on SIEMENS Polarion product testing structure. This program is created in EMC and Smart Building Lab in ABB Vittuone, Italy. Instead of creating the test task one-by-one, the system takes the test case/test logic from from a template file that describe a test structure that is also hardware agnostic, and another set of structural elements (for example a ZERA generator and a M4M 30 Ethernet) to create the final <a class="reference external" href="https://robotframework.org/">Robot Framework</a> test task. This results in zero-redundancy, easy-to-write, and easy-to-maintainable codebase.</p>
+</section>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>The Pipeline in a Nutshell (assume that we are about to generate a test task PMD-0000)</p>
 <p><strong>Bootstrap (create)</strong>: The user selects (or the information is obtained via SIEMENS Polarion) a test case (a.k.a. test structure or test logic), e.g., PMD-1111 in a config.toml.</p>
 <p><strong>Auto-Resolution (fetch)</strong>: The system “reads” the selected test template to identify required hardware (e.g., a Power Meter or Generator). It then automatically fetches the corresponding Structural Element templates and their TOML parameters to the afformentioned config.toml (where user (or Polarion) then fill the desired instruments (e.g. PMD-2222, and PMD-3333)).</p>
@@ -178,18 +208,32 @@ data-aria-dark="Switch to auto color mode">
 </span><span data-line="3">saarto<span class="w"> </span>fetch<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># create &lt;TASKS_DIR&gt;PMD-1111/instrument.toml</span>
 </span><span data-line="4">saarto<span class="w"> </span>build<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># compile all the templates resulting in &lt;TASKS_DIR&gt;/PMD-1111/PMD-1111.robot.j2</span>
 </span><span data-line="5">saarto<span class="w"> </span>render<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># before running make sure all the data is set, then this will generate the version that parameters are resolved</span>
+</span><span data-line="6">saarto<span class="w"> </span>execute<span class="w"> </span>PMD-1111<span class="w"> </span>--skip_build<span class="w"> </span><span class="c1"># basically run the generated Robot Framework file and manage the result</span>
 </span></pre></div>
 </div>
 <p>In practice, we follow real workflow</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">saarto<span class="w"> </span>init<span class="w"> </span>PMD-1111<span class="w"> </span>PMD-0000
 </span><span data-line="2"><span class="c1"># the same as fetching, the user must fill the instrument fields</span>
-</span><span data-line="3">saarto<span class="w"> </span>compile<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># this is equivalent to fetch -&gt; build. This works because instrument.toml always should be written with default values for readability</span>
-</span><span data-line="4">saarto<span class="w"> </span>run<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># this should generate and run the generated code, each time the code in the marker is fetch, user added code should be outside of the markers (###)</span>
+</span><span data-line="3">saarto<span class="w"> </span>fetch<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># at this point user should edit the configuration instruments in instrument.toml, e.g., port, ip, baudrate, etc.</span>
+</span><span data-line="4">saarto<span class="w"> </span>execute<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># withoiut --skip_build this should build, render and then run the generated code</span>
 </span><span data-line="5">saarto<span class="w"> </span>clean<span class="w"> </span>PMD-1111<span class="w"> </span><span class="c1"># by running this, we start with a clean slate (deleting PMD-1111.robot), user code will be lost as well.</span>
 </span></pre></div>
 </div>
 <p><img alt="saarto simplified diagram" src="images/saarto_diagram.svg" /></p>
 </section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>This project is tested on Python 3.14, for automatic installation, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools<span class="w"> </span>wheel
+</span><span data-line="2">git<span class="w"> </span>pull<span class="w"> </span>https://github.com/ABB-VIT-EMC/saarto
+</span><span data-line="3">pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>./saarto
+</span></pre></div>
+</div>
+<p>or use this instead of cloning from GitHub</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;saarto @ git+https://github.com/ABB-VIT-EMC/saarto&quot;</span>
+</span></pre></div>
+</div>
+<p>For easier installation refer to <a class="reference external" href="https://github.com/ABB-VIT-EMC/ATE">ATE (Automatic Test Environment)</a></p>
 <section id="dependencies">
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h3>
 <ul class="simple">
@@ -205,21 +249,9 @@ The dependencies above should be installed from pyproject.toml except our in-hou
 </span></pre></div>
 </div>
 </section>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h3>
-<p>This project is tested on Python 3.14, for automatic installation, run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools<span class="w"> </span>wheel
-</span><span data-line="2">git<span class="w"> </span>pull<span class="w"> </span>https://github.com/ABB-VIT-EMC/saarto
-</span><span data-line="3">pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>./saarto
-</span></pre></div>
-</div>
-<p>or use this instead of cloning from GitHub</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;saarto&quot;</span><span class="w"> </span>@<span class="w"> </span>git+https://github.com/ABB-VIT-EMC/saarto
-</span></pre></div>
-</div>
-</section>
 <section id="project-structure-and-paths">
 <h3>Project Structure and Paths<a class="headerlink" href="#project-structure-and-paths" title="Link to this heading">¶</a></h3>
+<p>Note that this is how to project function without using <strong>ATE</strong> package</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">saarto/<span class="w">                          </span><span class="c1"># SAARTO_ROOT</span>
 </span><span data-line="2">│
 </span><span data-line="3">├──<span class="w"> </span>resources/
@@ -233,6 +265,35 @@ The dependencies above should be installed from pyproject.toml except our in-hou
 </span><span data-line="11"><span class="w">    </span>└──<span class="w"> </span>templates/<span class="w">               </span><span class="c1"># TEMPLATES_DIR — Internal-use templates (\*.\*.j2)</span>
 </span></pre></div>
 </div>
+</section>
+<section id="configuration-resolution-scheme">
+<h3>Configuration Resolution Scheme<a class="headerlink" href="#configuration-resolution-scheme" title="Link to this heading">¶</a></h3>
+<p>SAARTO uses a <strong>two-tier, fallback-based configuration system</strong>. This allows individual users or projects to customize settings safely without modifying the core source code, while still guaranteeing that the application works out-of-the-box.</p>
+<p>This logic is driven by the <code class="docutils literal notranslate"><span class="pre">get_config_path</span></code> and <code class="docutils literal notranslate"><span class="pre">load_main_config</span></code> functions.</p>
+<section id="how-it-works">
+<h4>How It Works<a class="headerlink" href="#how-it-works" title="Link to this heading">¶</a></h4>
+<p>When the application requests a configuration file (e.g., <code class="docutils literal notranslate"><span class="pre">saarto.toml</span></code>), the system attempts to locate it in the following order:</p>
+<section id="user-virtual-environment-config-priority">
+<h5>1. User/Virtual Environment Config (Priority)<a class="headerlink" href="#user-virtual-environment-config-priority" title="Link to this heading">¶</a></h5>
+<p>First, the system checks if you are running inside a Python Virtual Environment (<code class="docutils literal notranslate"><span class="pre">sys.prefix</span></code>). It looks for a <code class="docutils literal notranslate"><span class="pre">config/</span></code> folder located right next to your active virtual environment directory:</p>
+<ul class="simple">
+<li><p><strong>Path:</strong> <code class="docutils literal notranslate"><span class="pre">&lt;venv_parent_dir&gt;/config/&lt;config_file&gt;</span></code></p></li>
+<li><p><strong>Why?</strong> This allows developers to easily inject custom parameters, paths, or logging levels specific to their current workspace, without overriding the global application defaults.</p></li>
+</ul>
+</section>
+<section id="system-default-config-fallback">
+<h5>2. System/Default Config (Fallback)<a class="headerlink" href="#system-default-config-fallback" title="Link to this heading">¶</a></h5>
+<p>If no user-specific configuration is found next to the virtual environment, the system automatically falls back to the default configuration bundled directly inside the SAARTO package source code:</p>
+<ul class="simple">
+<li><p><strong>Path:</strong> <code class="docutils literal notranslate"><span class="pre">&lt;saarto_source_dir&gt;/core/config/&lt;config_file&gt;</span></code></p></li>
+<li><p><strong>Why?</strong> This serves as the “safe default.” It guarantees that the pipeline always has a valid baseline configuration to run against, even on a fresh installation.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary">
+<h4>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h4>
+<p>By using <code class="docutils literal notranslate"><span class="pre">load_main_config(&quot;saarto.toml&quot;)</span></code>, the API gracefully handles environment-specific overrides while maintaining a solid default state. If neither file exists, it raises a clear <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> to halt execution before any unexpected behavior occurs.</p>
+</section>
 <section id="structural-element-import">
 <h4>Structural Element Import<a class="headerlink" href="#structural-element-import" title="Link to this heading">¶</a></h4>
 <p>There is also a possibility to import structural elements from another library like <a class="reference external" href="https://github.com/ITLAVIT/AutoTestLib">AutoTestLib</a>.</p>
@@ -275,7 +336,7 @@ The dependencies above should be installed from pyproject.toml except our in-hou
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fetch</span></code></p></td>
 <td><p>Fetch instrument definitions</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">build</span></code></p></td>
 <td><p>Build robot template</p></td>
@@ -293,76 +354,173 @@ The dependencies above should be installed from pyproject.toml except our in-hou
 <td><p>Fetch and build final robot file</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">run</span></code></p></td>
-<td><p>Run final robot file</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">show</span></code></p></td>
 <td><p>Show human readable test step</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validate</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validate</span></code></p></td>
 <td><p>Check if the test task is complete</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">test_name</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">execute</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">execute</span></code></p></td>
 <td><p>Execute test or test folder</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">--skip_build</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">paths</span></code></p></td>
-<td><p>List file configured in saarto.toml</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><p>List saarto items</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--all</span></code>, <code class="docutils literal notranslate"><span class="pre">--test_tasks</span></code>, <code class="docutils literal notranslate"><span class="pre">--test_cases</span></code>, <code class="docutils literal notranslate"><span class="pre">--structural_element</span></code>, <code class="docutils literal notranslate"><span class="pre">--results</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tests</span></code></p></td>
-<td><p>List test tasks</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ses</span></code></p></td>
-<td><p>List structural elements</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cases</span></code></p></td>
-<td><p>List test cases</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">delete</span></code></p></td>
+<td><p>Execute test or test folder</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--no_ask</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <!-- COMMANDS_END -->
 </section>
-<section id="api">
-<h3>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h3>
-<p><strong>saarto</strong> (will) supports creating “recipe,” i.e.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="o">--</span> <span class="n">config</span><span class="o">.</span><span class="n">cmconf</span>
-</span><span data-line="2"><span class="o">--</span> <span class="n">instrument</span><span class="o">.</span><span class="n">toml</span>
+</section>
+<section id="saarto-core-api-pipeline-query">
+<h2>SAARTO Core API: Pipeline &amp; Query<a class="headerlink" href="#saarto-core-api-pipeline-query" title="Link to this heading">¶</a></h2>
+<p>The SAARTO Python API is designed around a clear separation of concerns. All interactions with the framework are routed through two main classes: <strong><code class="docutils literal notranslate"><span class="pre">api.Pipeline</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">api.Query</span></code></strong>.</p>
+<p>Think of <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> as the “actor” that creates and runs things, and <code class="docutils literal notranslate"><span class="pre">Query</span></code> as the “observer” that reads and searches for things.</p>
+<section id="api-pipeline">
+<h3>1. <code class="docutils literal notranslate"><span class="pre">api.Pipeline</span></code><a class="headerlink" href="#api-pipeline" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> class is responsible for the entire lifecycle of a test task. It handles everything that involves creating, mutating, or executing files on the disk.</p>
+<p>Every method in the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> returns a <code class="docutils literal notranslate"><span class="pre">Result</span></code> object (or a list of them), which provides a standardized way to check for success, warnings, or errors.</p>
+<p><strong>Key Responsibilities:</strong></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">init</span></code> / <code class="docutils literal notranslate"><span class="pre">load_config</span></code></strong>: Creates new test task directories and injects configurations from API payloads or templates.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fetch</span></code></strong>: Pulls the required hardware/instrument definitions from Structural Elements.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">build</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">render</span></code></strong>: Compiles the Robot Framework (<code class="docutils literal notranslate"><span class="pre">.robot</span></code>) files using Jinja2 templates and dynamic data.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">execute</span></code></strong>: Triggers the Robot Framework runner and packages the results securely into hashed <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archives.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">clean</span></code></strong>: Removes temporary build files.</p></li>
+</ul>
+<p><strong>Quick Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">saarto</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="c1"># Complete a test lifecycle</span>
+</span><span data-line="4"><span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">test_name</span><span class="o">=</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">,</span> <span class="n">test_case</span><span class="o">=</span><span class="s2">&quot;PMD-0000&quot;</span><span class="p">)</span>
+</span><span data-line="5"><span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">)</span>
+</span><span data-line="6"><span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1"># Execute and check the result</span>
+</span><span data-line="9"><span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">,</span> <span class="n">test_instance</span><span class="o">=</span><span class="s2">&quot;nightly_run&quot;</span><span class="p">)</span>
+</span><span data-line="10"><span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ok</span><span class="p">():</span>
+</span><span data-line="11">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Execution successful!&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>from a function, therefore, with just a Python dict (configurated by Polarion opening test tasks) test task files are automatically generated.</p>
 </section>
-<section id="results">
-<h3>Results<a class="headerlink" href="#results" title="Link to this heading">¶</a></h3>
-<section id="tracing-configurations">
-<h4>Tracing Configurations<a class="headerlink" href="#tracing-configurations" title="Link to this heading">¶</a></h4>
-<p>There are three values that are important</p>
+</section>
+<section id="test-result-management">
+<h2>Test Result Management<a class="headerlink" href="#test-result-management" title="Link to this heading">¶</a></h2>
+<p>When a test task is executed, the SAARTO pipeline manages the outputs and artifacts to ensure that every test run is fully traceable, immutable, and reproducible. This is handled through a structured directory naming convention and cryptographic archiving.</p>
+<section id="execution-and-directory-structure">
+<h3>Execution and Directory Structure<a class="headerlink" href="#execution-and-directory-structure" title="Link to this heading">¶</a></h3>
+<p>When you trigger test execution via the pipeline, it automatically organizes the output files. A unique, time-stamped parent directory is created for the execution instance.</p>
+<p>For example, if you execute a batch of tests with the instance name <code class="docutils literal notranslate"><span class="pre">&quot;release_candidate&quot;</span></code>, the pipeline creates an isolated directory like:
+<code class="docutils literal notranslate"><span class="pre">2026-05-06_14-30-00_release_candidate/</span></code></p>
+<p>Inside this directory, individual test tasks output their Robot Framework logs, reports, and a <strong>hashed archive</strong> of their configurations.</p>
+</section>
+<section id="how-results-are-archived">
+<h3>How Results are Archived<a class="headerlink" href="#how-results-are-archived" title="Link to this heading">¶</a></h3>
+<p>At the end of a test execution, the pipeline preserves the exact state of the test inputs using a cryptographic hashing mechanism.</p>
+<ol class="arabic simple">
+<li><p><strong>Gather Artifacts:</strong> The pipeline collects all relevant source files used for that specific execution (e.g., <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>, <code class="docutils literal notranslate"><span class="pre">instrument.toml</span></code>, <code class="docutils literal notranslate"><span class="pre">temp.toml</span></code>).</p></li>
+<li><p><strong>Compression:</strong> These files are compressed into a single <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive.</p></li>
+<li><p><strong>Cryptographic Hashing:</strong> A SHA-256 hash is generated based on the exact byte-content of the archive.</p></li>
+<li><p><strong>Unique Identification:</strong> The archive is renamed using the first 8 characters of the SHA-256 hash (e.g., <code class="docutils literal notranslate"><span class="pre">a1b2c3d4.tar.gz</span></code>) and saved to the specific output directory for that test instance.</p></li>
+</ol>
+</section>
+<section id="siemens-polarion-integration">
+<h3>Siemens Polarion Integration<a class="headerlink" href="#siemens-polarion-integration" title="Link to this heading">¶</a></h3>
+<p>This archiving step is critical for syncing test results back to our Application Lifecycle Management tool, <strong>Siemens Polarion</strong>.</p>
+<p>When the pipeline patches and attaches the test result to Polarion, it reads the configuration data directly from this hashed <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive rather than the active local workspace.</p>
+<p><strong>Why do we do this?</strong></p>
 <ul class="simple">
-<li><p>hash of the templates used</p></li>
-<li><p>hash of the configuration</p></li>
-<li><p>hash of the parameters</p></li>
+<li><p><strong>Resistance to Change:</strong> If an engineer edits the local test configuration immediately after a test finishes but before the results are synced, the uploaded result remains completely unaffected.</p></li>
+<li><p><strong>Decoupled from Local State:</strong> The upload process does not depend on the live, local test folders. It relies entirely on the frozen snapshot captured at the exact moment of execution.</p></li>
+<li><p><strong>Traceability:</strong> The 8-character hash acts as a unique fingerprint. If someone needs to debug a test run months later, the hash guarantees exactly which configurations and instruments were used.</p></li>
 </ul>
-<p>with these two we can trace the test structure, configuration and test parameter with these data, which (will) also shown on Git. This allow us to understand and trace any test case without relying on another extra tool, only relying on Git version control.</p>
 </section>
+</section>
+<section id="error-handling-custom-dataclasses-and-exceptions">
+<h2>Error Handling, Custom Dataclasses, and Exceptions<a class="headerlink" href="#error-handling-custom-dataclasses-and-exceptions" title="Link to this heading">¶</a></h2>
+<p>In the SAARTO pipeline, we use two main tools to handle outcomes and errors: the <code class="docutils literal notranslate"><span class="pre">Result</span></code> dataclass and custom <strong>Exceptions</strong>.</p>
+<section id="the-result-dataclass">
+<h3>1. The <code class="docutils literal notranslate"><span class="pre">Result</span></code> Dataclass<a class="headerlink" href="#the-result-dataclass" title="Link to this heading">¶</a></h3>
+<p>Instead of returning <code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>, pipeline functions return a <code class="docutils literal notranslate"><span class="pre">Result</span></code> object. This tells the CLI and GUI exactly what happened so they can show the right messages and colors.</p>
+<p><strong>Key fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code> (int): <code class="docutils literal notranslate"><span class="pre">0</span></code> means success. Any other number means failure or warning.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code> (str): A short label like <code class="docutils literal notranslate"><span class="pre">&quot;SUCCESS&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ERROR&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;WARNING&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code> (str): The text to display to the user.</p></li>
+</ul>
+<p><strong>How to check it:</strong>
+Because <code class="docutils literal notranslate"><span class="pre">Result</span></code> has a special boolean method, you can just use <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">result:</span></code> to check if it was successful.</p>
+</section>
+<section id="custom-exceptions">
+<h3>2. Custom Exceptions<a class="headerlink" href="#custom-exceptions" title="Link to this heading">¶</a></h3>
+<p>Sometimes things go critically wrong (e.g., a required file is missing or contains invalid syntax). Instead of returning a <code class="docutils literal notranslate"><span class="pre">Result</span></code>, we <strong>raise a custom exception</strong>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PipelineError</span></code>: The base error for everything.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TestCaseNotFoundError</span></code>: Raised when a test case file doesn’t exist.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfigurationError</span></code>: Raised when a config file is missing or has broken TOML syntax.</p></li>
+</ul>
+<p>The CLI and GUI catch these exceptions so the app doesn’t crash, and instead shows a clean error banner to the user.</p>
+<hr class="docutils" />
+</section>
+<section id="simple-examples">
+<h3>Simple Examples<a class="headerlink" href="#simple-examples" title="Link to this heading">¶</a></h3>
+<p>Here is a simple example showing when to return a <code class="docutils literal notranslate"><span class="pre">Result</span></code> versus when to raise an exception:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">saarto.core.dataclass</span><span class="w"> </span><span class="kn">import</span> <span class="n">Result</span><span class="p">,</span> <span class="n">TestCaseNotFoundError</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="k">def</span><span class="w"> </span><span class="nf">run_test</span><span class="p">(</span><span class="n">test_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">:</span>
+</span><span data-line="4">    <span class="c1"># 1. CRITICAL ERROR: Raise an Exception</span>
+</span><span data-line="5">    <span class="k">if</span> <span class="ow">not</span> <span class="n">test_name</span><span class="p">:</span>
+</span><span data-line="6">        <span class="k">raise</span> <span class="n">TestCaseNotFoundError</span><span class="p">(</span><span class="s2">&quot;No test name provided! Cannot proceed.&quot;</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8">    <span class="c1"># 2. EXPECTED FAILURE: Return a Result</span>
+</span><span data-line="9">    <span class="k">if</span> <span class="n">test_name</span> <span class="o">==</span> <span class="s2">&quot;broken_test&quot;</span><span class="p">:</span>
+</span><span data-line="10">        <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;WARNING&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Test ran, but had warnings.&quot;</span><span class="p">)</span>
+</span><span data-line="11">
+</span><span data-line="12">    <span class="c1"># 3. SUCCESS: Return a Result</span>
+</span><span data-line="13">    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Test finished perfectly.&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span data-line="2"><span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span>
+</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">saarto.core.dataclass</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfigurationError</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="k">def</span><span class="w"> </span><span class="nf">load_config</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+</span><span data-line="6">    <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span data-line="7">        <span class="c1"># Raise an exception because the program cannot proceed without config</span>
+</span><span data-line="8">        <span class="k">raise</span> <span class="n">ConfigurationError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Config file not found: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span data-line="9">        
+</span><span data-line="10">    <span class="k">try</span><span class="p">:</span>
+</span><span data-line="11">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span data-line="12">            <span class="k">return</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span data-line="13">    <span class="k">except</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">TOMLDecodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span data-line="14">        <span class="k">raise</span> <span class="n">ConfigurationError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid TOML syntax: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
 </section>
 </section>
 <section id="module-reference">
 <h2>Module Reference<a class="headerlink" href="#module-reference" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">saarto</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="saarto.html">saarto package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="saarto.utilities.html">saarto.utilities package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saarto.html">saarto package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saarto.core.html">saarto.core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saarto.integration.html">saarto.integration package</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="saartoria.html">saartoria package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.handlers.html">saartoria.handlers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.models.html">saartoria.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.services.html">saartoria.services package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saartoria.ui.html">saartoria.ui package</a></li>
 </ul>
 </li>
 </ul>
@@ -379,7 +537,7 @@ The dependencies above should be installed from pyproject.toml except our in-hou
     <a href="modules.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">saarto</div>
+        <div class="title">&lt;no title&gt;</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

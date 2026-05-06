@@ -1,0 +1,21 @@
+saartoria.services package
+==========================
+
+Submodules
+----------
+
+saartoria.services.task\_service module
+---------------------------------------
+
+.. automodule:: saartoria.services.task_service
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saartoria.services
+   :members:
+   :show-inheritance:
+   :undoc-members:

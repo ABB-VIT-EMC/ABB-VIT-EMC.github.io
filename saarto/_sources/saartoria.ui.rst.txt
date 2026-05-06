@@ -1,0 +1,45 @@
+saartoria.ui package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   saartoria.ui.components
+
+Submodules
+----------
+
+saartoria.ui.main\_panel module
+-------------------------------
+
+.. automodule:: saartoria.ui.main_panel
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.result\_manager module
+-----------------------------------
+
+.. automodule:: saartoria.ui.result_manager
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saartoria.ui.task\_manager module
+---------------------------------
+
+.. automodule:: saartoria.ui.task_manager
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saartoria.ui
+   :members:
+   :show-inheritance:
+   :undoc-members:

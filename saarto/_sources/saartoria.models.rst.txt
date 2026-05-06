@@ -1,0 +1,21 @@
+saartoria.models package
+========================
+
+Submodules
+----------
+
+saartoria.models.task module
+----------------------------
+
+.. automodule:: saartoria.models.task
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saartoria.models
+   :members:
+   :show-inheritance:
+   :undoc-members:
