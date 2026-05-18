@@ -1,0 +1,91 @@
+Using the Query Interface
+=========================
+
+The ``Query`` class provides read-only inspection of the SAARTO project state.
+It never modifies files on disk (except ``save_common_setting``).
+
+Listing Resources
+-----------------
+
+.. code-block:: python
+
+   from saarto import api
+
+   # List all test tasks
+   tasks = api.Query.list_tests(show=True)
+
+   # List test cases and parameter tables
+   cases = api.Query.list_test_cases()
+   # Returns: {"test_cases": [...], "table": [...]}
+
+   # List structural elements
+   elements = api.Query.list_structural_elements()
+
+   # List execution results
+   results = api.Query.list_results()
+
+Inspecting Test Tasks
+---------------------
+
+Get structured metadata for one or more tasks:
+
+.. code-block:: python
+
+   info_list = api.Query.get_info(test_names=["PMD-1234", "PMD-5678"])
+
+   for info in info_list:
+       print(info["test_case"])             # Source test case name
+       print(info["from"])                  # "Local" or "Polarion"
+       print(info["structural_elements"])   # Assigned instruments
+
+Validating Instruments
+----------------------
+
+Check that all instrument roles are correctly defined:
+
+.. code-block:: python
+
+   is_valid = api.Query.check_instruments("PMD-1234")
+   if not is_valid:
+       print("Fix instrument assignments before executing")
+
+Common Instrument Settings
+--------------------------
+
+When multiple tasks share the same instrument, manage shared configurations:
+
+.. code-block:: python
+
+   # Collect common settings across tasks
+   common = api.Query.get_common_setting(targets=["PMD-1234", "PMD-5678"])
+
+   # Edit settings (e.g., update IP address)
+   common["m4m_30_ethernet"]["ip"] = "192.168.1.100"
+
+   # Write back to all associated tasks
+   api.Query.save_common_setting(common)
+
+Reading Structural Elements
+---------------------------
+
+Read raw content of a structural element file:
+
+.. code-block:: python
+
+   content = api.Query.read_text("m4m_30_ethernet")
+
+For cross-module references:
+
+.. code-block:: python
+
+   content = api.Query.read_text("AutoTestLib__m4m_tcp")
+
+Deleting Test Tasks
+-------------------
+
+.. code-block:: python
+
+   result = api.Query.delete_test_task(
+       test_names=["PMD-1234"],
+       ask=True  # prompt for confirmation
+   )

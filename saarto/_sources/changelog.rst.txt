@@ -1,0 +1,11 @@
+Changelog
+=========
+
+Unreleased
+----------
+
+- Added comprehensive docstrings to all modules.
+- Added Sphinx RST documentation structure.
+- Added Pyright static analysis integration.
+- Added Polarion subprocess loader.
+- Refactored README.md to minimal landing page.

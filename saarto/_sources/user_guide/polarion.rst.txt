@@ -1,0 +1,69 @@
+Polarion Integration
+====================
+
+SAARTO integrates with Siemens Polarion for test run management. Test tasks
+can be loaded from Polarion test runs and results are synced back after execution.
+
+Loading from Polarion
+---------------------
+
+Use the Polarion subprocess integration to pull test definitions:
+
+.. code-block:: python
+
+   from saarto.integration.polarion import load_polarion_from_subprocess
+
+   result = load_polarion_from_subprocess(test_run_id="TR-12345")
+
+   if result.ok:
+       print(f"Loaded {result.data['count']} tasks")
+       print(result.data["loaded"])  # list of task names
+
+This will:
+
+1. Clean the hidden ``.polarion_tasks`` directory.
+2. Run the ``polarion_subprocess`` CLI tool.
+3. Parse the returned JSON test definitions.
+4. Initialize all tasks via ``Pipeline.load_config()``.
+
+Task Location
+-------------
+
+Polarion-sourced tasks are stored in a hidden subdirectory:
+
+.. code-block:: text
+
+   test_tasks/
+   +-- .polarion_tasks/
+       +-- PMD-1234_1/
+       +-- PMD-1234_2/
+       +-- PMD-5678_1/
+
+Tasks are tagged with ``"Polarion"`` in their ``info.tags`` field for identification.
+
+Result Upload
+-------------
+
+After execution, the hashed ``.tar.gz`` archive is used for uploading results
+back to Polarion. This ensures the uploaded data reflects the **exact** configuration
+used during execution, regardless of any subsequent local edits.
+
+Batch Workflow
+--------------
+
+A typical Polarion-driven workflow:
+
+.. code-block:: python
+
+   from saarto.integration.polarion import load_polarion_from_subprocess
+   from saarto import api
+
+   # 1. Load tasks from a test run
+   load_result = load_polarion_from_subprocess(test_run_id="TR-001")
+   task_names = load_result.data["loaded"]
+
+   # 2. Execute all loaded tasks
+   exec_result = api.Pipeline.execute(
+       test_names=task_names,
+       test_instance="polarion_TR-001",
+   )

@@ -1,0 +1,29 @@
+saarto.core package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   saarto.core.utilities
+
+Submodules
+----------
+
+saarto.core.dataclasses module
+------------------------------
+
+.. automodule:: saarto.core.dataclasses
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saarto.core
+   :members:
+   :show-inheritance:
+   :undoc-members:

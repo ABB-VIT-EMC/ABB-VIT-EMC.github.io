@@ -1,19 +1,26 @@
-.. saarto documentation master file, created by
-   sphinx-quickstart on Wed May  6 14:51:31 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+SAARTO Documentation
+====================
 
-saarto Documentation
-============================
+**S**\ ystem for **A**\ utomated, **A**\ nti-\ **R**\ edundancy **T**\ est **O**\ rchestrator
 
-.. include:: ../../README.md
-   :parser: myst_parser.sphinx_
-
-Module Reference
------------------
+SAARTO is a test orchestrator that separates test logic from hardware definitions,
+producing zero-redundancy, maintainable pytest files. It integrates with Siemens
+Polarion for Application Lifecycle Management.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
-   modules
+   getting_started
+   architecture
+   configuration
+   user_guide/index
+   api/modules
+   changelog
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

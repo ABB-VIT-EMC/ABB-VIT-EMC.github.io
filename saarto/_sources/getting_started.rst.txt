@@ -1,0 +1,64 @@
+Getting Started
+===============
+
+Requirements
+------------
+
+- Python 3.14+
+- pip, setuptools, wheel
+
+Installation
+------------
+
+**From GitHub (editable):**
+
+.. code-block:: bash
+
+   pip3 install --upgrade pip setuptools wheel
+   git clone https://github.com/ABB-VIT-EMC/saarto
+   pip install -e ./saarto
+
+**Single command (non-editable):**
+
+.. code-block:: bash
+
+   pip install "saarto @ git+https://github.com/ABB-VIT-EMC/saarto"
+
+**With ATE (recommended):**
+
+For a fully configured environment, refer to
+`ATE (Automatic Test Environment) <https://github.com/ABB-VIT-EMC/ATE>`_.
+
+Dependencies
+------------
+
+The following are installed automatically via ``pyproject.toml``:
+
+- jinja2
+- pytest
+- pytest-html
+- pydantic
+
+In-house libraries must be installed separately:
+
+.. code-block:: bash
+
+   pip install "matta @ git+https://github.com/ABB-VIT-EMC/matta"
+   pip install "AutoTestLib @ git+https://github.com/ABB-VIT-EMC/AutoTestLib"
+
+First Run
+---------
+
+After installation, verify the CLI is available:
+
+.. code-block:: bash
+
+   saarto --help
+
+Then follow the typical workflow:
+
+.. code-block:: bash
+
+   saarto init PMD-1111 PMD-0000    # link test case to new test task
+   saarto fetch PMD-1111            # resolve instruments
+   saarto execute PMD-1111          # build, render, run

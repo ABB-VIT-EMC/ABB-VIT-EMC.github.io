@@ -1,0 +1,116 @@
+Architecture
+============
+
+Design Philosophy
+-----------------
+
+SAARTO enforces a strict **separation of concerns**:
+
+- **Test cases** define *what* to test (logic, steps, assertions).
+- **Structural elements** define *how* to interact with hardware (drivers, parameters).
+- **The pipeline** merges both into executable pytest files at build time.
+
+This eliminates code duplication: if 10 test tasks use the same power meter,
+the instrument definition exists in exactly one place.
+
+Pipeline Lifecycle
+------------------
+
+Every test task follows a fixed sequence of stages:
+
+.. code-block:: text
+
+   init --> fetch --> build --> render --> execute
+                                  ^
+                                clean (resets to post-init state)
+
+.. list-table:: Pipeline Stages
+   :header-rows: 1
+   :widths: 15 85
+
+   * - Stage
+     - Description
+   * - **init**
+     - Creates a task directory and writes ``config.toml`` from a test case template.
+   * - **fetch**
+     - Reads the config to identify required instruments, pulls their TOML definitions.
+   * - **build**
+     - Merges Python blocks from test case + structural elements into a ``.py.j2`` template.
+   * - **render**
+     - Renders the Jinja2 template with full context (parameters, instruments) into ``test_*.py``.
+   * - **execute**
+     - Runs pytest, generates HTML reports, and archives configurations with SHA-256 hashing.
+   * - **clean**
+     - Deletes generated artifacts and re-initializes from the original test case.
+
+API Design
+----------
+
+The Python API is split into two classes:
+
+- **``Pipeline``** -- the "actor" that creates, mutates, and executes.
+- **``Query``** -- the "observer" that reads and inspects.
+
+Both return ``Result`` objects for standardized success/failure handling.
+
+Result-Based Error Handling
+---------------------------
+
+SAARTO uses two complementary error mechanisms:
+
+1. **``Result`` objects** -- for expected outcomes (success, warnings, soft failures).
+2. **Custom exceptions** -- for critical, unrecoverable errors (missing files, broken config).
+
+.. code-block:: python
+
+   # Expected failure: return a Result
+   if not instrument_found:
+       return Result(code=1, status="WARNING", message="Instrument not found")
+
+   # Critical failure: raise an exception
+   if not config_path.exists():
+       raise ConfigurationError(f"Config not found: {config_path}")
+
+Exception Hierarchy
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: text
+
+   PipelineError (base)
+   +-- TestCaseNotFoundError
+   +-- TestTaskNotFoundError
+   +-- ConfigurationError
+   +-- ExecutionError
+
+Test Result Management
+----------------------
+
+When a test executes, SAARTO produces a tamper-evident archive:
+
+1. Collects source configs (``config.toml``, ``instrument.toml``, ``temp.toml``).
+2. Compresses them into a ``.tar.gz`` archive.
+3. Generates a SHA-256 hash of the archive contents.
+4. Renames the archive using the first 8 hex characters (e.g., ``a1b2c3d4.tar.gz``).
+
+This ensures that results uploaded to Polarion are **immutable** -- immune to
+post-execution edits of local files.
+
+Output directory structure:
+
+.. code-block:: text
+
+   results/
+   +-- 2026-05-06_14-30-00_nightly_run/
+       +-- PMD-1234/
+           +-- results.xml          # JUnit XML
+           +-- log.html             # pytest-html report
+           +-- a1b2c3d4.tar.gz     # frozen config snapshot
+
+Polarion Sync
+~~~~~~~~~~~~~
+
+The upload process reads directly from the hashed archive, ensuring:
+
+- **Resistance to change** -- post-execution edits don't affect uploads.
+- **Decoupled from local state** -- relies on the frozen snapshot only.
+- **Traceability** -- the hash acts as a unique fingerprint for auditing.

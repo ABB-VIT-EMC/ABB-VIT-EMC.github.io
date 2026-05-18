@@ -1,0 +1,29 @@
+saarto.integration package
+==========================
+
+Submodules
+----------
+
+saarto.integration.polarion module
+----------------------------------
+
+.. automodule:: saarto.integration.polarion
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+saarto.integration.pyright module
+---------------------------------
+
+.. automodule:: saarto.integration.pyright
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: saarto.integration
+   :members:
+   :show-inheritance:
+   :undoc-members:

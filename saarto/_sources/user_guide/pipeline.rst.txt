@@ -1,0 +1,154 @@
+Using the Pipeline
+==================
+
+The Pipeline handles the full test task lifecycle. All methods return
+``Result`` objects for consistent error handling.
+
+Lifecycle Overview
+------------------
+
+.. code-block:: text
+
+   init --> fetch --> build --> render --> execute
+
+Initializing a Test Task
+-------------------------
+
+Link a test case template to a new test task:
+
+.. code-block:: python
+
+   from saarto import api
+
+   result = api.Pipeline.init(test_name="PMD-1234", test_case="PMD-0000")
+   assert result.ok
+
+Or from the CLI:
+
+.. code-block:: bash
+
+   saarto init PMD-0000 PMD-1234
+
+After init, fill the ``[instrument]`` section in ``config.toml``.
+
+Fetching Instruments
+--------------------
+
+Resolve instrument definitions from structural elements:
+
+.. code-block:: python
+
+   result = api.Pipeline.fetch("PMD-1234")
+
+For batch processing (all tasks):
+
+.. code-block:: python
+
+   result = api.Pipeline.fetch(batch=True)
+
+After fetch, review and configure hardware parameters in ``instrument.toml``
+(e.g., IP address, port, baud rate).
+
+Building Templates
+------------------
+
+Compile test case + structural element blocks into a Jinja2 template:
+
+.. code-block:: python
+
+   result = api.Pipeline.build("PMD-1234")
+   # Produces: PMD-1234.py.j2
+
+Rendering Test Files
+--------------------
+
+Render the template with full context into an executable pytest file:
+
+.. code-block:: python
+
+   result = api.Pipeline.render("PMD-1234")
+   # Produces: test_PMD-1234.py
+
+Executing Tests
+---------------
+
+Run pytest and collect results:
+
+.. code-block:: python
+
+   result = api.Pipeline.execute(
+       test_names="PMD-1234",
+       test_instance="nightly_run",
+       rebuild=True,
+   )
+
+   if result.ok:
+       print("All tests passed")
+
+The ``rebuild=True`` flag (default) triggers build + render before execution.
+
+Cleaning Up
+-----------
+
+Reset a test task to its post-init state:
+
+.. code-block:: python
+
+   result = api.Pipeline.clean("PMD-1234")
+
+.. warning::
+   This deletes all generated files including ``test_PMD-1234.py``.
+   Custom user code in the task folder will be lost.
+
+Batch Operations
+----------------
+
+Most methods accept a list of test names:
+
+.. code-block:: python
+
+   targets = ["PMD-1234", "PMD-5678", "PMD-9999"]
+   api.Pipeline.build(targets, generate_doc=True)
+   api.Pipeline.render(targets)
+   api.Pipeline.execute(targets, test_instance="regression")
+
+CLI Commands Reference
+----------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 15 40 45
+
+   * - Command
+     - Description
+     - Arguments
+   * - ``create``
+     - Create test from test case
+     - ``test_name``, ``test_case``
+   * - ``fetch``
+     - Fetch instrument definitions
+     - ``test_name``, ``--all``
+   * - ``build``
+     - Build Jinja2 template
+     - ``test_name``, ``--all``
+   * - ``render``
+     - Render final pytest file
+     - ``test_name``, ``--all``
+   * - ``clean``
+     - Remove compiled files
+     - ``test_name``, ``--all``
+   * - ``compile``
+     - Fetch + build in one step
+     - ``test_name``, ``--all``
+   * - ``validate``
+     - Check task completeness
+     - ``test_name``, ``--all``
+   * - ``execute``
+     - Run pytest
+     - ``test_name``, ``--all``, ``--skip_build``
+   * - ``list``
+     - List project items
+     - ``--test_tasks``, ``--test_cases``, ``--structural_element``, ``--results``
+   * - ``delete``
+     - Delete test tasks
+     - ``test_name``, ``--all``, ``--no_ask``

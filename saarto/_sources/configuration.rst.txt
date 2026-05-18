@@ -1,0 +1,110 @@
+Configuration
+=============
+
+SAARTO uses a two-tier, fallback-based configuration system driven by TOML files.
+
+Configuration Resolution
+------------------------
+
+When the application requests a config file (e.g., ``saarto.toml``), it searches
+in the following order:
+
+1. **User/Virtual Environment Config** (priority):
+
+   ``<venv_parent_dir>/config/<config_file>``
+
+   Allows workspace-specific overrides without modifying source code.
+
+2. **System/Default Config** (fallback):
+
+   ``<saarto_source_dir>/core/config/<config_file>``
+
+   Guarantees a valid baseline on fresh installations.
+
+If neither file exists, a ``FileNotFoundError`` is raised immediately.
+
+.. note::
+   Use ``load_main_config("saarto.toml")`` to leverage this resolution automatically.
+
+Project Structure
+-----------------
+
+.. code-block:: text
+
+   saarto/                          # SAARTO_ROOT
+   |
+   +-- resources/
+   |   +-- test_cases/              # TC_DIR -- Test case templates
+   |   +-- structural_elements/     # SE_DIR -- Reusable instrument definitions
+   |
+   +-- test_tasks/                  # TASKS_DIR -- Generated pytest task folders
+   |
+   +-- src/
+       +-- saarto.toml              # Main configuration
+       +-- templates/               # TEMPLATES_DIR -- Jinja2 templates (*.j2)
+
+saarto.toml Reference
+---------------------
+
+.. code-block:: toml
+
+   [template]
+   extension = "md"              # Test case file extension
+   csv_parse = "temp.toml"       # Dynamic parameter output filename
+   readme = "README.md"          # Generated doc filename
+
+   [recipe]
+   extension = "toml"            # Config recipe extension
+
+   [polarion]
+   folder_name = ".polarion_tasks"  # Hidden folder for Polarion-sourced tasks
+
+   [paths]
+   use_env = false               # Whether to resolve Python from venv
+
+   [logging]
+   log_level = "INFO"            # Log level for pytest execution
+
+   [tool.pytest]
+   args = []                     # Additional pytest CLI arguments
+
+se_lib.toml Reference
+---------------------
+
+The ``se_lib.toml`` file defines the mapping between instrument roles and
+structural element names, including aliases and parent relationships used
+during automatic resolution in ``load_config``.
+
+.. code-block:: toml
+
+   [[device]]
+   name = "m4m_30_ethernet"
+   alias = ["M4M-30-ETH", "m4m30"]
+   parent = ["generic_power_meter"]
+
+Structural Element Cross-Module Import
+--------------------------------------
+
+Structural elements can be imported from external libraries (e.g., AutoTestLib)
+using the double-underscore convention:
+
+.. code-block:: toml
+
+   [instrument]
+   generic_power_meter = "AutoTestLib__m4m_tcp"
+
+The prefix before ``__`` identifies the Python module. SAARTO resolves the
+template via an API request to that module's internal endpoint.
+
+In the structural element file:
+
+.. code-block:: text
+
+   ### TOML-BLOCK-START: INSTRUMENT_DEFINITION
+   [AutoTestLib__m4m_tcp]
+   class = "abb_power_meter"
+   ### TOML-BLOCK-END: INSTRUMENT_DEFINITION
+
+   ### PYTEST-BLOCK-START: SE_DEPENDENCIES
+   from AutoTestLib.Interfaces.M4MModbusTCP import M4MModbusTCP as {{ AutoTestLib__m4m_tcp.name }}
+   ### PYTEST-BLOCK-END: SE_DEPENDENCIES
