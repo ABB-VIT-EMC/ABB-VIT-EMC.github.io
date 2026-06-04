@@ -65,6 +65,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/pipeline.html">Using the Pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/query.html">Using the Query Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/cartamodello.html">Writing a Test Case in Cartamodello Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/polarion.html">Polarion Integration</a></li>
 </ul>
 </li>
@@ -96,6 +97,7 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#first-run">First Run</a></li>
+<li><a class="reference internal" href="#graphical-user-interface-saartoria">Graphical User Interface (Saartoria)</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -188,18 +190,12 @@ data-aria-dark="Switch to auto color mode">
 </section>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h2>
-<p>The following are installed automatically via <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>:</p>
-<ul class="simple">
-<li><p>jinja2</p></li>
-<li><p>pytest</p></li>
-<li><p>pytest-html</p></li>
-<li><p>pydantic</p></li>
-</ul>
-<p>In-house libraries must be installed separately:</p>
+<p>All the depenencies are installed via <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> except for in-house libraries must be installed separately:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;matta @ git+https://github.com/ABB-VIT-EMC/matta&quot;</span>
 </span><span data-line="2">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;AutoTestLib @ git+https://github.com/ABB-VIT-EMC/AutoTestLib&quot;</span>
 </span></pre></div>
 </div>
+<p>However, with <a class="reference external" href="https://github.com/ABB-VIT-EMC/ATE">ATE</a>, everything is set up for you.</p>
 </section>
 <section id="first-run">
 <h2>First Run<a class="headerlink" href="#first-run" title="Link to this heading">¶</a></h2>
@@ -213,6 +209,10 @@ data-aria-dark="Switch to auto color mode">
 </span><span data-line="3">saarto<span class="w"> </span>execute<span class="w"> </span>PMD-1111<span class="w">          </span><span class="c1"># build, render, run</span>
 </span></pre></div>
 </div>
+</section>
+<section id="graphical-user-interface-saartoria">
+<h2>Graphical User Interface (Saartoria)<a class="headerlink" href="#graphical-user-interface-saartoria" title="Link to this heading">¶</a></h2>
+<p>for sarrto GUI, refer to <a class="reference external" href="https://github.com/ABB-VIT-EMC/saarto/tree/main/src/saartoria">Saartoria</a>.</p>
 </section>
 </section>
 

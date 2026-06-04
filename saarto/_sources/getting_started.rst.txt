@@ -32,19 +32,14 @@ For a fully configured environment, refer to
 Dependencies
 ------------
 
-The following are installed automatically via ``pyproject.toml``:
-
-- jinja2
-- pytest
-- pytest-html
-- pydantic
-
-In-house libraries must be installed separately:
+All the depenencies are installed via ``pyproject.toml`` except for in-house libraries must be installed separately:
 
 .. code-block:: bash
 
    pip install "matta @ git+https://github.com/ABB-VIT-EMC/matta"
    pip install "AutoTestLib @ git+https://github.com/ABB-VIT-EMC/AutoTestLib"
+
+However, with `ATE <https://github.com/ABB-VIT-EMC/ATE>`_, everything is set up for you.
 
 First Run
 ---------
@@ -62,3 +57,8 @@ Then follow the typical workflow:
    saarto init PMD-1111 PMD-0000    # link test case to new test task
    saarto fetch PMD-1111            # resolve instruments
    saarto execute PMD-1111          # build, render, run
+
+Graphical User Interface (Saartoria)
+------------------------------------
+
+for sarrto GUI, refer to `Saartoria <https://github.com/ABB-VIT-EMC/saarto/tree/main/src/saartoria>`_.

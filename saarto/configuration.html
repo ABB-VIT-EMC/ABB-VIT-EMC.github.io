@@ -65,6 +65,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/pipeline.html">Using the Pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/query.html">Using the Query Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/cartamodello.html">Writing a Test Case in Cartamodello Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/polarion.html">Polarion Integration</a></li>
 </ul>
 </li>
@@ -172,7 +173,7 @@ in the following order:</p>
 <ol class="arabic">
 <li><p><strong>User/Virtual Environment Config</strong> (priority):</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;venv_parent_dir&gt;/config/&lt;config_file&gt;</span></code></p>
-<p>Allows workspace-specific overrides without modifying source code.</p>
+<p>Allows workspace-specific overrides without modifying source code. This is the case when it is installed along side with <a class="reference external" href="https://github.com/ABB-VIT-EMC/ATE">https://github.com/ABB-VIT-EMC/ATE</a> with –venv flag</p>
 </li>
 <li><p><strong>System/Default Config</strong> (fallback):</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;saarto_source_dir&gt;/core/config/&lt;config_file&gt;</span></code></p>
@@ -182,7 +183,7 @@ in the following order:</p>
 <p>If neither file exists, a <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> is raised immediately.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use <code class="docutils literal notranslate"><span class="pre">load_main_config(&quot;saarto.toml&quot;)</span></code> to leverage this resolution automatically.</p>
+<p>This behaviour is obtained by calling <code class="docutils literal notranslate"><span class="pre">load_main_config(&quot;saarto.toml&quot;)</span></code>.</p>
 </div>
 </section>
 <section id="project-structure">

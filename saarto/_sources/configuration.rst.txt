@@ -13,7 +13,7 @@ in the following order:
 
    ``<venv_parent_dir>/config/<config_file>``
 
-   Allows workspace-specific overrides without modifying source code.
+   Allows workspace-specific overrides without modifying source code. This is the case when it is installed along side with https://github.com/ABB-VIT-EMC/ATE with --venv flag
 
 2. **System/Default Config** (fallback):
 
@@ -24,7 +24,7 @@ in the following order:
 If neither file exists, a ``FileNotFoundError`` is raised immediately.
 
 .. note::
-   Use ``load_main_config("saarto.toml")`` to leverage this resolution automatically.
+   This behaviour is obtained by calling ``load_main_config("saarto.toml")``.
 
 Project Structure
 -----------------

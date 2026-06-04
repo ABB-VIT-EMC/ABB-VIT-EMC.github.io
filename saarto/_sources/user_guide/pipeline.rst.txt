@@ -11,10 +11,10 @@ Lifecycle Overview
 
    init --> fetch --> build --> render --> execute
 
-Initializing a Test Task
+Initializing a Test Task 
 -------------------------
 
-Link a test case template to a new test task:
+Link a test case template to a new test task through api:
 
 .. code-block:: python
 
@@ -49,8 +49,8 @@ For batch processing (all tasks):
 After fetch, review and configure hardware parameters in ``instrument.toml``
 (e.g., IP address, port, baud rate).
 
-Building Templates
-------------------
+Building Templates (not required)
+----------------------------------
 
 Compile test case + structural element blocks into a Jinja2 template:
 
@@ -59,8 +59,8 @@ Compile test case + structural element blocks into a Jinja2 template:
    result = api.Pipeline.build("PMD-1234")
    # Produces: PMD-1234.py.j2
 
-Rendering Test Files
---------------------
+Rendering Test Files (not required)
+-----------------------------------
 
 Render the template with full context into an executable pytest file:
 
@@ -95,6 +95,10 @@ Reset a test task to its post-init state:
 .. code-block:: python
 
    result = api.Pipeline.clean("PMD-1234")
+
+.. code-block:: bash
+
+   saarto clean PMD-1234
 
 .. warning::
    This deletes all generated files including ``test_PMD-1234.py``.

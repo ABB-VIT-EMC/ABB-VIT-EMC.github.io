@@ -4,14 +4,14 @@ Architecture
 Design Philosophy
 -----------------
 
-SAARTO enforces a strict **separation of concerns**:
+SAARTO enforces a **separation of concerns**:
 
-- **Test cases** define *what* to test (logic, steps, assertions).
-- **Structural elements** define *how* to interact with hardware (drivers, parameters).
-- **The pipeline** merges both into executable pytest files at build time.
+- **Test cases** define *how* the test should be executed with *which* class(es) of hardware/instruments.
+- **Structural elements** define a blueprint for interacting with hardware, i.e., library, initializing sequences, and teardown sequences.
+- **The pipeline** merges both into executable pytest files a.k.a. **test task** at build time or runtime.
 
 This eliminates code duplication: if 10 test tasks use the same power meter,
-the instrument definition exists in exactly one place.
+the instrument definition exists in exactly one place. Anything that can be done by any given structural element is pre-determined by the its class.
 
 Pipeline Lifecycle
 ------------------
@@ -21,27 +21,31 @@ Every test task follows a fixed sequence of stages:
 .. code-block:: text
 
    init --> fetch --> build --> render --> execute
-                                  ^
-                                clean (resets to post-init state)
+          ^
+        clean (resets to post-init state)
 
 .. list-table:: Pipeline Stages
    :header-rows: 1
-   :widths: 15 85
+   :widths: 20 70
 
    * - Stage
      - Description
    * - **init**
-     - Creates a task directory and writes ``config.toml`` from a test case template.
+     - Creates a task directory and writes ``config.toml`` from a test task template. At this stage, if the test case doesn't have default structural elements, they are empty, and need to be done by the user.
    * - **fetch**
-     - Reads the config to identify required instruments, pulls their TOML definitions.
-   * - **build**
+     - Reads the config to identify required instruments, pulls their TOML definitions to ``instrument.toml``.
+   * - **build** (required if not executed with --skip_build)
      - Merges Python blocks from test case + structural elements into a ``.py.j2`` template.
-   * - **render**
+   * - **render** (required if not executed with --skip_build)
      - Renders the Jinja2 template with full context (parameters, instruments) into ``test_*.py``.
    * - **execute**
-     - Runs pytest, generates HTML reports, and archives configurations with SHA-256 hashing.
+     - Runs build and render the pytest from the ``config.toml``, and ``instrument.toml``, generates HTML reports, and archives configurations with SHA-256 hashing.
    * - **clean**
      - Deletes generated artifacts and re-initializes from the original test case.
+
+on **render** the pipeline performs two tests to ensure the generated pytest is valid:
+- **Render check** -- the Jinja2 rendering engine checks for missing variables and syntax errors in the template. Some missing variables are permissible, for example tags, descriptions, etc.
+- **Syntax check** -- ``pyright`` checks the generated file to ensure it is syntactically correct.
 
 API Design
 ----------
@@ -51,14 +55,14 @@ The Python API is split into two classes:
 - **``Pipeline``** -- the "actor" that creates, mutates, and executes.
 - **``Query``** -- the "observer" that reads and inspects.
 
-Both return ``Result`` objects for standardized success/failure handling.
+Both return ``matta.Result`` objects for standardized success/failure handling.
 
 Result-Based Error Handling
 ---------------------------
 
 SAARTO uses two complementary error mechanisms:
 
-1. **``Result`` objects** -- for expected outcomes (success, warnings, soft failures).
+1. **``matta.Result`` objects** -- for expected outcomes (success, warnings, soft failures).
 2. **Custom exceptions** -- for critical, unrecoverable errors (missing files, broken config).
 
 .. code-block:: python
@@ -71,16 +75,17 @@ SAARTO uses two complementary error mechanisms:
    if not config_path.exists():
        raise ConfigurationError(f"Config not found: {config_path}")
 
-Exception Hierarchy
-~~~~~~~~~~~~~~~~~~~
+matta.Result allows us to embed another Result into the root Result, enabling a tree-like tracing of errors and warnings.
 
 .. code-block:: text
 
-   PipelineError (base)
-   +-- TestCaseNotFoundError
-   +-- TestTaskNotFoundError
-   +-- ConfigurationError
-   +-- ExecutionError
+    2026-06-03 12:19:44  ERROR       Render finished with errors. Success: 0, Failed: 1
+    2026-06-03 12:19:44  ERROR       └─ PMD-XIXI test file is rendered at C:\Users\ITTHCHU\Project\ATE\tests\PMD-XIXI\test_PMD-XIXI.py
+    2026-06-03 12:19:44  ERROR          └─ Static analysis for test_PMD-XIXI.py
+    2026-06-03 12:19:44  ERROR             ├─ Line 170: "(" was not closed | {'line': 170, 'character': 22, 'rule': 'unknown_rule', 'severity': 'error'}
+    2026-06-03 12:19:44  ERROR             ├─ Line 170: "[" was not closed | {'line': 170, 'character': 29, 'rule': 'unknown_rule', 'severity': 'error'}
+    2026-06-03 12:19:44  ERROR             └─ Line 4012: Statements must be separated by newlines or semicolons | {'line': 4012, 'character': 1, 'rule': 'unknown_rule', 'severity': 'error'}
+
 
 Test Result Management
 ----------------------
@@ -100,17 +105,8 @@ Output directory structure:
 .. code-block:: text
 
    results/
-   +-- 2026-05-06_14-30-00_nightly_run/
+   +-- 2026-05-06_14-30-00_example-test-instance/
        +-- PMD-1234/
            +-- results.xml          # JUnit XML
-           +-- log.html             # pytest-html report
-           +-- a1b2c3d4.tar.gz     # frozen config snapshot
-
-Polarion Sync
-~~~~~~~~~~~~~
-
-The upload process reads directly from the hashed archive, ensuring:
-
-- **Resistance to change** -- post-execution edits don't affect uploads.
-- **Decoupled from local state** -- relies on the frozen snapshot only.
-- **Traceability** -- the hash acts as a unique fingerprint for auditing.
+           +-- log.html             # customised pytest-html report
+           +-- a1b2c3d4.tar.gz     # frozen config snapshot of the toml files that can be reconstructed into the original pytest file

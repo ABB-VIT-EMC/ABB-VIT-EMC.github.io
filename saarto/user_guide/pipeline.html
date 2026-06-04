@@ -65,6 +65,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Using the Pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query.html">Using the Query Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cartamodello.html">Writing a Test Case in Cartamodello Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="polarion.html">Polarion Integration</a></li>
 </ul>
 </li>
@@ -95,8 +96,8 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#lifecycle-overview">Lifecycle Overview</a></li>
 <li><a class="reference internal" href="#initializing-a-test-task">Initializing a Test Task</a></li>
 <li><a class="reference internal" href="#fetching-instruments">Fetching Instruments</a></li>
-<li><a class="reference internal" href="#building-templates">Building Templates</a></li>
-<li><a class="reference internal" href="#rendering-test-files">Rendering Test Files</a></li>
+<li><a class="reference internal" href="#building-templates-not-required">Building Templates (not required)</a></li>
+<li><a class="reference internal" href="#rendering-test-files-not-required">Rendering Test Files (not required)</a></li>
 <li><a class="reference internal" href="#executing-tests">Executing Tests</a></li>
 <li><a class="reference internal" href="#cleaning-up">Cleaning Up</a></li>
 <li><a class="reference internal" href="#batch-operations">Batch Operations</a></li>
@@ -182,7 +183,7 @@ data-aria-dark="Switch to auto color mode">
 </section>
 <section id="initializing-a-test-task">
 <h2>Initializing a Test Task<a class="headerlink" href="#initializing-a-test-task" title="Link to this heading">¶</a></h2>
-<p>Link a test case template to a new test task:</p>
+<p>Link a test case template to a new test task through api:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">saarto</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">test_name</span><span class="o">=</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">,</span> <span class="n">test_case</span><span class="o">=</span><span class="s2">&quot;PMD-0000&quot;</span><span class="p">)</span>
@@ -208,16 +209,16 @@ data-aria-dark="Switch to auto color mode">
 <p>After fetch, review and configure hardware parameters in <code class="docutils literal notranslate"><span class="pre">instrument.toml</span></code>
 (e.g., IP address, port, baud rate).</p>
 </section>
-<section id="building-templates">
-<h2>Building Templates<a class="headerlink" href="#building-templates" title="Link to this heading">¶</a></h2>
+<section id="building-templates-not-required">
+<h2>Building Templates (not required)<a class="headerlink" href="#building-templates-not-required" title="Link to this heading">¶</a></h2>
 <p>Compile test case + structural element blocks into a Jinja2 template:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">)</span>
 </span><span data-line="2"><span class="c1"># Produces: PMD-1234.py.j2</span>
 </span></pre></div>
 </div>
 </section>
-<section id="rendering-test-files">
-<h2>Rendering Test Files<a class="headerlink" href="#rendering-test-files" title="Link to this heading">¶</a></h2>
+<section id="rendering-test-files-not-required">
+<h2>Rendering Test Files (not required)<a class="headerlink" href="#rendering-test-files-not-required" title="Link to this heading">¶</a></h2>
 <p>Render the template with full context into an executable pytest file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">)</span>
 </span><span data-line="2"><span class="c1"># Produces: test_PMD-1234.py</span>
@@ -243,6 +244,9 @@ data-aria-dark="Switch to auto color mode">
 <h2>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Link to this heading">¶</a></h2>
 <p>Reset a test task to its post-init state:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="s2">&quot;PMD-1234&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">saarto<span class="w"> </span>clean<span class="w"> </span>PMD-1234
 </span></pre></div>
 </div>
 <div class="admonition warning">
