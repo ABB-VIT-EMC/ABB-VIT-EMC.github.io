@@ -1,0 +1,32 @@
+# This file is the single inventory of documentation built by this repository.
+# Add a submodule under modules/ first, then add one entry per Sphinx project.
+#
+[[project]]
+name = "SAARTO"
+slug = "saarto"
+source = "modules/saarto/docs/source"
+# Optional: install project-specific Sphinx extensions before building.
+requirements = "modules/saarto/docs/requirements.txt"
+#
+# The central builder renders every project with sphinx_book_theme without
+# changing the project's conf.py or documentation content.
+
+[[project]]
+name = "AutoTestLib"
+slug = "AutoTestLib"
+source = "modules/AutoTestLib/docs/source"
+
+[[project]]
+name = "matta - Make Terminal Tasteful Again"
+slug = "matta"
+source = "modules/matta/docs/source"
+
+[[project]]
+name = "SAARTO: Rapid Plugin"
+slug = "saarto-rapid"
+source = "modules/saarto-rapid/docs/source"
+
+[[project]]
+name = "PolarionComLib"
+slug = "PolarionComLib"
+source = "modules/PolarionComLib/docs/source"

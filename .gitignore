@@ -1,6 +1,8 @@
 docs/build/
 docs/_build/
 _build/
+_site/
+.docs-build/
 __pycache__/
 *.pyc
 .python-version

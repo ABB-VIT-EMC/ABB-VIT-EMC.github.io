@@ -17,3 +17,7 @@
 	path = modules/AutoTestLib
 	url = https://github.com/ABB-VIT-EMC/AutoTestLib.git
 	branch = main
+[submodule "modules/PolarionComLib"]
+	path = modules/PolarionComLib
+	url = https://github.com/ABB-VIT-EMC/PolarionComLib.git
+	branch = main
