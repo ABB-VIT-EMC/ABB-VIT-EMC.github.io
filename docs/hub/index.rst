@@ -16,7 +16,4 @@ The team includes
 This site does not include `cartamodello-code <https://github.com/ABB-VIT-EMC/cartamodello-code>`_ VSCode extension, since ``README`` suffices.
 
 
-.. toctree::
-   :maxdepth: 1
-
-   projects
+.. include:: projects.rst

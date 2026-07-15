@@ -15,6 +15,7 @@ CONFIG = ROOT / "docs" / "projects.toml"
 HUB_SOURCE = ROOT / "docs" / "hub"
 WORK = ROOT / ".docs-build"
 SITE = ROOT / "_site"
+SITE_URL = "https://abb-vit-emc.github.io"
 
 
 def run(*args: str) -> None:
@@ -32,7 +33,7 @@ def main() -> None:
     shutil.copytree(HUB_SOURCE, WORK / "hub")
     SITE.mkdir(parents=True)
 
-    links: list[str] = []
+    links: list[tuple[str, str]] = []
     for project in projects:
         name = project["name"]
         slug = project["slug"]
@@ -55,16 +56,17 @@ def main() -> None:
             "--keep-going",
             "-b",
             "html",
-            "-D",
-            "html_theme=furo",
             str(source),
             str(SITE / slug),
         )
-        links.append(f"* `{escape(name)} <../{escape(slug)}/>`_")
+        nav_title = project.get("nav_title", name.split(" - ", 1)[0])
+        links.append((str(nav_title), f"{SITE_URL}/{slug}/"))
 
-    project_page = "Projects\n========\n\n"
-    project_page += "\n".join(links) if links else "No projects are configured yet."
-    (WORK / "hub" / "projects.rst").write_text(project_page + "\n", encoding="utf-8")
+    project_tree = ".. toctree::\n   :caption: Projects\n   :maxdepth: 1\n   :hidden:\n\n"
+    project_tree += "\n".join(
+        f"   {escape(title)} <{escape(url)}>" for title, url in links
+    )
+    (WORK / "hub" / "projects.rst").write_text(project_tree + "\n", encoding="utf-8")
 
     run(
         sys.executable,

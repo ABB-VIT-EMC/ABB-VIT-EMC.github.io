@@ -8,25 +8,28 @@ source = "modules/saarto/docs/source"
 # Optional: install project-specific Sphinx extensions before building.
 requirements = "modules/saarto/docs/requirements.txt"
 #
-# The central builder renders every project with Furo without
-# changing the project's conf.py or documentation content.
+# The central builder uses each project's own Sphinx theme configuration.
 
 [[project]]
 name = "AutoTestLib - Drivers and Cartamodello definitions for our lab equipments"
 slug = "AutoTestLib"
 source = "modules/AutoTestLib/docs/source"
+requirements = "modules/AutoTestLib/docs/requirements.txt"
 
 [[project]]
 name = "matta - Make Terminal Tasteful Again"
 slug = "matta"
 source = "modules/matta/docs/source"
+requirements = "modules/matta/docs/requirements.txt"
 
 [[project]]
 name = "saarto-rapid - ABB Robotics Rapid language block support for SAARTO"
 slug = "saarto-rapid"
 source = "modules/saarto-rapid/docs/source"
+requirements = "modules/saarto-rapid/docs/requirements.txt"
 
 [[project]]
 name = "PolarionComLib - Communication library for SIEMENS Polarion"
 slug = "PolarionComLib"
 source = "modules/PolarionComLib/docs/source"
+requirements = "modules/PolarionComLib/docs/requirements.txt"
