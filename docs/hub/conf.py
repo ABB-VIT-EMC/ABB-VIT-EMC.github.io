@@ -6,14 +6,18 @@ extensions = []
 templates_path = ["_templates"]
 exclude_patterns = []
 
-html_theme = "sphinx_book_theme"
+html_theme = "furo"
 html_title = "ABB VIT EMC Documentation"
 html_theme_options = {
-    "home_page_in_toc": True,
-    "repository_url": "https://github.com/ABB-VIT-EMC/ABB-VIT-EMC.github.io",
-    "repository_branch": "main",
-    "path_to_docs": "docs/hub",
-    "use_repository_button": True,
-    "use_issues_button": True,
-    "show_navbar_depth": 2,
+    "source_repository": "https://github.com/ABB-VIT-EMC/ABB-VIT-EMC.github.io/",
+    "source_branch": "main",
+    "source_directory": "docs/hub/",
+    "light_css_variables": {
+        "color-brand-primary": "#c00000",
+        "color-brand-content": "#9c0000",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#ff8a8a",
+        "color-brand-content": "#ffb3b3",
+    },
 }

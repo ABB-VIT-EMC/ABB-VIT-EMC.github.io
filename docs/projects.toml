@@ -8,7 +8,7 @@ source = "modules/saarto/docs/source"
 # Optional: install project-specific Sphinx extensions before building.
 requirements = "modules/saarto/docs/requirements.txt"
 #
-# The central builder renders every project with sphinx_book_theme without
+# The central builder renders every project with Furo without
 # changing the project's conf.py or documentation content.
 
 [[project]]

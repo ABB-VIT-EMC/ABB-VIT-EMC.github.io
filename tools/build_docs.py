@@ -56,7 +56,7 @@ def main() -> None:
             "-b",
             "html",
             "-D",
-            "html_theme=sphinx_book_theme",
+            "html_theme=furo",
             str(source),
             str(SITE / slug),
         )
