@@ -1,0 +1,7 @@
+[submodule "modules/ATE"]
+	path = modules/ATE
+	url = https://github.com/ABB-VIT-EMC/ATE
+[submodule "modules/saarto"]
+	path = modules/saarto
+	url = https://github.com/ABB-VIT-EMC/saarto.git
+	branch = main
