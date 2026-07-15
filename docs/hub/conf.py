@@ -1,4 +1,5 @@
 project = "ABB SpA Vittuone Laboratory Software Documentation"
+author = "Thanapong Chuangyanyong"
 copyright = "ABB SpA"
 
 extensions = []

@@ -2,7 +2,7 @@
 # Add a submodule under modules/ first, then add one entry per Sphinx project.
 #
 [[project]]
-name = "SAARTO"
+name = "SAARTO - **S**ystem for **A**utomated, and **A**nti-**R**edundancy **T**est **O**rchestrator"
 slug = "saarto"
 source = "modules/saarto/docs/source"
 # Optional: install project-specific Sphinx extensions before building.
@@ -12,21 +12,21 @@ requirements = "modules/saarto/docs/requirements.txt"
 # changing the project's conf.py or documentation content.
 
 [[project]]
-name = "AutoTestLib"
+name = "AutoTestLib - Drivers and Cartamodello definitions for our lab equipments"
 slug = "AutoTestLib"
 source = "modules/AutoTestLib/docs/source"
 
 [[project]]
-name = "matta - Make Terminal Tasteful Again"
+name = "matta - **M**ake **T**erminal **T**asteful **A**gain"
 slug = "matta"
 source = "modules/matta/docs/source"
 
 [[project]]
-name = "SAARTO: Rapid Plugin"
+name = "saarto-rapid - ABB Robotics Rapid language block support for SAARTO"
 slug = "saarto-rapid"
 source = "modules/saarto-rapid/docs/source"
 
 [[project]]
-name = "PolarionComLib"
+name = "PolarionComLib - Communication library for SIEMENS Polarion"
 slug = "PolarionComLib"
 source = "modules/PolarionComLib/docs/source"
