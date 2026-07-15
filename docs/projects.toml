@@ -2,7 +2,7 @@
 # Add a submodule under modules/ first, then add one entry per Sphinx project.
 #
 [[project]]
-name = "SAARTO - **S**ystem for **A**utomated, and **A**nti-**R**edundancy **T**est **O**rchestrator"
+name = "SAARTO - System for Automated, and Anti-Redundancy Test Orchestrator"
 slug = "saarto"
 source = "modules/saarto/docs/source"
 # Optional: install project-specific Sphinx extensions before building.
@@ -17,7 +17,7 @@ slug = "AutoTestLib"
 source = "modules/AutoTestLib/docs/source"
 
 [[project]]
-name = "matta - **M**ake **T**erminal **T**asteful **A**gain"
+name = "matta - Make Terminal Tasteful Again"
 slug = "matta"
 source = "modules/matta/docs/source"
 
