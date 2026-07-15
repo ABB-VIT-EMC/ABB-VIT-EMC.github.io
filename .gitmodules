@@ -5,3 +5,7 @@
 	path = modules/saarto
 	url = https://github.com/ABB-VIT-EMC/saarto.git
 	branch = main
+[submodule "modules/matta"]
+	path = modules/matta
+	url = https://github.com/ABB-VIT-EMC/matta.git
+	branch = main
