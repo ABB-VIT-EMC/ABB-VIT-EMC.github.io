@@ -9,10 +9,6 @@
 	path = modules/matta
 	url = https://github.com/ABB-VIT-EMC/matta.git
 	branch = main
-[submodule "modules/saarto-rapid"]
-	path = modules/saarto-rapid
-	url = https://github.com/ABB-VIT-EMC/saarto-rapid.git
-	branch = main
 [submodule "modules/AutoTestLib"]
 	path = modules/AutoTestLib
 	url = https://github.com/ABB-VIT-EMC/AutoTestLib.git
