@@ -15,5 +15,14 @@ The team includes
 
 This site does not include `cartamodello-code <https://github.com/ABB-VIT-EMC/cartamodello-code>`_ VSCode extension, since ``README`` suffices.
 
+Optional integrations are collected on the :doc:`plugins` page. Plugin
+documentation lives in each plugin repository's ``README``.
 
 .. include:: projects.rst
+
+.. toctree::
+   :caption: Extensions
+   :maxdepth: 1
+   :hidden:
+
+   plugins

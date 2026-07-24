@@ -12,6 +12,7 @@ with a common landing page.
 | --- | --- |
 | `docs/hub/` | Source for the main landing page. Edit `index.rst` for its content and `_static/custom.css` for hub-specific styling. |
 | `docs/projects.toml` | The authoritative list of project documentation to build and show in the hub navigation. |
+| `docs/plugins.toml` | The plugin catalog shown on the hub. Plugin details remain in each repository's README. |
 | `modules/` | Git submodules containing the source repositories. Do not maintain package documentation as copied files here. |
 | `.gitmodules` | Submodule URLs and the branches followed by the automated build. |
 | `tools/build_docs.py` | Installs project documentation requirements and builds the hub and project sites. |
@@ -58,6 +59,24 @@ change that should record a known source revision.
 
 To change the landing page or project list, edit this repository directly,
 commit the change to `main`, and let the push-triggered workflow deploy it.
+
+## Add a plugin
+
+Plugins are listed on one generated hub page and do not need a Sphinx `docs/`
+folder or a documentation submodule. Keep all plugin documentation in the
+plugin repository's `README.md`.
+
+To add a plugin, append one entry to `docs/plugins.toml`:
+
+```toml
+[[plugins]]
+name = "Display name"
+description = "One short description."
+repository = "https://github.com/organization/repository"
+```
+
+These are the only required fields. `tools/build_docs.py` validates the catalog
+and regenerates the Plugins page during every build.
 
 ## Local setup and build
 

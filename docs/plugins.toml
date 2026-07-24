@@ -1,0 +1,12 @@
+# Source of truth for the plugin catalog shown on the documentation hub.
+# Add one table with only a display name, short description, and repository URL.
+
+[[plugins]]
+name = "SAARTO Rapid"
+description = "Adds ABB RAPID language blocks and Robot Web Services support to SAARTO tasks."
+repository = "https://github.com/ABB-VIT-EMC/saarto-rapid"
+
+[[plugins]]
+name = "SAARTO Polarion"
+description = "Imports Polarion work into SAARTO and reports execution results back to Polarion."
+repository = "https://github.com/ABB-VIT-EMC/saarto-polarion"

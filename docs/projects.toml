@@ -23,12 +23,6 @@ source = "modules/matta/docs/source"
 requirements = "modules/matta/docs/requirements.txt"
 
 [[project]]
-name = "saarto-rapid - ABB Robotics Rapid language block support for SAARTO"
-slug = "saarto-rapid"
-source = "modules/saarto-rapid/docs/source"
-requirements = "modules/saarto-rapid/docs/requirements.txt"
-
-[[project]]
 name = "PolarionComLib - Communication library for SIEMENS Polarion"
 slug = "PolarionComLib"
 source = "modules/PolarionComLib/docs/source"
