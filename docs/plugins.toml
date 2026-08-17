@@ -7,6 +7,11 @@ description = "Adds ABB RAPID language blocks and Robot Web Services support to 
 repository = "https://github.com/ABB-VIT-EMC/saarto-rapid"
 
 [[plugins]]
+name = "SAARTO Vision"
+description = "Brings cameras to SAARTO: capture and attach pictures, read a screen with OCR, locate one from a printed marker, and watch a bench while a test runs."
+repository = "https://github.com/ABB-VIT-EMC/saarto-vision"
+
+[[plugins]]
 name = "SAARTO Polarion"
 description = "Imports Polarion work into SAARTO and reports execution results back to Polarion."
 repository = "https://github.com/ABB-VIT-EMC/saarto-polarion"

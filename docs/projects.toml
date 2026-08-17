@@ -17,6 +17,12 @@ source = "modules/AutoTestLib/docs/source"
 requirements = "modules/AutoTestLib/docs/requirements.txt"
 
 [[project]]
+name = "SAARTO Vision - Cameras, OCR and markers for SAARTO test cases"
+slug = "saarto-vision"
+source = "modules/saarto-vision/docs/source"
+requirements = "modules/saarto-vision/docs/requirements.txt"
+
+[[project]]
 name = "matta - Make Terminal Tasteful Again"
 slug = "matta"
 source = "modules/matta/docs/source"
