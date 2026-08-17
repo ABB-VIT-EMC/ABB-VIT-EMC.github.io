@@ -17,7 +17,3 @@
 	path = modules/PolarionComLib
 	url = https://github.com/ABB-VIT-EMC/PolarionComLib.git
 	branch = main
-[submodule "modules/saarto-vision"]
-	path = modules/saarto-vision
-	url = https://github.com/ABB-VIT-EMC/saarto-vision.git
-	branch = main
